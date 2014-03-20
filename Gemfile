@@ -21,13 +21,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-end
 
 gem 'jquery-rails'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'debugger'
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+end
