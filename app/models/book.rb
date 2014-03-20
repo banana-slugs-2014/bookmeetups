@@ -6,5 +6,5 @@ class Book < ActiveRecord::Base
   validates :isbn, format: { with: /^\d{13}$/ }
 
   has_many :user_books
-  has_many :users, through :user_books
+  has_many :users, through: :user_books
 end
