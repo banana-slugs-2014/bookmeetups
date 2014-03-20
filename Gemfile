@@ -28,6 +28,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'debugger'
 group :development, :test do
+  gem 'faker'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
