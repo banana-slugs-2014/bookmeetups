@@ -5,8 +5,7 @@ describe Location do
     it { should validate_presence_of :city }
     it { should validate_presence_of :state }
     it { should validate_presence_of :zip }
-    it { should allow_value('1234567891234').for(:isbn) }
-    it { should_not allow_value('2542423').for(:isbn) }
+
   end
 
   context "associations" do
