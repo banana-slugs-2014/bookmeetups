@@ -34,5 +34,43 @@ describe SessionsController do
         session[:id].should == existing_user.id
       end
     end
+
+    context 'with all invalid params' do
+      let(:invalid_cred) { {username: 'bobert', password: 'nottest'} }
+
+      it 'should be redirect' do
+        post :create, { user: invalid_cred }
+        expect(response).to be_redirect
+      end
+
+      it 'should not find user' do
+        post :create, { user: invalid_cred }
+        expect(assigns(:user)).to be_nil
+      end
+
+      it 'should not create a new session' do
+        post :create, { user: invalid_cred }
+        session[:id].should be_nil
+      end
+    end
+
+    context 'with some invalid params' do
+      let(:invalid_cred) { {username: 'bob', password: 'nottest'} }
+
+      it 'should be redirect' do
+        post :create, { user: invalid_cred }
+        expect(response).to be_redirect
+      end
+
+      it 'should find user' do
+        post :create, { user: invalid_cred }
+        expect(assigns(:user)).to_not be_nil
+      end
+
+      it 'should not create a new session' do
+        post :create, { user: invalid_cred }
+        session[:id].should be_nil
+      end
+    end
   end
 end
