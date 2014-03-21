@@ -116,6 +116,19 @@ describe SessionsController do
     end
 
     context "when user id and session id don't match" do
+      let!(:another_user) { FactoryGirl.create :user }
+      before(:each) { request.session[:id] = existing.id }
+
+      it "should not delete user" do
+        expect {
+          delete :destroy, id: another_user.id
+        }.to_not change { User.count }
+      end
+
+      it "should not delete session" do
+        delete :destroy, id: another_user.id
+        session[:id].should_not be_nil
+      end
     end
   end
 end

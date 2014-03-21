@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
   def destroy
     (redirect_to(root_path) && return) unless User.exists?(params[:id])
     @user = User.find(params[:id])
+    (redirect_to(user_path(session[:id])) && return) unless session[:id] == @user.id
     @user.destroy
     session.clear
     redirect_to(root_path)
