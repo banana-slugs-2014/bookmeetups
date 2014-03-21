@@ -6,6 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :user_books
   has_many :books, through: :user_books
-  has_many :user_locations
-  has_many :locations, through: :user_locations
+  belongs_to :location
 end
