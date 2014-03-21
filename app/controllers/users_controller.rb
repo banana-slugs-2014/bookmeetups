@@ -1,4 +1,5 @@
-class UsersController < ActionController::Base
+class UsersController < ApplicationController
+  before_filter :redirect_unless_logged_in, :except => [:new, :create]
 
   def new
     @user = User.new
