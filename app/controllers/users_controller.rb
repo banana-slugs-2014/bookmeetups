@@ -21,6 +21,24 @@ class UsersController < ActionController::Base
   end
 
   def index
+    @users = User.all
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    redirect_to(edit_user_path(@user)) && return unless @user.update_attributes(params[:user])
+    redirect_to(user_path(@user))
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    session.clear
+    redirect_to(root_path)
   end
 
 end
