@@ -12,4 +12,8 @@ class UserBooksController < ApplicationController
     redirect_to user_books_path
   end
 
+  def index
+    books = current_user.books
+    render :partial => 'users/books_index', locals: {books: books}
+  end
 end

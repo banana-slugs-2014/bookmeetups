@@ -25,8 +25,12 @@ describe UserBooksController do
       expect { delete :destroy, user_id: my_user, book_id: my_book }.to change{ UserBook.count }.by(-1)
       expect(response).to be_redirect
     end
-
-
   end
 
+  context "#index" do
+    it "should be ok" do
+      get :index, user_id: my_user
+      expect(response).to be_success
+    end
+  end
 end
