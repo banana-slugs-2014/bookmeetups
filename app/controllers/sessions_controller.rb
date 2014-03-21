@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   def destroy
     @user = User.where(id: params[:id]).first
     (redirect_to(root_path) && return) if @user.nil?
-    if authorized?
+    if authorized?(@user.id)
       @user.destroy
       session.clear
       redirect_to(root_path)
@@ -29,10 +29,6 @@ class SessionsController < ApplicationController
   private
     def invalid_login?
       !@user.authenticate(params[:user][:password])
-    end
-
-    def authorized?
-      session[:id] == @user.id
     end
 
 end
