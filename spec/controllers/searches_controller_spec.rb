@@ -11,10 +11,9 @@ describe SearchesController do
       expect( response ).to be_success
     end
 
-    it "displays the search bar on the results page" do
+    it "sets " do
       post :search, search: book.title
-      expect( response ).to be_success
-      expect( response ).to include(book.title)
+      expect( assigns(:books) ).to eq([book]) 
     end
   end
 end
