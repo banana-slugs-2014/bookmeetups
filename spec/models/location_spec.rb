@@ -9,7 +9,6 @@ describe Location do
   end
 
   context "associations" do
-    it { should have_many(:user_locations) }
-    it { should have_many(:users).through(:user_locations) }
+    it { should have_many(:users) }
   end
 end
