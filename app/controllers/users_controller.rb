@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :redirect_unless_logged_in, :except => :new
+  before_filter :redirect_unless_logged_in, :except => [:new, :create]
 
   def new
     @user = User.new
@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    p logged_in?
     @user = User.find(params[:id])
   end
 

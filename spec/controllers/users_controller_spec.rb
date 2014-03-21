@@ -45,6 +45,8 @@ describe UsersController do
   end
 
   context '#show' do
+    before(:each) { request.session[:id] = my_user.id }
+
     it "should be a success" do
       get :show, id: my_user.id
       expect(response).to be_success
@@ -57,6 +59,8 @@ describe UsersController do
   end
 
   context '#index' do
+    before(:each) { request.session[:id] = my_user.id }
+
     it "should be a success" do
       get :index
       expect(response).to be_success
@@ -69,6 +73,9 @@ describe UsersController do
   end
 
   context '#edit' do
+    before(:each) { request.session[:id] = my_user.id }
+
+
     it "should be a success" do
       get :edit, id: my_user.id
       expect(response).to be_success
@@ -81,6 +88,8 @@ describe UsersController do
   end
 
   context '#update' do
+    before(:each) { request.session[:id] = my_user.id }
+
     context "with valid attributes" do
       it "should be a redirect" do
         put :update, id: my_user.id
@@ -91,6 +100,7 @@ describe UsersController do
 
   context '#destroy' do
     let!(:delete_user) { FactoryGirl.create :user }
+    before(:each) { request.session[:id] = delete_user.id }
 
     it "should be redirect" do
       delete :destroy, id: delete_user.id
