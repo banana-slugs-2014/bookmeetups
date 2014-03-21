@@ -25,5 +25,17 @@ describe BooksController do
     end
   end
 
+  context '#index' do
+    it "should be ok" do
+      get :index
+      expect(response).to be_success
+    end
+
+    it "should list all current books" do
+      get :index
+      expect(assigns(:books)).to eq(Book.all)
+    end
+  end
+
 end
 
