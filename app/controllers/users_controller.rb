@@ -13,7 +13,7 @@ class UsersController < ActionController::Base
       user.email = params[:user][:email]
     end
     redirect_to(root_path) && return unless new_user.save
-    redirect_to(root_path)
+    redirect_to(user_path(new_user))
   end
 
   def show
