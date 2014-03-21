@@ -13,5 +13,10 @@ FactoryGirl.define do
     isbn {Faker::Number.number(13)}
     google_id {Faker::Number.number(15)}
   end
+
+  factory :user_book do
+    user
+    book
+  end
 end
 
