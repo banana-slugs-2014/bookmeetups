@@ -4,6 +4,7 @@ Bookmeetups::Application.routes.draw do
   resources :users do
     post 'books/:book_id', to: 'user_books#create'
     delete 'books/:book_id', to: 'user_books#destroy'
+    get 'books/', to: 'user_books#index'
   end
 
   resources :books, only: [:create, :show, :index]
