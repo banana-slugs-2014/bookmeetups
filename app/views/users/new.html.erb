@@ -1,0 +1,14 @@
+<div class='splash'>
+  <h2>Welcome!</h2>
+  <%= form_for @user do |f| %>
+    <%= f.label "Username" %>
+    <%= f.text_field(:username) %>
+    <%= f.label "E-Mail" %>
+    <%= f.text_field(:email) %>
+    <%= f.label "Password" %>
+    <%= f.password_field(:password) %>
+    <%= f.label "Confirm Password" %>
+    <%= f.password_field(:password_confirmation) %>
+    <%= f.submit "Sign Up" %>
+  <% end %>
+</div>
