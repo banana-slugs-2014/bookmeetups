@@ -4,6 +4,7 @@ class Book < ActiveRecord::Base
   validates_presence_of :isbn
   validates_uniqueness_of :isbn
   validates_uniqueness_of :google_id
+  validates_uniqueness_of :author, :scope => :title
 
   validates :isbn, format: { with: /^\d{13}$/ }
 

@@ -1,19 +1,18 @@
 class GoogleSearch
-  def search(term, opts)
-    books = GoogleBooks.search( term, opts )
+  def self.search(terms, opts)
+    books = GoogleBooks.search( terms, opts )
   end
 
-  def search_and_add(term, opts)
+  def self.search_and_add(terms, opts)
     results = []
-    books = search(terms, {:count => 5})
+    books = self.search(terms, opts)
     books.each do |book|
       newbook = Book.new
       newbook.title = book.title
       newbook.google_id = book.id
-      newbook.author = book.author
+      newbook.author = book.authors
       newbook.isbn = book.isbn
-      newbook.save
-      results << newbook
+      results << newbook if newbook.save
     end
     results
   end

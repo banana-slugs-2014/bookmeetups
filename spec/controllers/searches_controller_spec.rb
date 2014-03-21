@@ -5,14 +5,14 @@ describe SearchesController do
     session[:id]=1
   end
   context "results page" do
-    it "displays the results page" do
-      session[:id]= 1
+    it "redirects when posed to" do
       post :search, search: "bob"
-      expect( response ).to be_success
+      expect( response ).to be_redirect
     end
 
-    it "sets " do
-      post :search, search: book.title
+    it "finds the searched term in our database" do
+      GoogleSearch.stub(:search_and_add) { [] }
+      post :results,  :s => book.title
       expect( assigns(:books) ).to eq([book]) 
     end
   end

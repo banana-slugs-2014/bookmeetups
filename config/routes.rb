@@ -9,6 +9,10 @@ Bookmeetups::Application.routes.draw do
   end
 
   resources :books, only: [:create, :show, :index]
-
   resources :sessions, :only => [:new, :create, :destroy]
+
+
+  get "/search/:s", to: "searches#results"
+  get "/search", to: "searches#results"
+  resources :users
 end
