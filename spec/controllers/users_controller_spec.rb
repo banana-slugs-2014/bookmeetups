@@ -31,7 +31,28 @@ describe UsersController do
     end
 
     context 'With invalid attributes' do
+      it "should be redirect" do
+        post :create
+        expect(response).to be_redirect
+      end
 
+      it "should not increase User count" do
+        expect {
+          post :create
+          }.to_not change { User.count }
+      end
+    end
+  end
+
+  context '#show' do
+    it "should be a success" do
+      get :show, id: my_user.id
+      expect(response).to be_success
+    end
+
+    it "should get the correct user" do
+      get :show, id: my_user.id
+      expect(assigns(:user)).to eq(User.find(my_user.id))
     end
   end
 end
