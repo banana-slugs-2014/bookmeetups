@@ -21,8 +21,14 @@ describe UserBooksController do
   end
 
   context "#destroy" do
+    it "should decrease UserBook count" do
+      expect {
+        delete :destroy, user_id: my_user, book_id: my_book
+        }.to change{ UserBook.count }.by(-1)
+    end
+
     it "should redirect" do
-      expect { delete :destroy, user_id: my_user, book_id: my_book }.to change{ UserBook.count }.by(-1)
+      delete :destroy, user_id: my_user, book_id: my_book
       expect(response).to be_redirect
     end
   end
