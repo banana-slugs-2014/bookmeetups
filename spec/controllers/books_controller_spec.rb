@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe BooksController do
-  let(:my_book) { FactoryGirl.create :book }
-  let(:attribs) { FactoryGirl.attributes_for :book }
+  let(:my_book) { create :book }
+  let(:attribs) { attributes_for :book }
 
   context '#create' do
     context "with valid attributes" do

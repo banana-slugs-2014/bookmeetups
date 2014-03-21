@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe "Books", :js => false do
-  let!(:my_book) { FactoryGirl.create(:book) }
-  let!(:book2) { FactoryGirl.create(:book) }
+  let!(:my_book) { create(:book) }
+  let!(:book2) { create(:book) }
   let!(:books) { [my_book, book2] }
 
   it "a user can view a book's profile" do

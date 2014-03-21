@@ -13,7 +13,7 @@ describe UserBooksController do
 
     it "should increase count of UserBooks" do
       expect{
-        post :create, user_id: my_user, book_id: my_book, user_book: {}
+        post :create, user_id: my_user, book_id: my_book  , user_book: {}
       }.to change{ UserBook.count }.by(1)
 
     end
