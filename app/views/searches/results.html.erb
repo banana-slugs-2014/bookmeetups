@@ -1,0 +1,10 @@
+<%= render 'searches/search_bar' %>
+<h1> Results </h1>
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= book.title  %>
+    </li>
+  <% end %>
+</ul>
+
