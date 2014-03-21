@@ -117,7 +117,7 @@ describe SessionsController do
 
     context "when user id and session id don't match" do
       let!(:another_user) { FactoryGirl.create :user }
-      before(:each) { request.session[:id] = existing.id }
+      before(:each) { request.session[:id] = existing_user.id }
 
       it "should not delete user" do
         expect {
