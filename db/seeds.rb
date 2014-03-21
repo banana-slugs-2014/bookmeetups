@@ -9,4 +9,5 @@ titles.each_with_index do |title, index|
    book.author = authors[index]
    book.isbn = isbn13[index]
    book.google_id = google_id[index]
+   book.save
 end
