@@ -55,4 +55,11 @@ describe UsersController do
       expect(assigns(:user)).to eq(User.find(my_user.id))
     end
   end
+
+  context '#index' do
+    it "should be a success" do
+      get :index
+      expect(response).to be_success
+    end
+  end
 end
