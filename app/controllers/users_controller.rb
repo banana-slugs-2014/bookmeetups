@@ -11,11 +11,6 @@ class UsersController < ActionController::Base
       user.password_confirmation = params[:user][:password_confirmation]
       user.email = params[:user][:email]
     end
-    # p '--------------------------------'
-    # p new_user
-    # p new_user.save
-    # p new_user.errors
-    # p params
     new_user.save
     redirect_to(root_path)
   end
