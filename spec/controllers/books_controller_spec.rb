@@ -15,8 +15,13 @@ describe BooksController do
 
   context '#show' do
     it "should be ok" do
-      get :show, id: my_book
+      get :show, id: my_book.id
       expect(response).to be_success
+    end
+
+    it "should get the correct book" do
+      get :show, id: my_book.id
+      expect(assigns(:book)).to eq(Book.find(my_book.id))
     end
   end
 
