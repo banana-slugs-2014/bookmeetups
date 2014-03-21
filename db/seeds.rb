@@ -11,3 +11,28 @@ titles.each_with_index do |title, index|
    book.google_id = google_id[index]
    book.save
 end
+
+l = Location.new
+l.city = "SanFrancisco"
+l.state = "CA"
+l.zip = "94103"
+l.save
+
+names = ["bob", "tom", "test"]
+
+names.each do |name|
+  u = User.new
+  u.username = name
+  u.password = "123"
+  u.email = name + "@test.com"
+  u.location = l
+  u.save
+  u.books << Book.first
+  u.books << Book.all.sample(3)
+end
+
+
+
+
+
+
