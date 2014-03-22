@@ -8,6 +8,8 @@ describe MeetupsController do
 
 
   context "#index" do
+    before(:each) { request.session[:id] = my_user.id }
+
     it "should be success" do
       get :index, :user_id => my_user.id
       expect(response).to be_ok

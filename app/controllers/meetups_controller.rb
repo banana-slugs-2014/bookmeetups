@@ -1,9 +1,8 @@
 class MeetupsController < ApplicationController
   def index
     #show the meetups for the current user
-    user = User.find(params[:user_id])
-
-    @meetups = user.meetups
+    @meetups = current_user.meetups
+    render partial: "index", locals: { meetups: @meetups }
   end
 
   def create
