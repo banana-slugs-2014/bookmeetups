@@ -13,5 +13,14 @@ FactoryGirl.define do
     isbn {Faker::Number.number(13)}
     google_id {Faker::Number.number(15)}
   end
+
+  factory :meetup do
+  end
+
+  factory :message do
+    meetup
+    text {Faker::Lorem.sentence}
+  end
+
 end
 

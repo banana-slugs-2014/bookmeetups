@@ -14,5 +14,6 @@ describe Book do
   context "associations" do
     it { should have_many(:user_books) }
     it { should have_many(:users).through(:user_books) }
+    it { should have_many(:meetups) }
   end
 end
