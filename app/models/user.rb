@@ -9,4 +9,23 @@ class User < ActiveRecord::Base
   has_many :user_meetups
   has_many :meetups, through: :user_meetups
   belongs_to :location
+
+
+  def find_book_freinds()
+    friends = []
+    books = self.books.to_a
+    self.location.users.includes(:books).each do |user|
+      next if user == self
+      user.books.each do |book|
+        if books.include?( book)
+          friends << user
+        end
+      end
+    end
+    friends.uniq
+  end
+
+  def extended_location
+
+  end
 end
