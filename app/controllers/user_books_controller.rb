@@ -13,7 +13,8 @@ class UserBooksController < ApplicationController
   end
 
   def index
-    books = current_user.books
-    render :partial => 'users/books_index', locals: {books: books}
+    user = User.find(params[:user_id])
+    @books = user.books
+    render :partial => 'users/books_index', locals: {books: @books}
   end
 end
