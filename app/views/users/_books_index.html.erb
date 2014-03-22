@@ -1,6 +1,20 @@
-<ul>
-  <% @books.each do |book| %>
-    <li><%= book.title %></li>
-    <li><%= book.author %></li>
-  <% end %>
-</ul>
+  Username's books
+
+<%= form_for :users_books, url: books_path, method: :post do |book| %>
+      <%= book.submit "Add book" %>
+      <%= book.text_field(:add, size: "50") %>
+<% end %>
+
+<div class="user_books_table">
+  <ul>
+    <% @books.each do |book| %>
+      <li><%= link_to book.title, book_path(book.id) %> <%= book.author %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "edit" %>
+  <span class="caption">Friends</span>
+  <%= link_to "action"%>
+</div>
+
+

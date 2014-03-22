@@ -15,3 +15,20 @@
 /*===== Layout Navbar =====*/
 .nav {
 }
+
+/*===== table listing friends in user/show =====*/
+.user_show_table td {
+  border: 1px solid purple;
+}
+
+
+
+/*===== General container =====*/
+.container {
+  border: 1px solid black;
+}
+
+/*===== Bottom of page status captions =====*/
+.caption {
+  border: 1px solid black;
+}
