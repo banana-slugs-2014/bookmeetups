@@ -75,60 +75,16 @@ describe SessionsController do
   end
 
   context '#destroy' do
-    context 'with matching session/user ids' do
-      before(:each) { request.session[:id] = existing_user.id }
+    before(:each) { request.session[:id] = existing_user.id }
 
-      it 'should be redirect' do
-        delete :destroy, id: existing_user.id
-        expect(response).to be_redirect
-      end
-
-      it "should delete a user" do
-        expect {
-          delete :destroy, id: existing_user.id
-          }.to change { User.count }.by(-1)
-      end
-
-      it "should delete current session" do
-        delete :destroy, id: existing_user.id
-        session[:id].should be_nil
-      end
+    it 'should be redirect' do
+      delete :destroy, id: existing_user.id
+      expect(response).to be_redirect
     end
 
-    context 'on non-existant user' do
-      before(:each) { request.session[:id] = existing_user.id }
-
-      it 'should be redirect' do
-        delete :destroy, id: 2
-        expect(response).to be_redirect
-      end
-
-      it "should not delete a user" do
-        expect {
-          delete :destroy, id: 2
-        }.to_not change { User.count }
-      end
-
-      it "should not delete current session" do
-        delete :destroy, id: 2
-        session[:id].should_not be_nil
-      end
-    end
-
-    context "when user id and session id don't match" do
-      let!(:another_user) { FactoryGirl.create :user }
-      before(:each) { request.session[:id] = existing_user.id }
-
-      it "should not delete user" do
-        expect {
-          delete :destroy, id: another_user.id
-        }.to_not change { User.count }
-      end
-
-      it "should not delete session" do
-        delete :destroy, id: another_user.id
-        session[:id].should_not be_nil
-      end
+    it "should delete current session" do
+      delete :destroy, id: existing_user.id
+      session[:id].should be_nil
     end
   end
 end

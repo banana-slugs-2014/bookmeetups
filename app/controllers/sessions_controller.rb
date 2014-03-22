@@ -15,15 +15,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    @user = User.where(id: params[:id]).first
-    (redirect_to(root_path) && return) if @user.nil?
-    if authorized?(@user.id)
-      @user.destroy
-      session.clear
-      redirect_to(root_path)
-    else
-      redirect_to user_path(session[:id])
-    end
+    session.clear
+    redirect_to(root_path)
   end
 
   private
