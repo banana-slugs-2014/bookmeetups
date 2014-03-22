@@ -21,5 +21,9 @@ FactoryGirl.define do
     text {Faker::Lorem.sentence}
   end
 
+  factory :photo do
+    name { Faker::Lorem.word }
+    data { 10011011 }
+  end
 end
 
