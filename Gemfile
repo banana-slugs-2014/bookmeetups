@@ -30,8 +30,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'debugger'
 group :development, :test do
-  gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'faker'
   gem 'rspec-rails'
   gem 'factory_girl_rails'

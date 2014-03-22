@@ -1,10 +1,8 @@
 <div class='login'>
   <h2>Welcome!</h2>
   <%= form_for login, url: sessions_path, method: :post do |f| %>
-    <%= f.label "Username" %>
-    <%= f.text_field(:username) %>
-    <%= f.label "Password" %>
-    <%= f.password_field(:password) %>
+    <%= f.text_field :username, placeholder: "USERNAME", name: "username" %>
+    <%= f.password_field :password, placeholder: "PASSWORD", name: "password" %>
     <%= f.submit "Log In" %>
   <% end %>
 </div>
