@@ -14,5 +14,4 @@ Bookmeetups::Application.routes.draw do
 
   get "/search/:s", to: "searches#results"
   get "/search", to: "searches#results"
-  resources :users
 end
