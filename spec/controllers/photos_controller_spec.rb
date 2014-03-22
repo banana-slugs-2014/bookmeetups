@@ -20,42 +20,22 @@ describe PhotosController do
   end
 
   context '#create' do
-    context 'valid attributes' do
-      let(:attribs) { attributes_for :photo }
+    let(:attribs) { attributes_for :photo }
 
-      it 'should be redirect' do
-        post :create, { :user_id => test_user.id, :photo => attribs }
-        expect(response).to be_redirect
-      end
-
-      it 'should create a new photo' do
-        expect {
-          post :create, { :user_id => test_user.id, :photo => attribs }
-        }.to change { Photo.count }.by(1)
-      end
-
-      it 'should associate new photo with user' do
-        post :create, { :user_id => test_user.id, :photo => attribs }
-        expect(assigns(:photo)).to eq(test_user.photo)
-      end
+    it 'should be redirect' do
+      post :create, { :user_id => test_user.id, :photo => attribs }
+      expect(response).to be_redirect
     end
 
-    context 'invalid attributes' do
-      it 'should be redirect' do
-        post :create, { :user_id => test_user.id }
-        expect(response).to be_redirect
-      end
-
-      it 'should not create a new photo' do
-        expect {
-          post :create, { :user_id => test_user.id, :photo => attribs }
-        }.to_not change { Photo.count }
-      end
-
-      it 'should not associate new photo with user' do
+    it 'should create a new photo' do
+      expect {
         post :create, { :user_id => test_user.id, :photo => attribs }
-        expect(assigns(:photo)).to be_nil
-      end
+      }.to change { Photo.count }.by(1)
+    end
+
+    it 'should associate new photo with user' do
+      post :create, { :user_id => test_user.id, :photo => attribs }
+      expect(assigns(:photo)).to eq(test_user.photo)
     end
   end
 
