@@ -18,7 +18,6 @@ FactoryGirl.define do
   end
 
   factory :message do
-    meetup
     text {Faker::Lorem.sentence}
   end
 
