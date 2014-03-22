@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     @login = User.new
+    render :partial => "login", locals: { login: @login }
   end
 
   def create
@@ -22,6 +23,7 @@ class SessionsController < ApplicationController
   private
     def invalid_login?
       !@user.authenticate(params[:user][:password])
+
     end
 
 end
