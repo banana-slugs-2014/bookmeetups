@@ -1,6 +1,6 @@
   Username's books
 
-<%= form_for :users_books, url: books_path, method: :post do |book| %>
+<%= form_for :users_books, url: user_books_path, method: :post do |book| %>
       <%= book.submit "Add book" %>
       <%= book.text_field(:add, size: "50") %>
 <% end %>
