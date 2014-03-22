@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :user_meetups
   has_many :meetups, through: :user_meetups
   belongs_to :location
+  has_many :messages
 
 
   def book_friends(miles = 60)
