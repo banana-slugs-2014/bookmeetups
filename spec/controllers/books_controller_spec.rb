@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe BooksController do
+  let(:my_user) { create :user }
   let(:my_book) { create :book }
   let(:attribs) { attributes_for :book }
 
@@ -14,6 +15,10 @@ describe BooksController do
   end
 
   context '#show' do
+
+    before (:each) do
+      session[:id] = my_user.id
+    end
     it "should be ok" do
       get :show, id: my_book.id
       expect(response).to be_success
