@@ -2,8 +2,7 @@ require 'spec_helper'
 
 describe PhotosController do
   let!(:test_user) { create :user }
-  let!(:test_photo) { create :photo }
-  before(:each) { test_user.photo = test_photo }
+  let(:test_photo) { create :photo }
 
   context '#show' do
     it 'should be successful' do
@@ -17,7 +16,47 @@ describe PhotosController do
     end
   end
 
+  context '#new' do
+  end
+
   context '#create' do
+    context 'valid attributes' do
+      let(:attribs) { attributes_for :photo }
+
+      it 'should be redirect' do
+        post :create, { :user_id => test_user.id, :photo => attribs }
+        expect(response).to be_redirect
+      end
+
+      it 'should create a new photo' do
+        expect {
+          post :create, { :user_id => test_user.id, :photo => attribs }
+        }.to change { Photo.count }.by(1)
+      end
+
+      it 'should associate new photo with user' do
+        post :create, { :user_id => test_user.id, :photo => attribs }
+        expect(assigns(:photo)).to eq(test_user.photo)
+      end
+    end
+
+    context 'invalid attributes' do
+      it 'should be redirect' do
+        post :create, { :user_id => test_user.id }
+        expect(response).to be_redirect
+      end
+
+      it 'should not create a new photo' do
+        expect {
+          post :create, { :user_id => test_user.id, :photo => attribs }
+        }.to_not change { Photo.count }
+      end
+
+      it 'should not associate new photo with user' do
+        post :create, { :user_id => test_user.id, :photo => attribs }
+        expect(assigns(:photo)).to be_nil
+      end
+    end
   end
 
   context '#destroy' do
