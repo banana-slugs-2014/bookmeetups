@@ -1,9 +1,13 @@
 class SearchesController < ApplicationController
+  require 'googlebooks'
+
   def search
-    raw = params[:search]
-    term = "%#{raw}%"
-    uterm = "%#{raw.split(' ').map(&:capitalize).join(' ')}%"
-    @books = Book.where("title LIKE ? OR author like ? OR title Like ? OR author like ?", term , term, uterm, uterm)
+    redirect_to "/search/#{params[:search]}"
+  end
+
+  def results
+    @books = Searcher.search(params[:s])
     render :results
   end
+
 end
