@@ -13,8 +13,12 @@ class UsersController < ApplicationController
       user.password_confirmation = params[:user][:password_confirmation]
       user.email = params[:user][:email]
     end
-    redirect_to(root_path) && return unless new_user.save
-    redirect_to(user_path(new_user))
+    if new_user.save
+      session[:id] = new_user.id
+      redirect_to(user_path(new_user))
+    else
+      redirect_to(root_path)
+    end
   end
 
   def show
