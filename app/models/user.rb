@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   belongs_to :location
 
 
-  def find_book_freinds(miles = 60)
+  def book_friends(miles = 60)
     friends = []
     books = self.books.to_a
     locations = location.in_range( miles )
