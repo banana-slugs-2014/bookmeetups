@@ -1,5 +1,6 @@
 Bookmeetups::Application.routes.draw do
   root to: 'users#new'
+
   post "/search", to: "searches#search"
   resources :users do
     post 'books/:book_id', to: 'user_books#create'
@@ -9,9 +10,5 @@ Bookmeetups::Application.routes.draw do
 
   resources :books, only: [:create, :show, :index]
 
-  end
-
-
-
-
-
+  resources :sessions, :only => [:new, :create, :destroy]
+end

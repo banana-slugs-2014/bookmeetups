@@ -12,4 +12,13 @@ class ApplicationController < ActionController::Base
   def current_user
     User.find(session[:id]) if session[:id]
   end
+
+  def authorized?(user_id)
+    session[:id] == user_id
+  end
+
+  def redirect_unless_authorized(user_id)
+    redirect_to(user_path(session[:id])) && return unless authorized?(user_id)
+  end
+
 end
