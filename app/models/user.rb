@@ -11,21 +11,20 @@ class User < ActiveRecord::Base
   belongs_to :location
 
 
-  def find_book_freinds()
+  def find_book_freinds(miles = 60)
     friends = []
     books = self.books.to_a
-    self.location.users.includes(:books).each do |user|
-      next if user == self
-      user.books.each do |book|
-        if books.include?( book)
-          friends << user
+    locations = location.in_range( miles )
+    locations.each do |locale|
+      locale.users.includes(:books).each do |user|
+        next if user == self
+        user.books.each do |book|
+          if books.include?( book)
+            friends << user
+          end
         end
       end
     end
     friends.uniq
-  end
-
-  def extended_location
-
   end
 end
