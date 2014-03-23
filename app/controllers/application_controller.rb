@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_unless_logged_in
-    redirect_to(root_path) && return unless logged_in?
+    redirect_to(root_path) unless logged_in?
   end
 
   def current_user
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_unless_authorized(user_id)
-    redirect_to(user_path(session[:id])) && return unless authorized?(user_id)
+    redirect_to(user_path(session[:id])) unless authorized?(user_id)
   end
 
 end
