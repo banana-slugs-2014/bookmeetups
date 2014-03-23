@@ -7,6 +7,7 @@
           <li><%= book.title  %></li>
           <li><%= book.author %></li>
           <li><img src="<%= book.photo_link(1) %>" ></li>
+          <li><%= link_to "Add to my collection", [current_user, book], :method => "POST" %></li>
         <ul>
       </div>
     </li>

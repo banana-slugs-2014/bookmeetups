@@ -3,7 +3,7 @@ Bookmeetups::Application.routes.draw do
 
   post "/search", to: "searches#search"
   resources :users do
-    post 'books', to: 'user_books#create', as: 'create'
+    post 'books/:book_id', to: 'user_books#create', as: 'create'
     delete 'books/:book_id', to: 'user_books#destroy', as: 'book'
     get 'books', to: 'user_books#index'
     get 'books/:book_id/new_meetup', to: 'meetups#create'
