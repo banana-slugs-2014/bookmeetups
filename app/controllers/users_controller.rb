@@ -32,11 +32,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def profile
-    @user = User.find(params[:user_id])
-
-  end
-
   def index
     @users = User.all
   end

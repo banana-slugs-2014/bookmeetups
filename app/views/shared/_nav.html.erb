@@ -3,7 +3,6 @@
     <% if logged_in? %>
       <li><%= link_to "Log Out", { :controller => :sessions, :action => :destroy, :id => session[:id] }, :method => :delete %></li>
       <li><%= link_to second_button_text, user_path(session[:id]) %></li>
-      <li><%= link_to "My Profile", user_profile_path(current_user) %></li>
       <li><%= link_to "My Books", user_books_path(current_user) %></li>
 
     <% else %>
