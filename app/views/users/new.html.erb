@@ -1,14 +1,17 @@
 <div class='splash'>
   <h2>Welcome!</h2>
   <%= form_for @user do |f| %>
-    <%= f.label "Username" %>
+    <p><%= f.label "Username" %></p>
     <%= f.text_field(:username) %>
-    <%= f.label "E-Mail" %>
+    <p><%= f.label "E-Mail" %></p>
     <%= f.text_field(:email) %>
-    <%= f.label "Password" %>
+    <p><%= f.label "Password" %></p>
     <%= f.password_field(:password) %>
-    <%= f.label "Confirm Password" %>
+    <p><%= f.label "Confirm Password" %></p>
     <%= f.password_field(:password_confirmation) %>
+    <p>City: <%= text_field_tag "city", nil, placeholder: 'City' %></p>
+    <p>State: <%= text_field_tag "state",nil, placeholder: 'ST' %></p>
+    <p>Zip: <%= text_field_tag "zip", nil, placeholder: '12345', maxLength: 5 %></p>
     <%= f.submit "Sign Up" %>
   <% end %>
 </div>

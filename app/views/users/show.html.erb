@@ -1,7 +1,8 @@
-<%= current_user.username %>'s friends:
+<%= current_user.username.capitalize %>'s Friends:
 
 <ul class="friends_list">
   <% if !current_user.location.nil? %>
+    <%= "#{current_user.location.city}, #{current_user.location.state} #{current_user.location.zip}" %>
     <% current_user.book_friends.each do |friend|  %>
     <li><%= link_to friend.username, user_books_path(friend) %></li>
     <% end %>
