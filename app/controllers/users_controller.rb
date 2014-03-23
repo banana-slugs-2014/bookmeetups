@@ -42,7 +42,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    redirect_to(edit_user_path(@user)) && return unless @user.update_attributes(params[:user])
+    location = @user.location
+    location.update_attributes(city: params[:user][:city])
+    location.update_attributes(state: params[:user][:state])
+    location.update_attributes(zip: params[:user][:zip])
     redirect_to(user_path(@user))
   end
 

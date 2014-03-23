@@ -3,22 +3,7 @@
   <%= button_to "Remove", user_book_path(current_user.id, book.id), :method => :delete %>
   <h1>Title: <%= book.title %></h1>
   <h1>Author: <%= book.author %></h1>
+  <img src="<%= book.photo_link %>" alt="<%= book.title %>">
 
-    <table>
-      <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-      </tr>
-      <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-      </tr>
-    </table>
 
 </div>
