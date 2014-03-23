@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   def new
     @meetup = Meetup.where(id: params[:meetup_id]).first
     @message = Message.new
-    render partial: 'new', locals: { meetup: @meetup, message: @message}
+    render :"messages/new", :layout => true
   end
 
   def create
