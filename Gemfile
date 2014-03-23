@@ -29,6 +29,11 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'debugger'
+
+group :development do
+  gem "better_errors"
+end
+
 group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
