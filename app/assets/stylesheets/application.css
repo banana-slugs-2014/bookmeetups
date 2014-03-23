@@ -28,15 +28,34 @@ ul li {
 }
 
 ul li .book-display {
+  border: 1px solid black;
   float: left;
+  height: 250px;
   margin: 15px 20px;
-  text-align: center;
+  position: relative;
   width: 200px;
+}
+
+ul li .book-display img {
+  height: 72%;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+ul li .book-display h4 {
+  margin: 0;
+  position: relative;
+  top: 0;
+  width: 100%;
 }
 
 ul li .book-display p {
   display: inline;
-
+  position: relative;
+  top: 0;
+  width: 100%;
 }
 /*===== General container =====*/
 .container {

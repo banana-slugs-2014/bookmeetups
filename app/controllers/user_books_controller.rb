@@ -1,4 +1,6 @@
 class UserBooksController < ApplicationController
+  before_filter :redirect_unless_logged_in
+
   def create
     user = User.find(params[:user_id])
     book = Book.find(params[:book_id])
