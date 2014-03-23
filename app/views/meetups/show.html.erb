@@ -1,13 +1,17 @@
 <% if !@messages.nil?  %>
   <% if @meetup.users.include? current_user%>
-  <ul>
+    <h2><%= link_to @meetup.book.title, book_path(@meetup.book) %> meetup with <%= link_to @other_user.username, user_path(@other_user) %></h2>
+     <%= link_to 'New Message', new_meetup_message_path(@meetup) %>
     <% @messages.each do |message| %>
-      <li><%= message.text %></li>
-      <li><%= message.user.username %></li>
+      <div class="message">
+        <p><%= link_to message.user.username, user_path(message.user) %> said:</p>
+        <p><%= message.text %></p>
+        <span class="date"> <%= message.created_at.strftime("%B %e, %Y at %I:%M %p") %></span>
+      </div>
     <% end %>
-  </ul>
-  <%= link_to 'New Message', new_meetup_message_path(@meetup) %>
+
   <% else %>
     <h1>Uhhhh...get out of here. You don't have permission</h1>
   <% end %>
 <% end %>
+

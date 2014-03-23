@@ -66,3 +66,9 @@ ul li .book-display p {
 .caption {
   border: 1px solid black;
 }
+
+/*===== Date for message times =====*/
+.date {
+  font-size: .5em;
+  color: #999999;
+}
