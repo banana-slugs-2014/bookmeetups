@@ -5,6 +5,7 @@ FactoryGirl.define do
     password {"12345"}
     password_confirmation "12345"
     email {Faker::Internet.email}
+    location
   end
 
   factory :book do
@@ -30,6 +31,14 @@ FactoryGirl.define do
     city {Faker::Lorem.word}
     state {Faker::Lorem.word}
     zip {Faker::Number.number(5)}
+  end
+
+  factory :user_with_location, class: User do
+    sequence(:username) { |n| Faker::Lorem.word + n.to_s }
+    password {"12345"}
+    password_confirmation "12345"
+    email {Faker::Internet.email}
+    location_attributes { attributes_for :location }
   end
 
 end

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe UsersController do
-  let(:my_user) { FactoryGirl.create :user }
-  let(:attribs) { FactoryGirl.attributes_for :user }
   let(:my_location) { FactoryGirl.create :location }
+  let(:my_user) { FactoryGirl.create :user, location: my_location }
+  let(:attribs) { FactoryGirl.attributes_for :user_with_location }
 
   context '#new' do
     it "should be a success" do
