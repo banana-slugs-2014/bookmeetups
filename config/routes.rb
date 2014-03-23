@@ -6,7 +6,7 @@ Bookmeetups::Application.routes.draw do
     post 'books/:book_id', to: 'user_books#create', as: 'create'
     delete 'books/:book_id', to: 'user_books#destroy', as: 'book'
     get 'books', to: 'user_books#index'
-    get 'books/:book_id/new_meetup', to: 'meetups#create'
+    get 'books/:book_id/new_meetup', to: 'meetups#create', as: 'create_meetup'
     resources :meetups, :except => [:new, :edit, :create, :destroy]
     resources :photos, :only => [:show, :new, :create, :destroy] do
       get "serve", :on => :member

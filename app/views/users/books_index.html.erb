@@ -7,6 +7,7 @@
         <div class="book-display">
           <p><%= link_to book.title, book_path(book.id) %></p>
           <img src="<%= book.photo_link(1) %>" alt="<%= book.title %>">
+          <%= link_to "Meet Up!", user_create_meetup_path(@user, book) %>
         </div>
       </li>
     <% end %>
