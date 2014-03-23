@@ -1,4 +1,6 @@
 <%= current_user.username %>'s friends:
+<br>
+at controller: user, action: show
 
 <ul class="friends_list">
   <% if !current_user.location.nil? %>
@@ -7,3 +9,7 @@
     <% end %>
   <% end %>
 </ul>
+
+
+<!-- Here's form to edit user's profile -->
+<%= link_to "Edit Profile", edit_user_path %>
