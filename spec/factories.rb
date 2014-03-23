@@ -2,7 +2,7 @@ FactoryGirl.define do
 
   factory :user do
     sequence(:username) { |n| Faker::Lorem.word + n.to_s }
-    password "12345"
+    password {"12345"}
     password_confirmation "12345"
     email {Faker::Internet.email}
   end
@@ -21,5 +21,9 @@ FactoryGirl.define do
     text {Faker::Lorem.sentence}
   end
 
+  factory :photo do
+    name { Faker::Lorem.word }
+    data { 10011011 }
+  end
 end
 

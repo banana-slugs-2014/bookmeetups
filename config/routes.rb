@@ -8,6 +8,9 @@ Bookmeetups::Application.routes.draw do
     get 'books', to: 'user_books#index'
     get 'books/:book_id/new_meetup', to: 'meetups#create'
     resources :meetups, :except => [:new, :edit, :create, :destroy]
+    resources :photos, :only => [:show, :new, :create, :destroy] do
+      get "serve", :on => :member
+    end
   end
 
   resources :books, only: [:create, :show, :index]
