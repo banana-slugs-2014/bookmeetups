@@ -1,7 +1,13 @@
 This is yo' fuggin meetup, yo.
+
+<% if meetup.users.include? current_user %>
 <ul>
   <% @messages.each do |message| %>
     <li><%= message.text %></li>
+    <li><%= message.user.username %></li>
   <% end %>
 </ul>
 <%= link_to 'New Message', new_meetup_message_path(meetup) %>
+<% else %>
+  <h1>Uhhhh...get out of here. You don't have permission</h1>
+<% end %>
