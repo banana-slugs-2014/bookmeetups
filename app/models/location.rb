@@ -1,4 +1,5 @@
 class Location < ActiveRecord::Base
+
   attr_accessible :city, :state, :zip
   validates_presence_of :city
   validates_presence_of :state
@@ -13,9 +14,10 @@ class Location < ActiveRecord::Base
     [city, state, zip].compact.join(', ')
   end
 
+<<<<<<< HEAD
   def self.find_limits(lat, long, miles)
-    fla, cla =LatLongDistanceConverter.lat_range(lat, miles) 
-    flo, clo =LatLongDistanceConverter.long_range(lat, long, miles) 
+    fla, cla =LatLongDistanceConverter.lat_range(lat, miles)
+    flo, clo =LatLongDistanceConverter.long_range(lat, long, miles)
     { floorlat: fla, ceillat: cla,
       floorlong: flo, ceillong: clo}
   end
@@ -28,7 +30,7 @@ class Location < ActiveRecord::Base
 
   def self.locations_within_range_circle(lat, long, miles, locations)
     in_range = []
-    locations.each do |location| 
+    locations.each do |location|
       d = LatLongDistanceConverter.distance_between_two_points(location.latitude, lat, location.longitude, long)
       in_range << location if d <= miles
     end
@@ -38,5 +40,6 @@ class Location < ActiveRecord::Base
   def in_range( miles )
     Location.locations_within_range( latitude, longitude, miles )
   end
+
 
 end

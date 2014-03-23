@@ -1,17 +1,15 @@
 <div class='splash'>
   <h2>Welcome!</h2>
   <%= form_for @user do |f| %>
-    <p><%= f.label "Username" %></p>
-    <%= f.text_field(:username) %>
-    <p><%= f.label "E-Mail" %></p>
-    <%= f.text_field(:email) %>
-    <p><%= f.label "Password" %></p>
-    <%= f.password_field(:password) %>
-    <p><%= f.label "Confirm Password" %></p>
-    <%= f.password_field(:password_confirmation) %>
-    <p>City: <%= text_field_tag "city", nil, placeholder: 'City' %></p>
-    <p>State: <%= text_field_tag "state",nil, placeholder: 'ST' %></p>
-    <p>Zip: <%= text_field_tag "zip", nil, placeholder: '12345', maxLength: 5 %></p>
+    <p>Username: <%= f.text_field :username, placeholder: "BookWorm23" %></p>
+    <p>E-Mail: <%= f.text_field :email, placeholder: "ilovebooks@email.com" %>
+    <p>Password: <%= f.password_field :password, placeholder: "*****" %></p>
+    <p>Confirm Password: <%= f.password_field :password_confirmation, placeholder: "*****" %></p>
+    <%= f.fields_for :location, Location.new do |l| %>
+       <p>City: <%= l.text_field :city, placeholder: "Bookville" %></p>
+       <p>State: <%= l.text_field :state, placeholder: "CA" %></p>
+       <p>Zip: <%= l.text_field :zip, placeholder: "12345", maxLength: 5 %></p>
+    <% end %>
     <%= f.submit "Sign Up" %>
   <% end %>
 </div>

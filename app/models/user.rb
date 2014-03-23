@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  attr_accessible :location_attributes, :location_id
+
   validates_presence_of :username, :password, :email
   validates_uniqueness_of :username, :email, case_sensitive: false
 
@@ -10,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :user_meetups
   has_many :meetups, through: :user_meetups
   belongs_to :location
+  accepts_nested_attributes_for :location
+
   has_many :messages
 
   def friends(book, miles = 60)

@@ -29,6 +29,37 @@ describe UsersController do
           post :create, user: attribs
         }.to change { User.count }.by(1)
       end
+
+      xit "should set the user location" do
+        context "with an existing location" do
+          xit "should set the user location by zip code" do
+          end
+
+          xit "sohuld not increase location count" do
+          end
+        end
+
+        context "with a new location" do
+          xit "should create a new location" do
+            context "with valid attributes" do
+              xit "should increase location count" do
+              end
+
+              xit "should set the user location to the new location" do
+              end
+            end
+
+            context "with invalid attributes" do
+              xit "should not increase location count" do
+              end
+
+              xit "should re-render the form with errors" do
+              end
+            end
+          end
+
+        end
+      end
     end
 
     context 'With invalid attributes' do
