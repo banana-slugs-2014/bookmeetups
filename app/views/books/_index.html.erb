@@ -1,6 +1,6 @@
 <p>Book collection: </p>
   <ul>
   <% books.each do |book| %>
-    <li><%= book.title %></li>
+    <li><img src="<%= book.photo_link(1) %>" alt="<%= book.title %>"><%= link_to book.title, book_path(book.id) %> <%= book.author %></li>
   <% end %>
   </ul>

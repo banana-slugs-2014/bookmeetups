@@ -1,19 +1,9 @@
-  Username's books
-
-<%= form_for :users_books, url: user_create_path(current_user.id), method: :post do |book| %>
-      <%= book.submit "Add book" %>
-      <%= book.text_field(:add, size: "50") %>
-<% end %>
+<%= @user.username %>'s Books:
 
 <div class="user_books_table">
   <ul>
-    <% @books.each do |book| %>
+    <% @user.books.each do |book| %>
       <li><img src="<%= book.photo_link(1) %>" alt="<%= book.title %>"><%= link_to book.title, book_path(book.id) %> <%= book.author %></li>
     <% end %>
   </ul>
-
-
-
 </div>
-
-
