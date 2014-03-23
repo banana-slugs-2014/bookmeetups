@@ -7,9 +7,12 @@ class MessagesController < ApplicationController
 
   def create
     meetup = Meetup.find(params[:meetup_id])
-    message = Message.new(params[:text])
-    if @message.valid?
+    message = Message.new
+    message.text = params[:text]
+    message.user_id = current_user.id
+    if message.save
       meetup.messages << message
     end
+    redirect_to user_meetup_path(current_user, meetup)
   end
 end
