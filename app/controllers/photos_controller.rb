@@ -4,6 +4,7 @@ class PhotosController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @photo = Photo.find(params[:id])
+    render partial: "photos/show", locals: { user: @user, photo: @photo }
   end
 
   def new

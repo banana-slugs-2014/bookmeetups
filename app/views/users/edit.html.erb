@@ -10,4 +10,5 @@
         <%= user.text_field(:zip, size: "15", value: current_user.location.blank? ? "Zip code" : current_user.location.zip) %>
         <%= user.submit "Edit Profile" %>
   <% end %>
+  <%= link_to "Add New Profile Pic", new_user_photo_path(@user) %>
 </div>
