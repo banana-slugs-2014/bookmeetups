@@ -68,7 +68,7 @@ describe MeetupsController do
         new_meetup.messages << message2
 
         get :show, {:user_id => my_user.id, :id => new_meetup.id}
-        expect(assigns(:messages)).to eq ([message1,message2])
+        expect(assigns(:messages)).to eq ([message2,message1])
       end
     end
 
