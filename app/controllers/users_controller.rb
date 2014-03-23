@@ -11,11 +11,15 @@ class UsersController < ApplicationController
 
   def create
     redirect_to(root_path) && return unless params[:user]
+    attrs =  params[:user]
     new_user = User.new do |user|
-      user.username = params[:user][:username]
-      user.password = params[:user][:password]
-      user.password_confirmation = params[:user][:password_confirmation]
-      user.email = params[:user][:email]
+      user.username = attrs[:username]
+      user.password = attrs[:password]
+      user.password_confirmation = attrs[:password_confirmation]
+      user.email = attrs[:email]
+      user.location = Location.where(zip: attrs[:location_attributes][:zip]).first_or_create do |location|
+                        location.attributes = attrs[:location_attributes]
+                      end
     end
     if new_user.save
       session[:id] = new_user.id
@@ -42,8 +46,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    location = Location.find_or_create_by_city_and_state_and_zip(:city => params[:user][:city], :state => params[:user][:state], :zip => params[:user][:zip])
-    @user.update_attribute(:location, location)
+    redirect_to(edit_user_path(@user)) && return unless @user.update_attributes(params[:user])
     redirect_to(user_path(@user))
   end
 
