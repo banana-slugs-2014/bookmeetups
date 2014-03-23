@@ -11,4 +11,8 @@ class Book < ActiveRecord::Base
   has_many :user_books
   has_many :users, through: :user_books
   has_many :meetups
+
+  def photo_link( zoom = 2)
+    "http://bks7.books.google.com/books?id=#{google_id}&printsec=frontcover&img=1&zoom=#{zoom}"
+  end
 end
