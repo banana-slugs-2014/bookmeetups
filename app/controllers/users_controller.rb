@@ -44,10 +44,11 @@ class UsersController < ApplicationController
     p "%%%%%%%%%%%%%"
     p params
     @user = User.find(params[:id])
-    location = @user.location
-    location.update_attributes(city: params[:user][:city])
-    location.update_attributes(state: params[:user][:state])
-    location.update_attributes(zip: params[:user][:zip])
+    location = Location.find_or_create_by_city_and_state_and_zip(:city => params[:user][:city], :state => params[:user][:state], :zip => params[:user][:zip])
+    @user.update_attribute(:location, location)
+    # @user.location = location
+    p "@@@@@@@@@@@@@@@"
+    p @user.inspect
     redirect_to(user_path(@user))
   end
 
