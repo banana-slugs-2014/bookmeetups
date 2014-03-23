@@ -1,5 +1,5 @@
 <%= current_user.username %>'s friends:
-
+<br>
 <ul class="friends_list">
   <% if !current_user.location.nil? %>
     <% current_user.book_friends.each do |friend|  %>
@@ -7,3 +7,5 @@
     <% end %>
   <% end %>
 </ul>
+
+<%= link_to "Edit Profile", edit_user_path %>

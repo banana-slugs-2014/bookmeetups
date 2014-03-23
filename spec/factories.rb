@@ -25,5 +25,12 @@ FactoryGirl.define do
     name { Faker::Lorem.word }
     data { 10011011 }
   end
+
+  factory :location do
+    city {Faker::Lorem.word}
+    state {Faker::Lorem.word}
+    zip {Faker::Number.number(5)}
+  end
+
 end
 

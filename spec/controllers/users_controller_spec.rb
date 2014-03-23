@@ -3,6 +3,7 @@ require 'spec_helper'
 describe UsersController do
   let(:my_user) { FactoryGirl.create :user }
   let(:attribs) { FactoryGirl.attributes_for :user }
+  let(:my_location) { FactoryGirl.create :location }
 
   context '#new' do
     it "should be a success" do
@@ -89,10 +90,11 @@ describe UsersController do
 
   context '#update' do
     before(:each) { request.session[:id] = my_user.id }
+    let(:location_attribs) {attributes_for :location}
 
     context "with valid attributes" do
       it "should be a redirect" do
-        put :update, id: my_user.id
+        put :update, { id: my_user.id, :user => location_attribs }
         expect(response).to be_redirect
       end
     end
