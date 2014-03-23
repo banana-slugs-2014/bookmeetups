@@ -41,6 +41,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    p "%%%%%%%%%%%%%"
+    p params
     @user = User.find(params[:id])
     location = @user.location
     location.update_attributes(city: params[:user][:city])

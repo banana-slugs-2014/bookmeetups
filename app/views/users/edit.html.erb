@@ -1,27 +1,13 @@
 <!-- goes to user#update -->
-
-<%= current_user.location.city %>
-
 <div class="edit_user">
   <header><h1>Edit User info</h1></header>
   <%= form_for :user, url: user_path, method: :put do |user| %>
-    <table>
-      <tr>
-        <th>City</th>
-        <td><%= user.text_field(:city, size: "50", value: current_user.location.city) %></td>
-      </tr>
-      <tr>
-        <th>State</th>
-        <td><%= user.text_field(:state, size: "50", value: current_user.location.state) %></td>
-      </tr>
-      <tr>
-        <th>Zip</th>
-        <td><%= user.text_field(:zip, size: "50", value: current_user.location.zip) %></td>
-      </tr>
-      <tr>
-        <th></th>
-        <td><%= user.submit "Edit Profile" %></td>
-      </tr>
-    </table>
+        City
+        <%= user.text_field(:city, size: "30", value: current_user.location.city) %>
+        State
+        <%= user.text_field(:state, size: "30", value: current_user.location.state) %>
+        Zip
+        <%= user.text_field(:zip, size: "30", value: current_user.location.zip) %>
+        <%= user.submit "Edit Profile" %>
   <% end %>
 </div>
