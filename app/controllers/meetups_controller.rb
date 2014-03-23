@@ -26,7 +26,7 @@ class MeetupsController < ApplicationController
     current_user = User.where(id: params[:user_id]).first
     #(redirect user_books_path(current_user) && return) unless meetup.users.include?(current_user)
     @messages = meetup.messages
-    render :partial => 'messages/show'
+    render :partial => 'show', :locals => {meetup: meetup}
   end
 
 end

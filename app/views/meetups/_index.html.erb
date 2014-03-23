@@ -1,0 +1,11 @@
+<h1>Meetups!</h1>
+
+<% @meetups.each do |meetup| %>
+  <p><%= meetup.book.title %></p>
+  <%= link_to 'hello', user_meetup_path(current_user, meetup) %>
+  participants:
+  <% meetup.users.each do |user| %>
+  <li><%= user.username %></li>
+  <% end %>
+<% end %>
+

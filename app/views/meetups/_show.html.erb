@@ -1,0 +1,7 @@
+This is yo' fuggin meetup, yo.
+<ul>
+  <% @messages.each do |message| %>
+    <li><%= message.text %></li>
+  <% end %>
+</ul>
+<%= link_to 'New Message', new_meetup_message_path(meetup) %>
