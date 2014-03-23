@@ -1,6 +1,5 @@
 <%= current_user.username.capitalize %>'s Friends:
 
->>>>>>> Sets location of a user upon setup.
 <ul class="friends_list">
   <% if !current_user.location.nil? %>
     <%= "#{current_user.location.city}, #{current_user.location.state} #{current_user.location.zip}" %>
