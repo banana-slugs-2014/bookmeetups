@@ -18,8 +18,9 @@
 
 /*===== table listing friends in user/show =====*/
 ul {
+  display: inline-block;
   float: left;
-
+  width: 100%;
 }
 
 ul li {
@@ -27,7 +28,6 @@ ul li {
 }
 
 ul li .book-display {
-  background-color: red;
   float: left;
   margin: 15px 20px;
   text-align: center;
