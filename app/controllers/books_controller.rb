@@ -7,6 +7,11 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    if current_user.books.include? @book
+      @button = true
+    else
+      @button = false
+    end
     render "show", layout: true
   end
 
