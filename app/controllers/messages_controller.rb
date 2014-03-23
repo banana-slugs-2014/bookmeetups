@@ -8,12 +8,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    p params
     meetup = Meetup.find(params[:meetup_id])
-    message = Message.new
-    message.text = params[:message][:text]
-    message.user = current_user
-    message.user_id = current_user.id
+    message = Message.new do |m|
+      m.text = params[:message][:text]
+      m.user = current_user
+      m.user_id = current_user.id
+    end
     if message.save
       meetup.messages << message
     end

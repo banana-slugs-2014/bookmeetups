@@ -1,6 +1,7 @@
 class MeetupsController < ApplicationController
+  before_filter :redirect_unless_logged_in
+
   def index
-    (redirect_to root_path && return) unless session[:id]
     if session[:id] == params[:user_id].to_i
       @meetups = current_user.meetups
       render :index
@@ -22,10 +23,9 @@ class MeetupsController < ApplicationController
   end
 
   def show
-    (redirect_to root_path && return) unless session[:id]
     @meetup = Meetup.where(id: params[:id]).first
-    current_user = User.where(id: params[:user_id]).first
-    (redirect_to user_books_path(current_user) && return) unless @meetup.users.include?(current_user)
+    meetup_users = @meetup.users
+    (redirect_to user_books_path(session[:id]) && return) unless meetup_users.include?(current_user)
     if current_user.id == params[:user_id].to_i
       @other_user = (@meetup.users - [current_user]).first
       @messages = @meetup.messages.order("created_at DESC")

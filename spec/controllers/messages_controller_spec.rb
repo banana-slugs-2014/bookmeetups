@@ -25,7 +25,17 @@ describe MessagesController do
       post :create, { :meetup_id => test_meetup.id, :message => message_attribs }
       expect(response).to be_redirect
     end
+
+    it "should create a new message" do
+      expect {
+        post :create, { :meetup_id => test_meetup.id, :message => message_attribs }
+      }.to change { Message.count }.by(1)
+    end
+
+    it "should create a message associated the user" do
+      expect {
+        post :create, { :meetup_id => test_meetup.id, :message => message_attribs }
+      }.to change { current_user.messages.count }.by(1)
+    end
   end
-
-
 end

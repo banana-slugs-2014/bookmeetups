@@ -5,6 +5,7 @@ describe MeetupsController do
   let!(:my_user){ create :user}
   let!(:other_user) {create :user}
   let!(:meetup_book) {create :book}
+  before(:each) { request.session[:id] = my_user.id }
 
 
   context "#index" do
@@ -74,14 +75,21 @@ describe MeetupsController do
 
     context 'with not logged in user' do
       before(:each) { request.session[:id] = nil}
-      xit "should redirect" do
+
+      it "should redirect" do
         get :show, {:user_id => my_user.id, :id => new_meetup.id}
         expect(response).to be_redirect
       end
     end
 
     context 'with user not in the meetup' do
-      it "should redirect back to the current user books page"
+      let!(:unauthorized_user) { create :user }
+      before(:each) { request.session[:id] = unauthorized_user.id }
+
+      xit "should redirect back to the current user books page" do
+        get :show, { :user_id => my_user.id, :id => new_meetup.id }
+        expect(response).to be_redirect
+      end
     end
 
   end
