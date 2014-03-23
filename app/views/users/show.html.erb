@@ -1,6 +1,15 @@
+
+<div class="profile_pic">
+  <h1><%= @user.username %></h1>
+  <% if @user.photo %>
+    <%= render partial: "photos/show", locals: { user: @user } %>
+  <% end %>
+</div>
+<span class="edit"><%= link_to "Edit Profile", edit_user_path %></span>
+
+<ul class="friends_list">
 <%= current_user.username %>'s friends:
 <br>
-<ul class="friends_list">
   <% if !current_user.location.nil? %>
     <% current_user.book_friends.each do |friend|  %>
     <li><%= link_to friend.username, user_books_path(friend) %></li>
@@ -8,4 +17,3 @@
   <% end %>
 </ul>
 
-<%= link_to "Edit Profile", edit_user_path %>
