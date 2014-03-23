@@ -1,0 +1,12 @@
+<nav>
+  <ul class="nav-horizontal">
+    <!-- <li class="home_link"><%= link_to "BookBuddies", root_path %></li> -->
+    <% if logged_in? %>
+      <li><%= link_to first_button_text, session_path, method: :delete %></li>
+      <li><%= link_to second_button_text, user_path %></li>
+    <% else %>
+      <li><%= link_to first_button_text, new_session_path %></li>
+      <li><%= link_to second_button_text, new_user_path %></li>
+    <% end %>
+  </ul>
+</nav>

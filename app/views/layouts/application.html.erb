@@ -8,9 +8,13 @@
 </head>
 <body>
   <%= render partial: "searches/search_bar" %>
-  <div class="nav"><%= render partial: "layouts/header" %></div>
+  <ul class="nav">
+     <%= render partial: 'shared/nav' %>
+  </ul>
 
 <%= yield %>
 
 </body>
 </html>
+
+

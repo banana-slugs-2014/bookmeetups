@@ -10,5 +10,7 @@ class BooksController < ApplicationController
     render :partial => "show", locals: { book: @book }
   end
 
+  def create
+  end
 
 end

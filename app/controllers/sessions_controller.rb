@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_username(params[:user][:username])
-    if @user.nil? || invalid_login?
+    if @user.nil? || !valid_login?
       redirect_to(new_session_path)
     else
       session[:id] = @user.id
@@ -21,9 +21,8 @@ class SessionsController < ApplicationController
   end
 
   private
-    def invalid_login?
-      !@user.authenticate(params[:user][:password])
-
-    end
+  def valid_login?
+    @user.authenticate(params[:user][:password])
+  end
 
 end

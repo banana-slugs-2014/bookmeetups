@@ -1,0 +1,26 @@
+<!-- goes to user#update -->
+
+<div class="edit_user">
+<header><h1>Edit User info</h1></header>
+<%= form_for :edit_user, url: user_path, method: :put do |user| %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <td><%= user.text_field(:name, size: "50") %></td>
+    </tr>
+    <tr>
+      <th>City</th>
+      <td><%= user.text_field(:city, size: "50") %></td>
+    </tr>
+    <tr>
+      <th>Facebook</th>
+      <td><%= user.text_field(:facebook, size: "50") %></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><%= user.submit "Edit Profile" %></td>
+    </tr>
+  </table>
+<% end %>
+
+</div>
