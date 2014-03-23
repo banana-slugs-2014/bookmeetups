@@ -1,0 +1,8 @@
+Suuuuup
+<%= form_for [@meetup, @message] do |f| %>
+  <%= hidden_field_tag(:user_id, current_user.id)  %>
+  <%= text_area_tag :text %>
+  <%= submit_tag "New Message" %>
+<% end %>
+
+<%= @meetup %>
