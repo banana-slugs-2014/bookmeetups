@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_unless_authorized(user_id)
-    redirect_to(user_path(session[:id])) unless authorized?(user_id)
+    (redirect_to(user_path(session[:id])) && return) unless authorized?(user_id)
   end
 
 end
