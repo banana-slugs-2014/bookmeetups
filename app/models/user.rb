@@ -28,5 +28,6 @@ class User < ActiveRecord::Base
       end
     end
     friends.uniq
+
   end
 end

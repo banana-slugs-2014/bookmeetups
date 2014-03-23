@@ -20,4 +20,21 @@ module ApplicationHelper
     logged_in? ? "Home" : "Sign Up"
   end
 
+  def books_in_common_with(user)
+    books = []
+    user.books.each do |book|
+      books << book if current_user.books.include?(book)
+    end
+    books
+  end
+
+  def other_books_of(user)
+    books = []
+    user.books.each do |book|
+      books << book unless current_user.books.include?(book)
+    end
+    books
+  end
+
+
 end
