@@ -4,18 +4,26 @@ class PhotosController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
+    @photo = Photo.new
   end
 
   def create
     user = User.find(params[:user_id])
-    @photo = Photo.create do |p|
-      p.name = params[:photo][:name]
-      p.data = params[:photo][:data]
-      p.filename = params[:photo][:filename]
-      p.mime_type = params[:photo][:mime_type]
+     @photo = Photo.new(params[:photo]) do |t|
+      if params[:photo][:data]
+        t.data      = params[:photo][:data].read
+        t.filename  = params[:photo][:data].original_filename
+        t.mime_type = params[:photo][:data].content_type
+      end
     end
-    user.photo = @photo
-    redirect_to user_photo_path(user.id, @photo.id)
+
+    if @photo.save
+      user.photo = @photo
+      redirect_to user_photo_path(user.id, @photo.id)
+    else
+      redirect_to new_user_photo_path
+    end
   end
 
   def destroy
