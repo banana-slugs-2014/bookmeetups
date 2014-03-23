@@ -13,7 +13,7 @@ titles.each_with_index do |title, index|
 end
 
 l = Location.new
-l.city = "SanFrancisco"
+l.city = "San Francisco"
 l.state = "CA"
 l.zip = "94103"
 l.save

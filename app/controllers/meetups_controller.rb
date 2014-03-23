@@ -27,7 +27,8 @@ class MeetupsController < ApplicationController
     current_user = User.where(id: params[:user_id]).first
     (redirect_to user_books_path(current_user) && return) unless @meetup.users.include?(current_user)
     if current_user.id == params[:user_id].to_i
-      @messages = @meetup.messages
+      @other_user = (@meetup.users - [current_user]).first
+      @messages = @meetup.messages.order("created_at DESC")
       render :show
     else
       render :"shared/unauthorized", :layout => true

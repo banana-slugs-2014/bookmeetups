@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     meetup = Meetup.find(params[:meetup_id])
     message = Message.new
     message.text = params[:text]
-    message.user_id = current_user.id
+    message.user = current_user
     if message.save
       meetup.messages << message
     end

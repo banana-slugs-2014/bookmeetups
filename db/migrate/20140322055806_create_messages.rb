@@ -3,6 +3,7 @@ class CreateMessages < ActiveRecord::Migration
     create_table :messages do |t|
       t.belongs_to :meetup
       t.text :text
+      t.timestamps
     end
   end
 end
