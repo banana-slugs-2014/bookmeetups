@@ -49,6 +49,22 @@ describe PhotosController do
   end
 
   context '#destroy' do
+    let!(:existing_photo) { create :photo }
+
+    it 'should be redirect' do
+      delete :destroy, { :user_id => test_user.id, :id => existing_photo.id }
+      expect(response).to be_redirect
+    end
+
+    it 'should destroy a photo' do
+      expect {
+        delete :destroy, { :user_id => test_user.id, :id => existing_photo.id }
+      }.to change { Photo.count }.by(-1)
+    end
+  end
+
+  context '#serve' do
+    #Tests pending due to lack of full understanding
   end
 
 end
