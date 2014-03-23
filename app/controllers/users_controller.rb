@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # render :partial => 'users/friends_index', locals: { user: @user }, layout: true
   end
 
   def index

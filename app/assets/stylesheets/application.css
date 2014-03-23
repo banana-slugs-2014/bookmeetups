@@ -17,7 +17,7 @@
 }
 
 /*===== table listing friends in user/show =====*/
-.user_show_table td {
+ul.friends_list {
   border: 1px solid purple;
 }
 

@@ -1,25 +1,13 @@
-<div class="container">
-Your friends:
+<%= @user.username %>'s books
 
-  <div class="user_show_table">
-    <table>
-      <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-      </tr>
-      <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-      </tr>
+<div class="user_books_table">
+  <ul>
+    <% @user.books.each do |book| %>
+      <li><%= link_to book.title, book_path(book.id) %> <%= book.author %></li>
+    <% end %>
+  </ul>
 
-    </table>
-  </div>
 
 
 </div>
+
