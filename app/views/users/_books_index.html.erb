@@ -8,7 +8,7 @@
 <div class="user_books_table">
   <ul>
     <% @books.each do |book| %>
-      <li><img src="<%= book.photo_link(1) %>" alt="book cover"><%= link_to book.title, book_path(book.id) %> <%= book.author %></li>
+      <li><img src="<%= book.photo_link(1) %>" alt="<%= book.title %>"><%= link_to book.title, book_path(book.id) %> <%= book.author %></li>
     <% end %>
   </ul>
 
