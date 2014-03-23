@@ -13,6 +13,8 @@ Bookmeetups::Application.routes.draw do
     end
   end
 
+  get 'users/:user_id/profile', to: 'users#profile', as: 'user_profile'
+
   resources :books, only: [:create, :show, :index]
   resources :sessions, :only => [:new, :create, :destroy]
 

@@ -2,12 +2,12 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    render :partial => "index", locals: { books: @books }
+    render "index", layout: true
   end
 
   def show
     @book = Book.find(params[:id])
-    render :partial => "show", locals: { book: @book }
+    render "show", layout: true
   end
 
   def create
