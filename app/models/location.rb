@@ -14,7 +14,6 @@ class Location < ActiveRecord::Base
     [city, state, zip].compact.join(', ')
   end
 
-<<<<<<< HEAD
   def self.find_limits(lat, long, miles)
     fla, cla =LatLongDistanceConverter.lat_range(lat, miles)
     flo, clo =LatLongDistanceConverter.long_range(lat, long, miles)
