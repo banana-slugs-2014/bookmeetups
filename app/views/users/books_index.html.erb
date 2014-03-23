@@ -1,0 +1,26 @@
+<%= @user.username %>'s Books:
+
+<ul>
+  <p>Books in Common with <%= @user.username.upcase %>:</p>
+  <% books_in_common_with(@user).each do |book| %>
+    <li>
+      <div class="book-display">
+        <p><%= link_to book.title, book_path(book.id) %></p>
+        <img src="<%= book.photo_link(1) %>" alt="<%= book.title %>">
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+
+<ul>
+  <p><%= @user.username.upcase %>'s Other Books:</p>
+  <% other_books_of(@user).each do |book| %>
+    <li>
+      <div class="book-display">
+        <p><%= link_to book.title, book_path(book.id) %> <%= book.author %></p>
+        <img src="<%= book.photo_link(1) %>" alt="<%= book.title %>">
+      </div>
+    </li>
+  <% end %>
+</ul>

@@ -14,6 +14,6 @@ class UserBooksController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    render partial: "users/books_index", locals: { user: @user }
+    render "users/books_index", locals: { user: @user }, layout: true
   end
 end

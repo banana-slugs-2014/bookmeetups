@@ -17,12 +17,27 @@
 }
 
 /*===== table listing friends in user/show =====*/
-.user_show_table td {
-  border: 1px solid purple;
+ul {
+  display: inline-block;
+  float: left;
+  width: 100%;
 }
 
+ul li {
+  display: inline;
+}
 
+ul li .book-display {
+  float: left;
+  margin: 15px 20px;
+  text-align: center;
+  width: 200px;
+}
 
+ul li .book-display p {
+  display: inline;
+
+}
 /*===== General container =====*/
 .container {
   border: 1px solid black;
