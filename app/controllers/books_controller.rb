@@ -12,6 +12,7 @@ class BooksController < ApplicationController
     else
       @button = false
     end
+    @read_by = @book.users
     render "show", layout: true
   end
 

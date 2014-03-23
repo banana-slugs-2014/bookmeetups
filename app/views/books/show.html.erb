@@ -5,24 +5,15 @@
   <% else %>
     <%= button_to "Add", user_create_path(current_user.id, @book.id) %>
   <% end %>
+  <img src="<%= @book.photo_link(1) %>" alt="<%= @book.title %>">
   <h1>Title: <%= @book.title %></h1>
   <h1>Author: <%= @book.author %></h1>
-
-    <table>
-      <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-      </tr>
-      <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-      </tr>
-    </table>
-
+  <div class="read_by">
+    Users who have read this book:<br>
+    <% @read_by.each do |reader| %>
+      <div class="user">
+        <%= link_to reader.username, user_books_path(reader) %><br>
+      </div>
+    <% end %>
+  </div>
 </div>
