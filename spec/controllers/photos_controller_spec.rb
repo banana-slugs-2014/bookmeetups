@@ -3,6 +3,7 @@ require 'spec_helper'
 describe PhotosController do
   let!(:test_user) { create :user }
   let(:test_photo) { create :photo }
+  before(:each) { request.session[:id] = test_user.id }
 
   context '#show' do
     it 'should be successful' do

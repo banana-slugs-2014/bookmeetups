@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   before_filter :redirect_unless_logged_in
 
   def show
+    @user = User.find(params[:user_id])
     @photo = Photo.find(params[:id])
   end
 
@@ -12,8 +13,9 @@ class PhotosController < ApplicationController
 
   def create
     user = User.find(params[:user_id])
-     @photo = Photo.new(params[:photo]) do |t|
+     @photo = Photo.new do |t|
       if params[:photo][:data]
+        t.name      = params[:photo][:name]
         t.data      = params[:photo][:data].read
         t.filename  = params[:photo][:data].original_filename
         t.mime_type = params[:photo][:data].content_type
@@ -21,6 +23,7 @@ class PhotosController < ApplicationController
     end
 
     if @photo.save
+      user.photo.destroy unless user.photo.nil?
       user.photo = @photo
       redirect_to user_photo_path(user.id, @photo.id)
     else
