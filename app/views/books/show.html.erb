@@ -1,0 +1,11 @@
+<img src="http://www.youngyogainstitute.co.za/images/books.gif"/>
+
+<%= button_to "Remove", user_book_path(current_user.id, @book.id), :method => :delete %>
+<h1>Title: <%= @book.title %></h1>
+<h1>Author: <%= @book.author %></h1>
+
+<ul>
+  <% @book.users.each do |user| %>
+    <li><%= link_to user.username, user_books_path(user) %></li>
+  <% end %>
+</ul>
