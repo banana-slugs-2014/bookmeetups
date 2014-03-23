@@ -1,13 +1,11 @@
-<div class="container">
-
-  <% if @button %>
-    <%= button_to "Remove", user_book_path(current_user.id, @book.id), :method => :delete %>
-  <% else %>
-    <%= button_to "Add", user_create_path(current_user.id, @book.id) %>
-  <% end %>
-  <img src="<%= @book.photo_link(1) %>" alt="<%= @book.title %>">
-  <h1>Title: <%= @book.title %></h1>
-  <h1>Author: <%= @book.author %></h1>
+<% if @button %>
+  <%= button_to "Remove", user_book_path(current_user.id, @book.id), :method => :delete %>
+<% else %>
+  <%= button_to "Add", user_create_path(current_user.id, @book.id) %>
+<% end %>
+<img src="<%= @book.photo_link(1) %>" alt="<%= @book.title %>">
+<h1>Title: <%= @book.title %></h1>
+<h1>Author: <%= @book.author %></h1>
   <div class="read_by">
     Users who have read this book:<br>
     <% @read_by.each do |reader| %>
@@ -16,4 +14,3 @@
       </div>
     <% end %>
   </div>
-</div>

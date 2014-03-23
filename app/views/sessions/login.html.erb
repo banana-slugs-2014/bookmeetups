@@ -1,6 +1,6 @@
 <div class='login'>
   <h2>Welcome!</h2>
-  <%= form_for login, url: sessions_path, method: :post do |f| %>
+  <%= form_for @login, url: sessions_path, method: :post do |f| %>
     <%= f.label "Username" %>
     <%= f.text_field(:username) %>
     <%= f.label "Password" %>
