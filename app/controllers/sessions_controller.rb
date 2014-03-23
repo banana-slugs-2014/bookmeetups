@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     @login = User.new
-    render :partial => "login", locals: { login: @login }
+    render :login, :layout => true
   end
 
   def create

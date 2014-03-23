@@ -59,7 +59,8 @@ ul li {
 }
 /*===== General container =====*/
 .container {
-  border: 1px solid black;
+  width: 800px;
+  margin: 0 auto;
 }
 
 /*===== Bottom of page status captions =====*/
