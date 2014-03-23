@@ -12,9 +12,24 @@ class User < ActiveRecord::Base
   belongs_to :location
   has_many :messages
 
+  def friends(book, miles = 60)
+    f = []
+    locations = location.in_range( miles )
+    locations.each do |locale|
+      locale.users.includes(:books).each do |user|
+        next if user == self
+        user.books.each do |b|
+          if book == b
+            f << user
+          end
+        end
+      end
+    end
+    f
+  end
 
   def book_friends(miles = 60)
-    friends = []
+    f = []
     books = self.books.to_a
     locations = location.in_range( miles )
     locations.each do |locale|
@@ -22,12 +37,11 @@ class User < ActiveRecord::Base
         next if user == self
         user.books.each do |book|
           if books.include?( book)
-            friends << user
+            f << user
           end
         end
       end
     end
-    friends.uniq
-
+    f.uniq
   end
 end

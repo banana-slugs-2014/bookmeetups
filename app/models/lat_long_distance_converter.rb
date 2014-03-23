@@ -28,5 +28,4 @@ class LatLongDistanceConverter
     Math.cos( lat * (Math::PI / 180 )) * (180 / Math::PI )).abs
     [ long - x , long + x ]
   end
-
 end

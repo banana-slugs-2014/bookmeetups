@@ -18,7 +18,19 @@ l.state = "CA"
 l.zip = "94103"
 l.save
 
-names = ["bob", "tom", "test"]
+new_l = Location.new
+new_l.city = "San Francisco"
+new_l.state = "CA"
+new_l.zip = "94171"
+new_l.save
+
+far_l = Location.new
+far_l.city = "La Canada"
+far_l.state = "CA"
+far_l.zip = "91011"
+far_l.save
+
+names = [ "bob", "tom", "test" ]
 
 names.each do |name|
   u = User.new
@@ -27,12 +39,19 @@ names.each do |name|
   u.email = name + "@test.com"
   u.location = l
   u.save
-  u.books << Book.first
-  u.books << Book.all.sample(3)
+  u.books << ( Book.all ).sample(3)
 end
+names = [ "yoshi", "glen", "mario", "that other dude",
+"a legit sorcerer", "sal", "sam", "the phantom of the opera"]
 
-
-
-
+names.each do |name|
+  u = User.new
+  u.username = name
+  u.password = "123"
+  u.email = name + "@test.com"
+  u.location = [new_l, far_l].sample
+  u.save
+  u.books << ( Book.all ).sample(3)
+end
 
 
