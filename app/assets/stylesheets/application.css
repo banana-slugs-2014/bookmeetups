@@ -27,7 +27,7 @@ ul li {
   display: inline;
 }
 
-ul li .book-display {
+.book-display {
   border: 1px solid black;
   float: left;
   height: 250px;
@@ -36,7 +36,7 @@ ul li .book-display {
   width: 200px;
 }
 
-ul li .book-display img {
+.book-display img {
   height: 72%;
   padding: 5px;
   position: absolute;
@@ -44,14 +44,14 @@ ul li .book-display img {
   left: 0;
 }
 
-ul li .book-display h4 {
+.book-display h4 {
   margin: 0;
   position: relative;
   top: 0;
   width: 100%;
 }
 
-ul li .book-display p {
+.book-display p {
   display: inline;
   position: relative;
   top: 0;
