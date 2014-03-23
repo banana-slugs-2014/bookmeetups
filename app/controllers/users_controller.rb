@@ -21,6 +21,7 @@ class UsersController < ApplicationController
                         location.attributes = attrs[:location_attributes]
                       end
     end
+    set_location(new_user)
     if new_user.save
       session[:id] = new_user.id
       redirect_to(user_path(new_user))
@@ -57,4 +58,9 @@ class UsersController < ApplicationController
     redirect_to(root_path)
   end
 
+  private
+  def set_location(user)
+    location = Location.find_or_create_by_zip_and_city_and_state(params[:zip], params[:city], params[:state])
+    user.location = location
+  end
 end
