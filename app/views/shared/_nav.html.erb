@@ -1,0 +1,11 @@
+<nav>
+  <ul class="nav-horizontal">
+    <% if logged_in? %>
+      <li><%= button_to "Log Out", { :controller => :sessions, :action => :destroy, :id => session[:id] }, :method => :delete %></li>
+      <li><%= link_to second_button_text, user_path(session[:id]) %></li>
+    <% else %>
+      <li><%= link_to first_button_text, new_session_path %></li>
+      <li><%= link_to second_button_text, new_user_path %></li>
+    <% end %>
+  </ul>
+</nav>
