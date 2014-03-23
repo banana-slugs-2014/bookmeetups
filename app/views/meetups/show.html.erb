@@ -6,7 +6,8 @@
       <div class="message">
         <p><%= link_to message.user.username, user_path(message.user) %> said:</p>
         <p><%= message.text %></p>
-        <span class="date"> <%= message.created_at.strftime("%B %e, %Y at %I:%M %p") %></span>
+        <span class="date"> <%=  time_ago_in_words(message.created_at) %> ago</span>
+
       </div>
     <% end %>
 
