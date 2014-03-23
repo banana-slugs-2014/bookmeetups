@@ -1,9 +1,0 @@
-<%= current_user.username %>'s friends:
-
-<ul class="friends_list">
-  <% current_user.book_friends.each do |friend|  %>
-  <li><%= link_to friend.username, user_books_path(friend) %></li>
-  <% end %>
-</ul>
-
-

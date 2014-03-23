@@ -1,25 +1,7 @@
-<div class="container">
-Your friends:
+<%= current_user.username %>'s friends:
 
-  <div class="user_show_table">
-    <table>
-      <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-      </tr>
-      <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-      </tr>
-
-    </table>
-  </div>
-
-
-</div>
+<ul class="friends_list">
+  <% current_user.book_friends.each do |friend|  %>
+  <li><%= link_to friend.username, user_books_path(friend) %></li>
+  <% end %>
+</ul>
