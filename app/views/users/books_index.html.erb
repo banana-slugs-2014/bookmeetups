@@ -44,7 +44,7 @@
 
         <div class="book-display">
           <h4><%= book.title %></h4>
-          <img src="<%= book.photo_link(2) %>" alt="<%= book.title %>">
+          <%= link_to image_tag(book.photo_link(2)), book_path(book) %>
         </div>
 
     <% end %>
