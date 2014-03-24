@@ -51,7 +51,7 @@ names.each do |name|
   u.email = name + "@test.com"
   u.location = [new_l, far_l].sample
   u.save
-  u.books << ( Book.all ).sample(3)
+  u.books << ( Book.all ).sample(7)
 end
 
 
