@@ -1,9 +1,19 @@
+.book_list {
+  display: block;
+  height: 300px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+}
+
 .book-display {
   margin: 0em 0px 0em 0px;
-  overflow:hidden; /* this is important */
-  /*border: 1px solid black;*/
   float: left;
   height: 250px;
+  overflow:hidden; /* this is important */
   padding: 5px;
   position: relative;
   width: 200px;
@@ -16,7 +26,6 @@
 }
 
 .book-display:hover img a{
-  opacity: .25;
   padding: 5px 1em;
   z-index: 99;
 }
@@ -27,7 +36,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 120%;
 }
 
 .book-display h4 {
@@ -57,13 +65,12 @@
   width: 100%;
 }
 
-.book-display a {
+.meetup {
   bottom: 0;
+  opacity: 0;
   position: absolute;
-  z-index: 150;
 }
 
-.book-display:hover a{
-  z-index: 150;
-
+.book-display:hover .meetup {
+  opacity: 1;
 }
