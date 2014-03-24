@@ -1,3 +1,6 @@
+# See comments in converter
+#
+# Also, these "magic" numbers hsould be made symbolic constants e.g.  0.01745329251994
 class LatLongDistanceConverter
   def self.lat_to_miles( degrees_lat )
     degrees_lat * 69.172

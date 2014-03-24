@@ -20,6 +20,17 @@ module ApplicationHelper
     logged_in? ? "Home" : "Sign Up"
   end
 
+  #classic example of something NOT belonging in a helper:  this should be in a
+  #class.  As noted in comments on controller...
+  #
+  #
+  # def books_in_common_with(user)
+  #   BooksInCommonCalculator(userA, userB).books
+  # end
+  #
+  # Feel free to use a helper to WRAP a class' knowledge, but don't do the
+  # implementation in the class
+  #
   def books_in_common_with(user)
     books = []
     user.books.each do |book|
@@ -28,6 +39,9 @@ module ApplicationHelper
     books
   end
 
+
+  # see above.
+  #
   def other_books_of(user)
     books = []
     user.books.each do |book|
