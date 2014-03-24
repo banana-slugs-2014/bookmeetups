@@ -12,48 +12,47 @@
 .book-display {
   margin: 0em 0px 0em 0px;
   float: left;
-  height: 250px;
+  height: 200px;
   overflow:hidden; /* this is important */
-  padding: 5px;
+  padding: 0;
   position: relative;
-  width: 200px;
+  transition: .2s;
   z-index: 1;
 }
 
 .book-display:hover {
+  background-color: #A9D9DB;
+  margin: -15px 15px 15px 15px;
   opacity: .75;
-  background-color: #232323;
-}
-
-.book-display:hover img a{
-  padding: 5px 1em;
-  z-index: 99;
 }
 
 .book-display img a {
   margin: -15px 0px -40px -25px;
-  padding: 1em;
   position: absolute;
   top: 0;
   left: 0;
 }
 
+.book-display:hover img a{
+}
+
 .book-display h4 {
   opacity: 0;
   margin: 0;
-  padding-left: 4px;
   position: relative;
-  font-size: 23px;
   font-weight: 400;
   top: 45%;
   width: 100%;
 }
 
 .book-display:hover h4 {
-  color: white;
+  background-color: #50576B;
+  color: #FFFEF9;
   font-family: 'Lato', sans-serif;
+  font-size: 1.25em;
   font-weight: 400;
-  position: absolute;
+  margin-left: 10px;
+  padding-left: .25em;
   opacity: 1;
   z-index: 100;
 }
@@ -73,4 +72,5 @@
 
 .book-display:hover .meetup {
   opacity: 1;
+  z-index: 5;
 }
