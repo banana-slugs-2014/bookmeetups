@@ -107,3 +107,24 @@ ul li {
   bottom: 0;
   left: 0;
 }
+
+/*====== Friend List Pics ========*/
+.friend_links {
+  border: 1px solid gray;
+  float: left;
+  display: block;
+  text-align: center;
+  height: 100px;
+  position: relative;
+  width: 200px;
+}
+
+.friend_links img {
+  height: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

@@ -26,7 +26,7 @@ class PhotosController < ApplicationController
     if @photo.save
       user.photo.destroy unless user.photo.nil?
       user.photo = @photo
-      redirect_to user_photo_path(user.id, @photo.id)
+      redirect_to user_path(user.id)
     else
       redirect_to new_user_photo_path
     end
