@@ -7,8 +7,15 @@
 <h1>Title: <%= @book.title %></h1>
 <h1>Author: <%= @book.author %></h1>
   <div class="read_by">
-    Users who have read this book:<br>
-    <% @read_by.each do |reader| %>
+    Your close friends for this book:
+    <% @nearby_friends.each do |reader| %>
+      <div class="user">
+        <%= link_to reader.username, user_books_path(reader) %><br>
+      </div>
+    <% end %>
+  </div>
+    Your distant friends for this book:<br>
+    <% @distant_friends.each do |reader| %>
       <div class="user">
         <%= link_to reader.username, user_books_path(reader) %><br>
       </div>

@@ -37,6 +37,7 @@ end
 group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
+  gem 'rspec-mocks'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
