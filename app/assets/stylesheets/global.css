@@ -1,7 +1,61 @@
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
 /*===== Layout Navbar =====*/
-.nav {
+
+.header {
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
 }
+
+nav {
+  float: right;
+  width: 50%;
+}
+
+nav ul {
+  display: inline-block;
+  float: left;
+  position: relative;
+  right: 55px;
+  width: 100%;
+}
+
+nav ul li {
+  color: white;
+  display: inline;
+  float: right;
+  padding: 2px 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: rgba(0,0,0,0.5);
+}
+
+nav ul li a:visited {
+  color: white;
+}
+
+.search_bar {
+  float: left;
+  padding: 12px 0px 12px 55px;
+  width: 35%;
+}
+
 
 /*===== table listing friends in user/show =====*/
 ul {
@@ -69,10 +123,15 @@ ul li {
   top: 0;
   width: 100%;
 }
+
 /*===== General container =====*/
 .container {
-  width: 800px;
+  position: relative;
+  top: 50px;
   margin: 0 auto;
+  padding: 0;
+  width: 80%;
+  z-index: 25;
 }
 
 /*===== Bottom of page status captions =====*/

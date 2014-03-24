@@ -35,14 +35,13 @@
 
 <% else %>
   <h4><%= !@user.location.nil? ? @user.location.city : "No location set." %></h4>
-  <ul>
+  <div class="book_list">
     <% @user.books.each do |book| %>
-      <li>
+
         <div class="book-display">
           <h4><%= book.title %></h4>
           <img src="<%= book.photo_link(2) %>" alt="<%= book.title %>">
         </div>
-      </li>
     <% end %>
   </ul>
 
