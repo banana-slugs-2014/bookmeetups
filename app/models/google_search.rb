@@ -12,7 +12,12 @@ class GoogleSearch
       newbook.google_id = book.id
       newbook.author = book.authors
       newbook.isbn = book.isbn
-      results << newbook if newbook.save
+      if newbook.save
+        results << newbook
+      else
+        found = Book.find_by_google_id(book.id)
+        results << found if found
+      end
     end
     results
   end
