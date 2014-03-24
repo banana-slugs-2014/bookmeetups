@@ -98,12 +98,12 @@ ul li {
 
 .book-display:hover img{
   opacity: .25;
-  padding: 1em;
+  padding: 5px 1em;
   z-index: 99;
 }
 
 .book-display img {
-  margin: 0px 0px -40px -25px;
+  margin: -15px 0px -40px -25px;
   padding: 1em;
   position: absolute;
   top: 0;
