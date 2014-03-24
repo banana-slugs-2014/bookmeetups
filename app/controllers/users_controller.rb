@@ -10,8 +10,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    p "***********"
-    p params.inspect
     redirect_to(root_path) && return unless params[:user]
     new_user = User.new do |user|
       user.username = params[:user][:username]
@@ -20,11 +18,6 @@ class UsersController < ApplicationController
       user.email = params[:user][:email]
     end
    location = Location.where(:city => params[:city], :state => params[:state], :zip => params[:zip]).first_or_create
-   p "$$$$$$$$$"
-   p params[:city]
-   p params[:state]
-   p params[:zip]
-   p location.inspect
     location.users << new_user
     if new_user.save
       session[:id] = new_user.id
