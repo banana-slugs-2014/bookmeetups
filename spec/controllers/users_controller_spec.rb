@@ -18,15 +18,19 @@ describe UsersController do
   end
 
   context '#create' do
+    let(:city) { "New York" }
+    let(:state) { "NY" }
+    let(:zip) { "10031" }
+
     context 'With valid attributes' do
       it "should be redirect" do
-        post :create, user: attribs
+        post :create, { user: attribs, city: city, state: state, zip: zip }
         expect(response).to be_redirect
       end
 
       it "should increase user count by one" do
         expect {
-          post :create, user: attribs
+          post :create, { user: attribs, city: city, state: state, zip: zip }
         }.to change { User.count }.by(1)
       end
     end

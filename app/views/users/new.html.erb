@@ -2,13 +2,13 @@
   <h2>Welcome!</h2>
   <%= form_for @user do |f| %>
     <%= f.label "Username" %>
-    <%= f.text_field(:username) %>
+    <%= f.text_field(:username, :required => true) %>
     <%= f.label "E-Mail" %>
-    <%= f.text_field(:email) %>
+    <%= f.text_field(:email, :required => true) %>
     <%= f.label "Password" %>
-    <%= f.password_field(:password) %>
+    <%= f.password_field(:password, :required => true) %>
     <%= f.label "Confirm Password" %>
-    <%= f.password_field(:password_confirmation) %>
+    <%= f.password_field(:password_confirmation, :required => true) %>
     City <%= text_field_tag "city" %>
     State <%= text_field_tag "state" %>
     Zip <%= text_field_tag "zip" %>

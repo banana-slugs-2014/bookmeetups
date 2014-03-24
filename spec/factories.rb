@@ -5,6 +5,7 @@ FactoryGirl.define do
     password {"12345"}
     password_confirmation "12345"
     email {Faker::Internet.email}
+    location
   end
 
   factory :book do
