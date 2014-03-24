@@ -25,6 +25,11 @@ ul li {
   z-index: 1;
 }
 
+.book-display:hover {
+  opacity: .75;
+  background-color: #232323;
+}
+
 .book-display:hover img{
   opacity: .25;
   padding: 1em;
@@ -43,12 +48,16 @@ ul li {
 .book-display h4 {
   opacity: 0;
   margin: 0;
+  padding-left: 4px;
   position: relative;
-  top: 0;
+  font-size: 23px;
+  font-weight: 400;
+  top: 45%;
   width: 100%;
 }
 
 .book-display:hover h4 {
+  color: white;
   position: absolute;
   opacity: 1;
   z-index: 100;
