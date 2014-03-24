@@ -233,7 +233,8 @@ ul li {
   float: left;
   display: block;
   text-align: center;
-  height: 100px;
+  height: 250px;
+  padding: 5px;
   position: relative;
   width: 200px;
 }
@@ -247,3 +248,4 @@ ul li {
   bottom: 0;
   left: 0;
 }
+
