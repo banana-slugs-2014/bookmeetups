@@ -18,25 +18,20 @@
         <div class="book-display">
           <h4><%= book.title %></h4>
           <%= link_to image_tag(book.photo_link(1)), book_path(book) %>
-          <%= link_to "Meet Up!", user_create_meetup_path(@user, book), class: "meetup" %>
-        </div>
 
-
-        <div class="meetup_check">
           <% this_books_meetups = book.meetups %>
           <% if this_books_meetups.count > 0 %>
             <% this_books_meetups.each do |meetup| %>
-              <% if meetup.users.include?(@user && current_user) %>
-                <%= link_to "Edit meetup", user_meetup_path(current_user, meetup) %>
+              <% if meetup.users.include?(@user) && meetup.users.include?(current_user) %>
+                <%= link_to "Edit meetup", user_meetup_path(current_user, meetup), class: "meetup" %>
               <% else %>
-                <%= link_to "Meet Up!", user_create_meetup_path(@user, book) %>
+                <%= link_to "Meet Up!", user_create_meetup_path(@user, book), class: "meetup" %>
               <% end %>
             <% end %>
           <% else %>
-            <%= link_to "Meet Up!", user_create_meetup_path(@user, book) %>
+            <%= link_to "Meet Up!", user_create_meetup_path(@user, book), class: "meetup" %>
           <% end %>
         </div>
-
       <% end %>
     </div>
 
