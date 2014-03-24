@@ -5,11 +5,12 @@
        <%= link_to 'Compose new message', new_meetup_message_path(@meetup), :class => 'open-new-message', remote: true %>
     <div class="messages">
       <% @messages.each do |message| %>
-        <div class="message">
+        <%= render partial: "messages/created_message", locals: { message: message } %>
+        <!-- <div class="message">
           <div class="byline"><%= link_to message.user.username, user_path(message.user), :class => 'strong' %> said:</div>
           <div class="text"><%= message.text %></div>
           <span class="date"> <%=  time_ago_in_words(message.created_at) %> ago</span>
-        </div>
+        </div> -->
       <% end %>
     <% else %>
       <h1>Uhhhh...get out of here. You don't have permission</h1>

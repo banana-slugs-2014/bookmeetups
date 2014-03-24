@@ -11,6 +11,10 @@ Bookmeetups.Controller.prototype = {
 
   showCreatedMessageEvent: function(newMessage){
     this.view.renderNewMessage(newMessage);
+  },
+
+  hideNewMessage: function(){
+    this.view.removeNewMessageForm();
   }
 };
 
@@ -30,6 +34,12 @@ Bookmeetups.View.prototype = {
     this.showCreateMessageLink();
   },
 
+  removeNewMessageForm: function(){
+    this.hideNewMessageForm();
+    this.removeCancelButton();
+    this.showCreateMessageLink();
+  },
+
   displayNewMessageForm: function(form){
     $(this.selectors.messagesContainer).prepend(form);
   },
@@ -42,12 +52,16 @@ Bookmeetups.View.prototype = {
     $(this.selectors.messagesContainer).prepend(newMessage);
   },
 
-  removeNewMessageForm: function(){
-    $(this.selectors.newMessageForm).remove();
+  hideNewMessageForm: function(){
+    $(this.selectors.newMessageForm).hide();
   },
 
   showCreateMessageLink: function(){
     $(this.selectors.openMessageLink).show();
+  },
+
+  removeCancelButton: function(){
+    $(this.selectors.cancelNewMessageButton).hide();
   }
 };
 
@@ -60,6 +74,7 @@ Bookmeetups.Binder.prototype = {
   bind: function(){
     this.createMessageForm();
     this.showCreatedMessage();
+    this.cancelMessageCreation();
   },
 
   createMessageForm: function(){
@@ -74,19 +89,29 @@ Bookmeetups.Binder.prototype = {
     $('body').on("ajax:success", self.eventSelectors.newMessageFormSelector, function(event, newMessage){
       self.controller.showCreatedMessageEvent(newMessage);
     });
+  },
+
+  cancelMessageCreation: function(){
+    var self = this;
+    $('body').on('click', self.eventSelectors.cancelNewMessageSelector, function(event){
+      event.preventDefault();
+      self.controller.hideNewMessage();
+    });
   }
 };
 
 $(document).ready(function() {
   var eventSelectors = {
     openMessageFormSelector: '.open-new-message',
-    newMessageFormSelector: '#new_message'
+    newMessageFormSelector: '#new_message',
+    cancelNewMessageSelector: '.cancel'
   };
 
   var viewSelectors = {
     messagesContainer: '.messages',
     openMessageLink:   '.open-new-message',
-    newMessageForm:    '#new_message'
+    newMessageForm:    '#new_message',
+    cancelNewMessageButton: '.cancel'
   };
 
   Bookmeetups.view = new Bookmeetups.View(viewSelectors);
