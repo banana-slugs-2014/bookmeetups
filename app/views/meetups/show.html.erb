@@ -1,11 +1,11 @@
-<div class="meetup" id="<%= @meetup.id %>">
+<div class="meetup-messages" id="<%= @meetup.id %>">
   <% if !@messages.nil?  %>
     <% if @meetup.users.include? current_user%>
       <h2><%= link_to @meetup.book.title, book_path(@meetup.book) %> meetup with <%= link_to @other_user.username, user_path(@other_user) %></h2>
        <%= link_to 'Compose new message', new_meetup_message_path(@meetup), :class => 'open-new-message', remote: true %>
     <div class="messages">
       <% @messages.each do |message| %>
-        <%= render partial: "messages/created_message", locals: { message: message } %>
+        <%= render partial: "messages/created_message", locals: { message: message} %>
       <% end %>
     <% else %>
       <h1>Uhhhh...get out of here. You don't have permission</h1>
