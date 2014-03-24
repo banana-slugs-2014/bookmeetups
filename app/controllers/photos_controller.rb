@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_filter :redirect_unless_logged_in
+  before_filter :redirect_unless_logged_in, :except => :default
 
   def show
     @user = User.find(params[:user_id])
@@ -45,6 +45,9 @@ class PhotosController < ApplicationController
 
   def serve
     @photo = Photo.find(params[:id])
-    send_data(@photo.data, :type => @photo.mime_type, :filename => "#{@photo.name}.jpg", :disposition => "inline")
+    send_data( @photo.data,
+      :type => @photo.mime_type,
+      :filename => "#{@photo.name}.jpg",
+      :disposition => "inline" )
   end
 end

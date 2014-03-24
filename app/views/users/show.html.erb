@@ -1,7 +1,5 @@
 <div class="profile_pic">
-  <% if @user.photo %>
-    <%= render partial: "photos/show", locals: { user: @user } %>
-  <% end %>
+  <%= render partial: "photos/show", locals: { user: @user } %>
 </div>
 <div class="info">
   <h3><%= @user.username.capitalize %>'s Book Buddies!</h3>
@@ -14,11 +12,8 @@
 <ul class="friends_list">
   <% current_user.book_friends.each do |friend|  %>
     <div class="friend_links">
-      <% if friend.photo.nil? %>
-        <li><%= link_to friend.username, user_books_path(friend) %></li>
-      <% else %>
-      <li><%= link_to image_tag(serve_user_photo_path(friend.id, friend.photo.id)), user_books_path(friend) %></li>
-      <% end %>
+      <li><%= link_to friend.username, user_books_path(friend) %></li>
+      <li><%= link_to render( partial: "photos/show", locals: { user: friend }), user_books_path(friend) %></li>
     </div>
   <% end %>
 </ul>
