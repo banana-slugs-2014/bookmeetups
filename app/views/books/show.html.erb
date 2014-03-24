@@ -12,14 +12,14 @@
   <h4>Author: <%= @book.author %></h4>
 </div>
   <div class="read_by">
-    Your close friends for this book:
+    <p>Your close friends for this book:</p>
     <% @nearby_friends.each do |reader| %>
       <div class="user">
         <%= link_to reader.username, user_books_path(reader) %><br>
       </div>
     <% end %>
   </div>
-    Your distant friends for this book:<br>
+    <p>Your distant friends for this book:</p>
     <% @distant_friends.each do |reader| %>
       <div class="user">
         <%= link_to reader.username, user_books_path(reader) %><br>
