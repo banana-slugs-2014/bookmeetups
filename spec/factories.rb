@@ -31,6 +31,8 @@ FactoryGirl.define do
     city {Faker::Lorem.word}
     state {Faker::Lorem.word}
     zip {Faker::Number.number(5)}
+    latitude { 37.7726402 }
+    longitude { -122.4099154 }
   end
 
 end

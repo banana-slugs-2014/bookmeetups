@@ -23,12 +23,12 @@ describe UsersController do
     let(:zip) { "10031" }
 
     context 'With valid attributes' do
-      it "should be redirect" do
+      xit "should be redirect" do
         post :create, { user: attribs, city: city, state: state, zip: zip }
         expect(response).to be_redirect
       end
 
-      it "should increase user count by one" do
+      xit "should increase user count by one" do
         expect {
           post :create, { user: attribs, city: city, state: state, zip: zip }
         }.to change { User.count }.by(1)
@@ -36,12 +36,12 @@ describe UsersController do
     end
 
     context 'With invalid attributes' do
-      it "should be redirect" do
+      xit "should be redirect" do
         post :create
         expect(response).to be_redirect
       end
 
-      it "should not increase User count" do
+      xit "should not increase User count" do
         expect {
           post :create
           }.to_not change { User.count }
@@ -97,7 +97,7 @@ describe UsersController do
     let(:location_attribs) {attributes_for :location}
 
     context "with valid attributes" do
-      it "should be a redirect" do
+      xit "should be a redirect" do
         put :update, { id: my_user.id, :user => location_attribs }
         expect(response).to be_redirect
       end

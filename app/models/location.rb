@@ -6,7 +6,12 @@ class Location < ActiveRecord::Base
 
   has_many :users
   geocoded_by :address
-  before_save :geocode
+  before_save :geocheck
+
+  def geocheck
+    p "OMG GEOCODE" unless latitude && longitude
+    geocode unless latitude && longitude
+  end
 
 
   def address

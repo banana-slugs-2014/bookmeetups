@@ -16,18 +16,24 @@ l = Location.new
 l.city = "San Francisco"
 l.state = "CA"
 l.zip = "94103"
+l.latitude = 37.7726402
+l.longitude = -122.4099154
 l.save
 
 new_l = Location.new
 new_l.city = "San Francisco"
 new_l.state = "CA"
 new_l.zip = "94171"
+new_l.latitude = 37.78
+new_l.longitude = -122.42
 new_l.save
 
 far_l = Location.new
 far_l.city = "La Canada"
 far_l.state = "CA"
 far_l.zip = "91011"
+far_l.latitude = 34.2068182
+far_l.longitude = -118.2000277
 far_l.save
 
 names = [ "bob", "tom", "test" ]
@@ -53,5 +59,3 @@ names.each do |name|
   u.save
   u.books << ( Book.all ).sample(7)
 end
-
-
