@@ -36,5 +36,14 @@ module ApplicationHelper
     books
   end
 
+  def meetup_exist?(book, friend)
+    this_books_meetups = book.meetups
+    if this_books_meetups.count > 0
+      this_books_meetups.each do |meetup|
+        return meetup if meetup.users.include?(friend && current_user)
+      end
+      return false
+    end
+  end
 
 end

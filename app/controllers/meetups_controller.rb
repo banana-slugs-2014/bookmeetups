@@ -11,8 +11,18 @@ class MeetupsController < ApplicationController
   end
 
   def create
+    exist = false
     book =  Book.find(params[:book_id])
-    @meetup = Meetup.create
+
+    existing_meetups = book.meetups
+    existing_meetups.each do |meetup|
+      if meetup.users.include?(current_user && User.find(params[:user_id]))
+        exist = true
+        @meetup = meetup
+      end
+    end
+
+    @meetup = Meetup.create if exist == false
     @message = Message.new
     book.meetups << @meetup
     current_user = User.find(session[:id])
