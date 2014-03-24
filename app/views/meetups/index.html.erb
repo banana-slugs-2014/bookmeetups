@@ -1,6 +1,10 @@
 <h1>Meetups!</h1>
 <% @meetups.each do |meetup| %>
-  <p><%= meetup.book.title %></p>
+  <p><%= meetup.book.title %>
+    <div class="unread">
+      <%= meetup.unread(current_user.id) if meetup.unread(current_user.id) != 0%>
+    </div>
+  </p>
   <%= link_to 'go to messages', user_meetup_path(current_user, meetup) %>
   participants:
   <% meetup.users.each do |user| %>
