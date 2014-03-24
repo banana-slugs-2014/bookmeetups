@@ -4,7 +4,6 @@ describe BooksController do
   let!(:my_user) { create :user }
   let(:my_book) { create :book }
   let(:attribs) { attributes_for :book }
-  let(:location) { create :location }
   before(:each) { request.session[:id] = my_user.id }
 
   context '#create' do
@@ -18,15 +17,13 @@ describe BooksController do
 
   context '#show' do
     it "should be ok" do
-      # User.any_instance.stub(:friends).and_return([])
-      my_user.location = location.id
+      User.any_instance.stub(:friends).and_return([])
       get :show, id: my_book.id
-      # p * 100
-      response.status.should eql('200 OK')
-      # # expect(response).to be_success
+      expect(response).to be_success
     end
 
     it "should get the correct book" do
+      User.any_instance.stub(:friends).and_return([])
       get :show, id: my_book.id
       expect(assigns(:book)).to eq(Book.find(my_book.id))
     end
