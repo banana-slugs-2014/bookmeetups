@@ -1,3 +1,9 @@
+=begin comment
+1.  Hate this module pattern style stuff
+2.  so much easier to pass the core variables in during .new()
+3.  See 1.
+=end
+
 class LatLongDistanceConverter
   def self.lat_to_miles( degrees_lat )
     degrees_lat * 69.172

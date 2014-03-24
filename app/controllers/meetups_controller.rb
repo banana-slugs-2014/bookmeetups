@@ -2,6 +2,9 @@ class MeetupsController < ApplicationController
   before_filter :redirect_unless_logged_in
 
   def index
+    # I'd extract this implementation code to a helpful name in your
+    # ApplicationController.  What does this comparison mean?
+
     if session[:id] == params[:user_id].to_i
       @meetups = current_user.meetups
       render :index

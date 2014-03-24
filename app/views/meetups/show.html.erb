@@ -1,4 +1,5 @@
 <div class="info">
+  <%#  is this necessary?  it's only set if it exists?  And what's up with double negation? ! + nil? = true?%>
   <% if !@messages.nil?  %>
     <% if @meetup.users.include? current_user%>
       <h3><%= link_to @meetup.book.title, book_path(@meetup.book) %> meetup with <%= link_to @other_user.username, user_path(@other_user) %></h3>

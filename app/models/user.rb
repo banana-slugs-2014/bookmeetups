@@ -13,6 +13,18 @@ class User < ActiveRecord::Base
   has_many :messages
 
   def friends(book, miles = 60)
+    # Use of an empty array that functions as an accumulator is generally a bad
+    # sign.  In those cases you can generally use Enumerable.{inject,
+    # each_with_object} for simpler code.
+    #
+    #I also feel like in_range belongs as a class method on Location so that
+    #(caveat, untested code)
+    #
+    # Location.in_range_of(location).each_with_object([]) do |location, coll|
+    #   location.users.includes(:books).select do |user|
+    #     (user != self) && user.books.any?{|users_book| users_book = book }
+    #   end
+    # end
     f = []
     locations = location.in_range( miles )
     locations.each do |locale|
