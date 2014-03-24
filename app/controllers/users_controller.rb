@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     end
   end
 
+  # there is a ton of visual bloat in here.  15 lines.  It just makes me wince
+  # looking at it.  There are things to do to tighten it up.  I think this
+  # could be 5 lines or so.  Jamie and i have talked about this a bit and she's
+  # working on it presently.  But you should just not want to commit this.
   def create
     redirect_to(root_path) && return unless params[:user]
     new_user = User.new do |user|
