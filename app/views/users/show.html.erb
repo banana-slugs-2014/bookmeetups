@@ -1,24 +1,24 @@
 <div class="profile_pic">
-  <h1><%= @user.username %></h1>
   <% if @user.photo %>
     <%= render partial: "photos/show", locals: { user: @user } %>
   <% end %>
 </div>
-<span class="edit"><%= link_to "Edit Profile", edit_user_path %></span>
+<div class="info">
+  <h3><%= @user.username.capitalize %>'s Book Buddies!</h3>
+  <%= !@user.location.nil? ? @user.location.city : "No location set." %><br>
+  <% if @user == current_user %>
+    <%= link_to "Edit My Profile", edit_user_path(current_user) %>
+  <% end %>
+</div>
 
 <ul class="friends_list">
-<%= current_user.username %>'s friends:
-<br>
-    <% if !current_user.location.nil? %>
-      <% current_user.book_friends.each do |friend|  %>
-        <div class="friend_links">
-          <% if friend.photo.nil? %>
-            <li><%= link_to friend.username, user_books_path(friend) %></li>
-          <% else %>
-          <li><%= link_to friend.username, user_books_path(friend) %></li>
-          <li><%= link_to image_tag(serve_user_photo_path(friend.id, friend.photo.id)), user_books_path(friend) %></li>
-          <% end %>
-        </div>
+  <% current_user.book_friends.each do |friend|  %>
+    <div class="friend_links">
+      <% if friend.photo.nil? %>
+        <li><%= link_to friend.username, user_books_path(friend) %></li>
+      <% else %>
+      <li><%= link_to image_tag(serve_user_photo_path(friend.id, friend.photo.id)), user_books_path(friend) %></li>
       <% end %>
-    <% end %>
+    </div>
+  <% end %>
 </ul>

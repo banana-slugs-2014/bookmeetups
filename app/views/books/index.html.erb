@@ -1,12 +1,10 @@
 <p>Book collection: </p>
-<ul>
+
+<div class="book_list">
   <% @books.each do |book| %>
-    <div id="<%= book.google_id %>">
-      <div class="book-display">
-        <h4><%= link_to book.title, book_path(book.id) %></h4>
-        <p><%= book.author %></p>
-        <img src="<%= book.photo_link(1) %>" alt="<%= book.title %>">
-      </div>
+    <div class="book-display">
+      <h4><%= book.title %></h4>
+      <%= link_to image_tag(book.photo_link(2)), book_path(book) %>
     </div>
   <% end %>
-</ul>
+</div>

@@ -1,5 +1,7 @@
-<%= form_for [@meetup, @message] do |f| %>
-  <%= hidden_field_tag(:user_id, current_user.id)  %>
-  <%= f.text_area :text, :required => true %>
-  <%= submit_tag "New Message" %>
-<% end %>
+<div class="info">
+  <%= form_for [@meetup, @message] do |f| %>
+    <%= hidden_field_tag(:user_id, current_user.id)  %>
+    <%= f.text_area :text, :required => true %><br>
+    <%= submit_tag "New Message", class: "button small" %>
+  <% end %>
+</div>
