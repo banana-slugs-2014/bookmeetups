@@ -5,6 +5,6 @@ class Searcher
     if local.length < 5
       return local + GoogleSearch.search_and_add( terms, {:count => 10})
     end
-    return local
+    return local.uniq
   end
 end
