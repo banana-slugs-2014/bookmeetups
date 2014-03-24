@@ -5,9 +5,9 @@
         City
         <%= user.text_field(:city, size: "30", :required => true, value: current_user.location.blank? ? "Please enter your city" : current_user.location.city) %>
         State
-        <%= user.text_field(:state, size: "20", :required => true, value: current_user.location.blank? ? "Input state" : current_user.location.state) %>
+        <%= user.text_field(:state, size: "20", :required => true, :pattern => '^\w{2}$', value: current_user.location.blank? ? "Input state" : current_user.location.state) %>
         Zip
-        <%= user.text_field(:zip, size: "15", :required => true, value: current_user.location.blank? ? "Zip code" : current_user.location.zip) %>
+        <%= user.text_field(:zip, size: "15", :required => true, :pattern => '^\d{5}$', value: current_user.location.blank? ? "Zip code" : current_user.location.zip) %>
         <%= user.submit "Edit Profile" %>
   <% end %>
   <%= link_to "Add New Profile Pic", new_user_photo_path(@user) %>
