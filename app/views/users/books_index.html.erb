@@ -1,5 +1,5 @@
 <div class="profile_pic">
-  <h1><%= @user.username %></h1>
+  <h1><%= @user.username.capitalize %></h1>
   <% if @user.photo %>
     <%= render partial: "photos/show", locals: { user: @user } %>
   <% end %>
@@ -8,26 +8,26 @@
 <% if current_user != @user %>
   <h4><%= !@user.location.nil? ? "#{@user.location.city}, #{@user.location.state} #{@user.location.zip}" : "No location set." %></h4>
   <ul>
-    <p>Books in Common with <%= @user.username.upcase %>:</p>
+    <p>Books in Common with <%= @user.username.capitalize %>:</p>
     <% books_in_common_with(@user).each do |book| %>
       <li>
         <div class="book-display">
-          <p><%= link_to book.title, book_path(book.id) %></p>
-          <img src="<%= book.photo_link(1) %>" alt="<%= book.title %>">
-          <%= link_to "Meet Up!", user_create_meetup_path(@user, book) %>
+          <div class="overlay">
+            <span><%= book.title %></span>
+            <%= link_to "Meet Up!", user_create_meetup_path(@user, book) %>
+        </div>
+          <%= link_to image_tag(book.photo_link(2)), book_path(book.id) %>
         </div>
       </li>
     <% end %>
   </ul>
 
   <ul>
-    <p><%= @user.username.upcase %>'s Books:</p>
+    <p><%= @user.username.capitalize %>'s Books:</p>
     <% other_books_of(@user).each do |book| %>
       <li>
         <div class="book-display">
-          <h4><%= link_to book.title, book_path(book.id) %></h4>
-          <p><%= book.author %></p>
-          <img src="<%= book.photo_link(1) %>" alt="<%= book.title %>">
+          <%= link_to image_tag(book.photo_link(2)), book_path(book.id) %>
         </div>
       </li>
     <% end %>
@@ -39,9 +39,10 @@
     <% @user.books.each do |book| %>
       <li>
         <div class="book-display">
-          <h4><%= link_to book.title, book_path(book.id) %></h4>
-          <p><%= book.author %></p>
-          <img src="<%= book.photo_link(1) %>" alt="<%= book.title %>">
+          <div class="overlay">
+            <p>book.title</p>
+          </div>
+          <p class="crop"><%= link_to image_tag(book.photo_link(2)), book_path(book.id) %></p>
         </div>
       </li>
     <% end %>

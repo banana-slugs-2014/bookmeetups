@@ -1,5 +1,6 @@
-titles = ["Shades of Grey", "Rant", "Jane Eyre", "American Gods", "Reaper Man", "Harry Potter and the Sorcerer's Stone", "The Bourne Identity: Jason Bourne", "The Strategy of Indirect Approach"]
-authors = ["Jasper Fforde", "Chuck Palahniuk", "Charlotte Bronte", "Neil Gaiman", "Terry Prachett", "J.K. Rowling", "Robert Ludlum", "B. H. Liddell Hart"]
+titles = ["Shades of Grey", "Rant", "Jane Eyre", "American Gods", "Reaper Man", "Harry Potter and the Sorcerer's Stone", "The Bourne Identity: Jason Bourne", "The Strategy of Indirect Approach", "The Self Conceived", "Mystery", ]
+authors = ["Jasper Fforde", "Chuck Palahniuk", "Charlotte Bronte", "Neil Gaiman", "Terry Prachett", "J.K. Rowling", "Robert Ludlum", "B. H. Liddell Hart", "Helene Moglen", "
+Peter Straub"]
 google_id = ["G2ULLW2R17IC", "i6kj0xH2H0QC", "Xqon3jNYhCIC", "zupOHdkcSvkC", "RXT-iRt5s9MC", "MovumAEACAAJ", "BebwoOZCPr0C", "qK43pwAACAAJ"]
 isbn13 = [9781101159651, 9780307371966, 9780061792663, 9780061807053, 9780545582889, 9780307813787, 9781245060615]
 
@@ -39,7 +40,7 @@ names.each do |name|
   u.email = name + "@test.com"
   u.location = l
   u.save
-  u.books << ( Book.all ).sample(3)
+  u.books << ( Book.all ).sample(8)
 end
 names = [ "yoshi", "glen", "mario", "that other dude",
 "a legit sorcerer", "sal", "sam", "the phantom of the opera"]
