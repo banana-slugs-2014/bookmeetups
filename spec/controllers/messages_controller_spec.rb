@@ -23,7 +23,7 @@ describe MessagesController do
 
     it "should be redirect" do
       post :create, { :meetup_id => test_meetup.id, :message => message_attribs }
-      expect(response).to be_redirect
+      expect(response).to be_ok
     end
 
     it "should create a new message" do
