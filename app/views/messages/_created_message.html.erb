@@ -1,5 +1,5 @@
 <div class="message">
-  <p><%= link_to message.user.username, user_path(message.user) %> said:</p>
-  <p><%= message.text %></p>
+  <div class="byline"><%= link_to message.user.username, user_path(message.user) %> said:</p>
+  <div class="text"><%= message.text %></p>
   <span class="date"> <%=  time_ago_in_words(message.created_at) %> ago</span>
 </div>

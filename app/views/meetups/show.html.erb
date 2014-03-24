@@ -6,8 +6,8 @@
     <div class="messages">
       <% @messages.each do |message| %>
         <div class="message">
-          <p><%= link_to message.user.username, user_path(message.user) %> said:</p>
-          <p><%= message.text %></p>
+          <div class="byline"><%= link_to message.user.username, user_path(message.user), :class => 'strong' %> said:</div>
+          <div class="text"><%= message.text %></div>
           <span class="date"> <%=  time_ago_in_words(message.created_at) %> ago</span>
         </div>
       <% end %>
