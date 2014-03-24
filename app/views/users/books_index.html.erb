@@ -34,7 +34,11 @@
   </ul>
 
 <% else %>
-  <h4><%= !@user.location.nil? ? @user.location.city : "No location set." %></h4>
+  <div class="info">
+    <%= !@user.location.nil? ? @user.location.city : "No location set." %><br>
+    <%= link_to "Edit My Profile", edit_user_path(current_user) %>
+
+  </div>
   <div class="book_list">
     <% @user.books.each do |book| %>
 
@@ -46,7 +50,6 @@
     <% end %>
   </div>
 
-  <%= link_to "Edit My Profile", edit_user_path(current_user) %>
 <% end %>
 
 
