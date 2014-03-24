@@ -39,9 +39,7 @@
     <% @user.books.each do |book| %>
       <li>
         <div class="book-display">
-          <h4><%= link_to book.title, book_path(book.id) %></h4>
-          <p><%= book.author %></p>
-          <img src="<%= book.photo_link(1) %>" alt="<%= book.title %>">
+          <%= link_to image_tag(book.photo_link(2)), book_path(book.id) %>
         </div>
       </li>
     <% end %>
