@@ -1,1 +1,5 @@
-<%= image_tag serve_user_photo_path(@user.id, @user.photo.id) %>
+<% if user.photo.nil? %>
+  <%= image_tag src="/assets/missing.png" %>
+<% else %>
+  <%= image_tag serve_user_photo_path(user.id, user.photo.id) %>
+<% end %>
