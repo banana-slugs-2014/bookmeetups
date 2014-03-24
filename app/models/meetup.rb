@@ -12,12 +12,20 @@ class Meetup < ActiveRecord::Base
     num
   end
 
-  def mark_read(u_id)
+  def mark_read(user)
     messages.each do |message|
-      unless message.user_id == u_id
-        message.unread = false
-        message.save
+      unless message.user_id ==  user.id
+        if message.unread
+          message.unread = true
+          message.save
+          user.unread -= 1
+          user.save
+        end
       end 
     end
+  end
+
+  def other_user(user)
+    
   end
 end

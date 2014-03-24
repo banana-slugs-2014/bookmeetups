@@ -11,14 +11,15 @@ class MessagesController < ApplicationController
     meetup = Meetup.find(params[:meetup_id])
     message = Message.new do |m|
       m.text = params[:message][:text]
-      m.user = current_user
+      # m.user = current_user
       m.user_id = current_user.id
     end
     if message.save
       meetup.messages << message
+      meetup.other_user(current_user.id)
     end
     render :partial => 'messages/created_message',
            :locals => { meetup: meetup, message: message }
 
   end
-end
+en
