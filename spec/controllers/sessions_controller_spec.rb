@@ -7,6 +7,7 @@ describe SessionsController do
       user.username = credentials[:username]
       user.password = credentials[:password]
       user.email = 'test@glados.com'
+      user.location_id = 1
     end
   end
 

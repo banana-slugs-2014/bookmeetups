@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       session[:id] = new_user.id
       redirect_to(user_path(new_user))
     else
-      redirect_to(root_path)
+      redirect_to(root_path, :flash => {:error => "Invalid sign up"})
     end
   end
 
