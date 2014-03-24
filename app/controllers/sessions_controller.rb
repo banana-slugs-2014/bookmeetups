@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_username(params[:user][:username])
     if @user.nil? || !valid_login?
-      redirect_to(new_session_path)
+      redirect_to(new_session_path, :flash => {:error => "Invalid login"})
     else
       session[:id] = @user.id
       redirect_to user_path(@user)
