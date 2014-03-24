@@ -8,14 +8,16 @@ describe UserBooksController do
 
 
   context "#create" do
+    let!(:my_book2) { create :book }
+
     it "should redirect" do
-      post :create, user_id: my_user, book_id: my_book, user_book: {}
+      post :create, user_id: my_user, book_id: my_book2, user_book: {}
       expect(response).to be_redirect
     end
 
     it "should increase count of UserBooks" do
       expect{
-        post :create, user_id: my_user, book_id: my_book  , user_book: {}
+        post :create, user_id: my_user, book_id: my_book2, user_book: {}
       }.to change{ UserBook.count }.by(1)
     end
   end
