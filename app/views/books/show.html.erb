@@ -1,11 +1,16 @@
-<% if @button %>
-  <%= button_to "Remove", user_book_path(current_user.id, @book.id), :method => :delete %>
-<% else %>
-  <%= button_to "Add", user_create_path(current_user.id, @book.id) %>
-<% end %>
-<img src="<%= @book.photo_link(1) %>" alt="<%= @book.title %>">
-<h1>Title: <%= @book.title %></h1>
-<h1>Author: <%= @book.author %></h1>
+<div class="book_pic">
+  <img src="<%= @book.photo_link(2) %>" alt="<%= @book.title %>">
+  <% if @button %>
+    <%= button_to "Remove from my collection", user_book_path(current_user.id, @book.id), :method => :delete, :class => "button" %>
+  <% else %>
+    <%= button_to "Add to my collection", user_create_path(current_user.id, @book.id) %>
+  <% end %>
+</div>
+<div class="info">
+
+  <h4>Title: <%= @book.title %></h4>
+  <h4>Author: <%= @book.author %></h4>
+</div>
   <div class="read_by">
     Your close friends for this book:
     <% @nearby_friends.each do |reader| %>
