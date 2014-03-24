@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       user.password_confirmation = params[:user][:password_confirmation]
       user.email = params[:user][:email]
     end
-    location = Location.find_or_create_by_city_and_state_and_zip(params[:city], params[:state], params[:zip])
+   location = Location.where(:city => params[:city], :state => params[:state], :zip => params[:zip]).first_or_create
     location.users << new_user
     if new_user.save
       session[:id] = new_user.id
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    location = Location.find_or_create_by_city_and_state_and_zip(:city => params[:user][:city], :state => params[:user][:state], :zip => params[:user][:zip])
+    location = Location.where(:city => params[:user][:city], :state => params[:user][:state], :zip => params[:user][:zip]).first_or_create
     @user.update_attribute(:location, location)
     redirect_to(user_path(@user))
   end
