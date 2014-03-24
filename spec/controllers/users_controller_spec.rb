@@ -38,12 +38,14 @@ describe UsersController do
     end
 
     context 'With invalid attributes' do
-      xit "should be redirect" do
+      it "should be redirect" do
+        Location.any_instance.stub(:geocheck)
         post :create
         expect(response).to be_redirect
       end
 
-      xit "should not increase User count" do
+      it "should not increase User count" do
+        Location.any_instance.stub(:geocheck)
         expect {
           post :create
           }.to_not change { User.count }
