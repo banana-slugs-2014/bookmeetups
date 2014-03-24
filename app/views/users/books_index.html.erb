@@ -42,8 +42,9 @@
           <h4><%= book.title %></h4>
           <img src="<%= book.photo_link(2) %>" alt="<%= book.title %>">
         </div>
+
     <% end %>
-  </ul>
+  </div>
 
   <%= link_to "Edit My Profile", edit_user_path(current_user) %>
 <% end %>
