@@ -1,7 +1,7 @@
 class BookSearch
   def self.search(raw)
     books = []
-    term = "asdfasdfasdfasdfasdfasdfasf"
+    term = self.format_search(raw)
     uterm = BookSearch.smart_capitalize_format(raw)
     Book.where("title LIKE ? OR author like ? OR title Like ? OR author like ?", term , term, uterm, uterm)
   end
