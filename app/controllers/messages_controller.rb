@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   def new
     @meetup = Meetup.where(id: params[:meetup_id]).first
     @message = Message.new
-    render :"messages/new", :layout => true
+    render :partial => "messages/new", :locals => { message: @message, meetup: @meetup}
   end
 
   def create
@@ -17,6 +17,8 @@ class MessagesController < ApplicationController
     if message.save
       meetup.messages << message
     end
-    redirect_to user_meetup_path(current_user, meetup)
+    render :partial => 'messages/created_message',
+           :locals => { meetup: meetup, message: message }
+
   end
 end

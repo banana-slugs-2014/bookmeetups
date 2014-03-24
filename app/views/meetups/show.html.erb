@@ -1,18 +1,19 @@
-<div class="info">
+<div class="meetup" id="<%= @meetup.id %>">
   <% if !@messages.nil?  %>
     <% if @meetup.users.include? current_user%>
-      <h3><%= link_to @meetup.book.title, book_path(@meetup.book) %> meetup with <%= link_to @other_user.username, user_path(@other_user) %></h3>
-       <h4><%= link_to 'Compose New Message', new_meetup_message_path(@meetup) %></h4>
+      <h2><%= link_to @meetup.book.title, book_path(@meetup.book) %> meetup with <%= link_to @other_user.username, user_path(@other_user) %></h2>
+       <%= link_to 'Compose new message', new_meetup_message_path(@meetup), :class => 'open-new-message', remote: true %>
+    <div class="messages">
       <% @messages.each do |message| %>
         <div class="message">
-          <h4><p><%= link_to message.user.username, user_path(message.user) %> said:</h4>
+          <p><%= link_to message.user.username, user_path(message.user) %> said:</p>
           <p><%= message.text %></p>
           <span class="date"> <%=  time_ago_in_words(message.created_at) %> ago</span>
         </div>
       <% end %>
-
     <% else %>
       <h1>Uhhhh...get out of here. You don't have permission</h1>
     <% end %>
   <% end %>
+  </div>
 </div>
