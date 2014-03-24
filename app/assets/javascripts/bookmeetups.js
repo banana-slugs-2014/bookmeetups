@@ -14,20 +14,14 @@ Bookmeetups.Controller.prototype = {
   }
 };
 
-Bookmeetups.View = function(){};
+Bookmeetups.View = function(selectors){
+  this.selectors = selectors;
+};
 
 Bookmeetups.View.prototype = {
   renderNewMessageForm: function(form){
     this.displayNewMessageForm(form);
     this.hideCreateMessageLink();
-  },
-
-  displayNewMessageForm: function(form){
-    $('.messages').prepend(form);
-  },
-
-  hideCreateMessageLink: function(){
-    $('.open-new-message').hide();
   },
 
   renderNewMessage: function(newMessage){
@@ -36,21 +30,30 @@ Bookmeetups.View.prototype = {
     this.showCreateMessageLink();
   },
 
+  displayNewMessageForm: function(form){
+    $(this.selectors.messagesContainer).prepend(form);
+  },
+
+  hideCreateMessageLink: function(){
+    $(this.selectors.openMessageLink).hide();
+  },
+
   prependNewMessage: function(newMessage){
-    $('.messages').prepend(newMessage);
+    $(this.selectors.messagesContainer).prepend(newMessage);
   },
 
   removeNewMessageForm: function(){
-    $('#new_message').remove();
+    $(this.selectors.newMessageForm).remove();
   },
 
   showCreateMessageLink: function(){
-    $('.open-new-message').show();
+    $(this.selectors.openMessageLink).show();
   }
 };
 
-Bookmeetups.Binder = function(controller){
+Bookmeetups.Binder = function(controller, eventSelectors){
   this.controller = controller;
+  this.eventSelectors = eventSelectors;
 };
 
 Bookmeetups.Binder.prototype = {
@@ -61,21 +64,32 @@ Bookmeetups.Binder.prototype = {
 
   createMessageForm: function(){
     var self = this;
-    $('body').on("ajax:success", '.open-new-message', function(event,dataForm){
+    $('body').on("ajax:success", self.eventSelectors.openMessageFormSelector, function(event,dataForm){
       self.controller.showNewMessage(dataForm);
     });
   },
 
   showCreatedMessage: function(){
     var self = this;
-    $('body').on("ajax:success", '#new_message', function(event, newMessage){
+    $('body').on("ajax:success", self.eventSelectors.newMessageFormSelector, function(event, newMessage){
       self.controller.showCreatedMessageEvent(newMessage);
     });
   }
 };
 
 $(document).ready(function() {
-  Bookmeetups.view = new Bookmeetups.View();
+  var eventSelectors = {
+    openMessageFormSelector: '.open-new-message',
+    newMessageFormSelector: '#new_message'
+  };
+
+  var viewSelectors = {
+    messagesContainer: '.messages',
+    openMessageLink:   '.open-new-message',
+    newMessageForm:    '#new_message'
+  };
+
+  Bookmeetups.view = new Bookmeetups.View(viewSelectors);
   Bookmeetups.controller = new Bookmeetups.Controller(Bookmeetups.view);
-  new Bookmeetups.Binder(Bookmeetups.controller).bind();
+  new Bookmeetups.Binder(Bookmeetups.controller, eventSelectors).bind();
 });
