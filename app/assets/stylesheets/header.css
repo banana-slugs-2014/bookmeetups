@@ -11,7 +11,7 @@
 
 nav {
   float: right;
-  width: 50%;
+  width: 45%;
 }
 
 nav ul {
@@ -47,24 +47,33 @@ nav ul li a:visited {
   margin: 3px;
   padding: 5px 0px 5px 20px;
   position: relative;
-  width: 40%;
-  height: 100%;
+  width: 45%;
+  height: 50px;
 }
 
 .search_field{
   border: none;
-  height: 35px;
-  padding: 5px;
-  width: 350px;
+  height: 50%;
+  float: left;
+  font-size: 1em;
+  margin: .5%;
+  padding: 2%;
+  position: relative;
+  vertical-align: middle;
+  width: 65%%;
 }
+
 .search_button {
   background-color: #DBBDA9;
   border: none;
+  float: left;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 1.25em;
-  height: 45px;
-  margin-left: -5px;
-  position: absolute;
+  font-size: 1em;
+  height: 50%;
+  margin: .5% .5% .5% -1%;
+  padding: 1.75%;
+  position: relative;
   vertical-align: middle;
+  width: 25%;
 }
