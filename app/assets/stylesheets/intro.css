@@ -11,11 +11,14 @@
 .info h3{
   font-size: 1.75em;
   font-weight: 100;
-}
+  margin: 0;
+  padding: 0;}
 
 .info h4 {
   font-size: 1.25em;
   font-weight: 100;
+  margin: 0;
+  padding: 0;
 }
 
 

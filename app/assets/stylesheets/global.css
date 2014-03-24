@@ -10,6 +10,11 @@ p {
   font-weight: 300;
 }
 
+h1 {
+  font-size: 2em;
+  font-weight: 100;
+}
+
 ul {
   display: inline-block;
   float: left;
