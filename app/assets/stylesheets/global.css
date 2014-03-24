@@ -5,6 +5,11 @@ body {
   padding: 0;
 }
 
+p {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
 .info {
   background-color: #A9D9DB;
   height: 275px;
