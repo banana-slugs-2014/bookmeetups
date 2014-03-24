@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_filter :redirect_unless_logged_in
 
   def index
     @books = Book.all
@@ -7,12 +8,9 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    if current_user.books.include? @book
-      @button = true
-    else
-      @button = false
-    end
-    @read_by = @book.users
+    @button = ((current_user.books.include? @book) ? true : false)
+    @nearby_friends = current_user.friends(@book)
+    @distant_friends = @book.users - @nearby_freinds
     render "show", layout: true
   end
 
