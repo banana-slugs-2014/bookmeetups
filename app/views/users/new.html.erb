@@ -9,6 +9,9 @@
     <%= f.password_field(:password) %>
     <%= f.label "Confirm Password" %>
     <%= f.password_field(:password_confirmation) %>
+    City <%= text_field_tag "city" %>
+    State <%= text_field_tag "state" %>
+    Zip <%= text_field_tag "zip" %>
     <%= f.submit "Sign Up" %>
   <% end %>
 </div>

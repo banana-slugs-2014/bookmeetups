@@ -17,6 +17,8 @@ class UsersController < ApplicationController
       user.password_confirmation = params[:user][:password_confirmation]
       user.email = params[:user][:email]
     end
+    location = Location.find_or_create_by_city_and_state_and_zip(params[:city], params[:state], params[:zip])
+    location.users << new_user
     if new_user.save
       session[:id] = new_user.id
       redirect_to(user_path(new_user))
