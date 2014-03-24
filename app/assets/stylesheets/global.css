@@ -15,6 +15,11 @@ body {
   width: 100%;
 }
 
+.info h3{
+  font-size: 1.75em;
+  font-weight: 100;
+}
+
 /*===== Layout Navbar =====*/
 
 .header {
