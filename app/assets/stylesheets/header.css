@@ -45,21 +45,26 @@ nav ul li a:visited {
 .search_bar {
   float: left;
   margin: 3px;
-  padding: 12px 0px 12px 55px;
+  padding: 5px 0px 5px 20px;
   position: relative;
-  width: 35%;
+  width: 40%;
+  height: 100%;
 }
 
-
+.search_field{
+  border: none;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+}
 .search_button {
   background-color: #DBBDA9;
-  border: 1px solid #608D8F;
+  border: none;
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 1em;
-  margin: 3px 10px;
-  padding: 10px;
-  bottom: 0;
+  font-weight: 300;
+  font-size: 1.25em;
+  height: 45px;
+  margin-left: -5px;
   position: absolute;
-  width: 25%;
+  vertical-align: middle;
 }

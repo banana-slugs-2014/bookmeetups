@@ -1,6 +1,6 @@
 <div class="search_bar">
   <%= form_tag( "/search", :method => "post") do %>
-    <%= search_field_tag :search %>
+    <%= search_field_tag :search, nil, placeholder: "Find your favorite books...", class: "search_field" %>
     <%= submit_tag "Search Books", class: "search_button" %>
   <% end %>
 </div>
