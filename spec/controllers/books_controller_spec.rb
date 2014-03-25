@@ -6,15 +6,6 @@ describe BooksController do
   let(:attribs) { attributes_for :book }
   before(:each) { request.session[:id] = my_user.id }
 
-  context '#create' do
-    context "with valid attributes" do
-      xit "should redirect" do
-        post :create, book: attribs
-        expect(response).to be_redirect
-      end
-    end
-  end
-
   context '#show' do
     it "should be ok" do
       User.any_instance.stub(:friends).and_return([])

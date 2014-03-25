@@ -14,7 +14,7 @@ Bookmeetups::Application.routes.draw do
     end
   end
 
-  resources :books, only: [:create, :show, :index]
+  resources :books, only: [:show, :index]
   resources :sessions, :only => [:new, :create, :destroy]
 
   resources :meetups, :only => [] do
