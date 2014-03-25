@@ -2,7 +2,6 @@ class Book < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :author
   validates_presence_of :isbn
-  validates_length_of :title, :maximum => 255
   validates_uniqueness_of :isbn
   validates_uniqueness_of :google_id
   validates_uniqueness_of :author, :scope => :title
