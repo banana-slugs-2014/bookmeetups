@@ -28,7 +28,8 @@
   border: none;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 1.25em;padding: 5px;
+  font-size: 1.25em;
+  padding: 5px;
   height: 35px;
   width: 350px;
 }
@@ -42,4 +43,56 @@
   padding: 5px;
   width: 350px;
 
+}
+
+#user_email {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: .75em;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+
+}
+
+#user_password_confirmation {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: .75em;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+}
+
+#city {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: .75em;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+
+}
+
+#state {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: .75em;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+}
+
+#zip {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: .75em;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
 }

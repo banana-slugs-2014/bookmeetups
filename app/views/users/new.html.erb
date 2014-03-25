@@ -1,17 +1,17 @@
 <div class='splash'>
-  <h2>Welcome!</h2>
+  <h1>Welcome!</h1>
   <%= form_for @user do |f| %>
-    <%= f.label "Username" %>
+    <h1><%= f.label "Username" %></h1>
     <%= f.text_field(:username, :required => true) %>
-    <%= f.label "E-Mail" %>
+    <h1><%= f.label "E-Mail" %></h1>
     <%= f.text_field :email, :required => true, :pattern => '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$' %>
-    <%= f.label "Password" %>
+    <h1><%= f.label "Password" %></h1>
     <%= f.password_field(:password, :required => true) %>
-    <%= f.label "Confirm Password" %>
+    <h1><%= f.label "Confirm Password" %></h1>
     <%= f.password_field(:password_confirmation, :required => true) %>
-    City <%= text_field_tag :city, nil, :required => true %>
-    State <%= text_field_tag :state, nil, :required => true, :pattern => '^\w{2}$' %>
-    Zip <%= text_field_tag :zip, nil, :required => true, :pattern => '^\d{5}$' %>
+    <h1>City <%= text_field_tag :city, nil, :required => true %></h1>
+    <h1>State <%= text_field_tag :state, nil, :required => true, :pattern => '^\w{2}$' %></h1>
+    <h1>Zip <%= text_field_tag :zip, nil, :required => true, :pattern => '^\d{5}$' %></h1>
     <%= f.submit "Sign Up" %>
   <% end %>
 </div>
