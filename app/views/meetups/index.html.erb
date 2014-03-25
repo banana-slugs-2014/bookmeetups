@@ -6,7 +6,7 @@
   </div>
   <div class="info">
     <div class="unread">
-      <p><%= meetup.unread(current_user.id) if meetup.unread(current_user.id) != 0%></p>
+      <p><%= meetup.unread_messages(current_user.id) if meetup.unread_messages(current_user.id) != 0%></p>
     </div>
 
     <h3>Participants:</h3>
@@ -18,4 +18,3 @@
   </div>
 
 <% end %>
-

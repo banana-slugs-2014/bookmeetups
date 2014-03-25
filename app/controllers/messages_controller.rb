@@ -16,6 +16,8 @@ class MessagesController < ApplicationController
     end
     if message.save
       meetup.messages << message
+      other_user = meetup.other_user( current_user)
+      other_user.new_unread_message
     end
     render :partial => 'messages/created_message',
            :locals => { meetup: meetup, message: message }

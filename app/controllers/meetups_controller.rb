@@ -32,7 +32,7 @@ class MeetupsController < ApplicationController
     if current_user.id == params[:user_id].to_i
       @other_user = (@meetup.users - [current_user]).first
       @messages = @meetup.messages.order("created_at DESC")
-      @meetup.mark_read(current_user.id)
+      @meetup.mark_read(current_user)
       render :show
     else
       render :"shared/unauthorized", :layout => true
