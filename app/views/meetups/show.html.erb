@@ -1,5 +1,5 @@
 <div class="meetup-messages" id="<%= @meetup.id %>">
-  <% if !@messages.nil?  %>
+  <% if @messages %>
     <% if @meetup.users.include? current_user%>
       <h2><%= link_to @meetup.book.title, book_path(@meetup.book) %> meetup with <%= link_to @other_user.username, user_path(@other_user) %></h2>
        <%= link_to 'Compose new message', new_meetup_message_path(@meetup), :class => 'open-new-message', remote: true %>
