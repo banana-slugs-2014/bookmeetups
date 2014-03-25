@@ -15,5 +15,4 @@ class UserBuilder
     end
     return new_user
   end
-
 end

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :redirect_unless_logged_in, :except => [:new, :create]
   before_filter :redirect_unless_authorized, :only => [:edit, :update, :destroy]
+  before_filter :redirect_unless_form_filled, :only => [:update, :create]
 
   def new
     if logged_in?
@@ -11,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    redirect_to(root_path) && return unless params[:user]
     new_user = UserBuilder.new(params[:user]).build
     location = Location.where(:city => params[:city], :state => params[:state], :zip => params[:zip]).first_or_create
     location.users << new_user
