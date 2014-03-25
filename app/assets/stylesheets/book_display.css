@@ -51,6 +51,12 @@
   z-index: 120;
 }
 
+.book-display a {
+  color: #1F2129;
+  text-decoration: none;
+}
+
+
 .book-display p {
   display: inline;
   position: relative;
@@ -73,7 +79,7 @@
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 1em;
-  height: 20px;
+  height: 25px;
   margin: 0px auto;
   opacity: 1;
   position: absolute;
