@@ -17,12 +17,34 @@
   font-weight: 400;
   font-size: 1.25em;
   height: 55px;
-  margin-left: -5px;
   margin-top: 20px;
   position: absolute;
+  transition: all .2s ease;
   vertical-align: middle;
   width: 175px;
 }
+
+.submit:hover {
+  background-color: #8E6989;
+  -webkit-box-shadow:0px 0px 1px 0px #D8E7F5, inset 0px 0px 20px #EED0EE;
+       -moz-box-shadow:0px 0px 1px 0px #D8E7F5, inset 0px 0px 20px #EED0EE;
+            box-shadow:0px 0px 1px 0px #D8E7F5, inset 0px 0px 20px #EED0EE;
+transition: all .2s ease;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin-top: 1%;
+  padding: 0;
+}
+
+p {
+  font-size: 1.25em;
+  font-weight: 100;
+  margin-top: -1%;
+  padding: 0;
+ }
 
 #user_username {
   border: none;
@@ -57,27 +79,6 @@
 }
 
 #user_password_confirmation {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: .75em;
-  height: 35px;
-  padding: 5px;
-  width: 350px;
-}
-
-#city {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: .75em;
-  height: 35px;
-  padding: 5px;
-  width: 350px;
-
-}
-
-#state {
   border: none;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
