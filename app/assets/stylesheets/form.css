@@ -10,16 +10,18 @@
 }
 
 .submit {
-  background-color: #DBBDA9;
+  background-color: #8E6951;
   border: none;
+  color: #D9F7F1;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.25em;
-  height: 45px;
+  height: 55px;
   margin-left: -5px;
+  margin-top: 20px;
   position: absolute;
   vertical-align: middle;
-  width: 150px;
+  width: 175px;
 }
 
 #user_username {
@@ -35,7 +37,7 @@
   border: none;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 1.25em;
+  font-size: .75em;
   height: 35px;
   padding: 5px;
   width: 350px;
