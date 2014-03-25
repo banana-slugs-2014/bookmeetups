@@ -66,3 +66,34 @@
   width: 350px;
 
 }
+
+#city {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: .75em;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+
+}
+
+#state {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: .75em;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+}
+
+#zip {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: .75em;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+}
