@@ -8,8 +8,8 @@ class Book < ActiveRecord::Base
 
   validates :isbn, format: { with: /^\d{13}$/ }
 
-  has_many :user_books
-  has_many :users, through: :user_books
+  has_many :favorite_books
+  has_many :users, through: :favorite_books
   has_many :meetups
 
   def photo_link( zoom = 2)
