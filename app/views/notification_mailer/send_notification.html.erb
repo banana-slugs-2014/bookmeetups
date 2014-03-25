@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1> Dude, <%= @user.username %></h1>
+    <p>
+      You have an unread messages from <%= @otheruser.username %>!<br/>
+      You probably are not excited enough but we love you anyways.<br>
+      Have a great day!<br>
+      -BookMeetup Team<br>
+      bookmeetup.herokuapp.com
+    </p>
+    <p>P.S. I dont want to spoil it for you but here is the message:<br><br>
+      <%= @message %></p><br>
+  </body>
+</html>
