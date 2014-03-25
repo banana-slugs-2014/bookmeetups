@@ -13,8 +13,8 @@
 
 
 <% if current_user != @user %>
-    <p>Books in Common with <%= @user.username.capitalize %>:</p>
     <div class="book_list">
+    <p>Books in Common with <%= @user.username.capitalize %>:</p>
       <% books_in_common_with(@user).each do |book| %>
         <div class="book-display">
           <h4><%= link_to book.title, book_path(book) %></h4>
@@ -24,8 +24,8 @@
       <% end %>
     </div>
 
-    <p><%= @user.username.capitalize %>'s Books:</p>
     <div class="book_list">
+    <p><%= @user.username.capitalize %>'s Books:</p>
       <% other_books_of(@user).each do |book| %>
         <div class="book-display">
           <h4><%= link_to book.title, book_path(book) %></h4>
