@@ -21,7 +21,7 @@ describe MessagesController do
   context '#create' do
     let(:message_attribs) { attributes_for :message }
 
-    it "should be redirect" do
+    it "should be ok" do
       post :create, { :meetup_id => test_meetup.id, :message => message_attribs }
       expect(response).to be_ok
     end
