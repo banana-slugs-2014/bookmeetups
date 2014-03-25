@@ -8,7 +8,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @selected_book = ((current_user.books.include? @book) ? true : false)
+    @selected_book = current_user.books.include? @book
     @nearby_friends = current_user.friends(@book)
     @distant_friends = @book.users - [current_user] - @nearby_friends
     render "show", layout: true
