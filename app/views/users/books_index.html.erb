@@ -13,22 +13,22 @@
 
 
 <% if current_user != @user %>
-    <p>Books in Common with <%= @user.username.capitalize %>:</p>
     <div class="book_list">
+    <p>Books in Common with <%= @user.username.capitalize %>:</p>
       <% books_in_common_with(@user).each do |book| %>
         <div class="book-display">
-          <h4><%= book.title %></h4>
+          <h4><%= link_to book.title, book_path(book) %></h4>
           <%= link_to image_tag(book.photo_link(1)), book_path(book) %>
             <%= link_to "Meet Up!", user_create_meetup_path(@user, book), class: "meetup" %>
         </div>
       <% end %>
     </div>
 
-    <p><%= @user.username.capitalize %>'s Books:</p>
     <div class="book_list">
+    <p><%= @user.username.capitalize %>'s Books:</p>
       <% other_books_of(@user).each do |book| %>
         <div class="book-display">
-          <h4><%= book.title %></h4>
+          <h4><%= link_to book.title, book_path(book) %></h4>
           <%= link_to image_tag(book.photo_link(1)), book_path(book) %>
         </div>
       <% end %>
@@ -39,7 +39,7 @@
     <% @user.books.each do |book| %>
 
         <div class="book-display">
-          <h4><%= book.title %></h4>
+          <h4><%= link_to book.title, book_path(book) %></h4>
           <%= link_to image_tag(book.photo_link(1)), book_path(book) %>
         </div>
 
