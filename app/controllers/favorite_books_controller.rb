@@ -1,4 +1,4 @@
-class UserBooksController < ApplicationController
+class FavoriteBooksController < ApplicationController
   before_filter :redirect_unless_logged_in
 
   def create
@@ -11,7 +11,7 @@ class UserBooksController < ApplicationController
   def destroy
     book = Book.find(params[:book_id])
     current_user.books.delete(book)
-    redirect_to user_books_path
+    redirect_to user_favorite_books_path
   end
 
   def index

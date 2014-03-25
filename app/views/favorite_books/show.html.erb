@@ -1,6 +1,6 @@
 <%= @user.username %>'s Books:
 
-<div class="user_books_table">
+<div class="favorite-books-table">
   <ul>
     <% @user.books.each do |book| %>
       <li><img src="<%= book.photo_link(1) %>" alt="<%= book.title %>"><%= link_to book.title, book_path(book.id) %> <%= book.author %></li>

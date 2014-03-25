@@ -24,7 +24,7 @@ class MeetupsController < ApplicationController
 
   def show
     @meetup = Meetup.where(id: params[:id]).first
-    (redirect_to user_books_path(session[:id]) && return) unless @meetup.users.include?(current_user)
+    (redirect_to user_favorite_books_path(session[:id]) && return) unless @meetup.users.include?(current_user)
     if current_user.id == params[:user_id].to_i
       @other_user = (@meetup.users - [current_user]).first
       @messages = @meetup.messages.order("created_at DESC")

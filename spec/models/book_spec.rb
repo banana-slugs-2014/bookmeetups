@@ -12,8 +12,8 @@ describe Book do
   end
 
   context "associations" do
-    it { should have_many(:user_books) }
-    it { should have_many(:users).through(:user_books) }
+    it { should have_many(:favorite_books) }
+    it { should have_many(:users).through(:favorite_books) }
     it { should have_many(:meetups) }
   end
 end

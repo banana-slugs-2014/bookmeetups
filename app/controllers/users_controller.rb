@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if current_user != @user
-      redirect_to user_books_path(@user)
+      redirect_to user_favorite_books_path(@user)
     end
   end
 

@@ -11,8 +11,8 @@ describe User do
   end
 
   context "associations" do
-    it { should have_many(:user_books) }
-    it { should have_many(:books).through(:user_books) }
+    it { should have_many(:favorite_books) }
+    it { should have_many(:books).through(:favorite_books) }
     it { should belong_to(:location) }
   end
 end

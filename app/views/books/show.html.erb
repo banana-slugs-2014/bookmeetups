@@ -1,7 +1,7 @@
 <div class="book_pic">
   <img src="<%= @book.photo_link(2) %>" alt="<%= @book.title %>">
   <% if @button %>
-    <%= button_to "Remove from my collection", user_book_path(current_user.id, @book.id), :method => :delete, :class => "button" %>
+    <%= button_to "Remove from my collection", user_favorite_book_path(current_user.id, @book.id), :method => :delete, :class => "button" %>
   <% else %>
     <%= button_to "Add to my collection", user_create_path(current_user.id, @book.id), :class => "button" %>
   <% end %>
@@ -15,14 +15,14 @@
     <p>Your close friends for this book:</p>
     <% @nearby_friends.each do |reader| %>
       <div class="user">
-        <%= link_to reader.username, user_books_path(reader) %><br>
+        <%= link_to reader.username, user_favorite_books_path(reader) %><br>
       </div>
     <% end %>
   </div>
     <p>Your distant friends for this book:</p>
     <% @distant_friends.each do |reader| %>
       <div class="user">
-        <%= link_to reader.username, user_books_path(reader) %><br>
+        <%= link_to reader.username, user_favorite_books_path(reader) %><br>
       </div>
     <% end %>
   </div>

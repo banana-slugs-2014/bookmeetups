@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UserBooksController do
+describe FavoriteBooksController do
   let!(:my_user) { create :user }
   let!(:my_book) { create :book }
   before(:each) { request.session[:id] = my_user.id }
@@ -11,22 +11,22 @@ describe UserBooksController do
     let!(:my_book2) { create :book }
 
     it "should redirect" do
-      post :create, user_id: my_user, book_id: my_book2, user_book: {}
+      post :create, user_id: my_user, book_id: my_book2, favorite_book: {}
       expect(response).to be_redirect
     end
 
-    it "should increase count of UserBooks" do
+    it "should increase count of FavoriteBooks" do
       expect{
-        post :create, user_id: my_user, book_id: my_book2, user_book: {}
-      }.to change{ UserBook.count }.by(1)
+        post :create, user_id: my_user, book_id: my_book2, favorite_book: {}
+      }.to change{ FavoriteBook.count }.by(1)
     end
   end
 
   context "#destroy" do
-    it "should decrease UserBook count" do
+    it "should decrease FavoriteBook count" do
       expect {
         delete :destroy, user_id: my_user, book_id: my_book
-        }.to change{ UserBook.count }.by(-1)
+        }.to change{ FavoriteBook.count }.by(-1)
     end
 
     it "should redirect" do
