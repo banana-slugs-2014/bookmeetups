@@ -20,8 +20,10 @@ describe MessagesController do
 
   context '#create' do
     let(:message_attribs) { attributes_for :message }
-
-    it "should be ok" do
+    before(:each) do
+      Meetup.any_instance.stub(:other_user){other_user}
+    end
+    it "should be redirect" do
       post :create, { :meetup_id => test_meetup.id, :message => message_attribs }
       expect(response).to be_ok
     end
