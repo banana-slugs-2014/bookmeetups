@@ -13,8 +13,4 @@ class BooksController < ApplicationController
     @distant_friends = @book.users - [current_user] - @nearby_friends
     render "show", layout: true
   end
-
-  def create
-  end
-
 end
