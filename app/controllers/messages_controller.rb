@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
       meetup.messages << message
       other_user = meetup.other_user( current_user)
       other_user.new_unread_message
+      NotificationMailer.send_notification( other_user, current_user, message.text ).deliver
     end
     render :partial => 'messages/created_message',
            :locals => { meetup: meetup, message: message }
