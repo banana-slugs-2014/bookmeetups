@@ -43,6 +43,7 @@ nav ul li a:visited {
 }
 
 .search_bar {
+  color: #232323;
   float: left;
   margin: 3px;
   padding: 5px 0px 5px 20px;
