@@ -25,7 +25,7 @@ group :assets do
   gem 'handlebars_assets'
 end
 
-
+gem 'area'
 gem 'jquery-rails'
 
 gem 'bcrypt-ruby', '~> 3.0.0'

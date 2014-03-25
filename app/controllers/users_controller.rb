@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :redirect_unless_logged_in, :except => [:new, :create, :landing]
   before_filter :redirect_unless_authorized, :only => [:edit, :update, :destroy]
   before_filter :redirect_unless_form_filled, :only => [:update, :create]
+  before_filter :redirect_without_valid_zip, :only => [:update, :create]
 
   def new
     if logged_in?
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
 
   def create
     new_user = UserBuilder.new(params[:user]).build
-    location = Location.where(:city => params[:city], :state => params[:state], :zip => params[:zip]).first_or_create
+    location = LocationBuilder.new(params[:zip]).build
     location.users << new_user
     if new_user.save
       session[:id] = new_user.id

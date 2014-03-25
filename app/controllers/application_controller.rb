@@ -28,4 +28,9 @@ class ApplicationController < ActionController::Base
     redirect_to(new_user_path, :flash => {:error => "Please fill out the form"}) unless params[:user]
   end
 
+  def redirect_without_valid_zip
+    zip = params[:zip] || params[:user][:zip]
+    redirect_to(new_user_path, :flash => {:error => "Please use a valid zip code"}) if zip.to_region.nil?
+  end
+
 end
