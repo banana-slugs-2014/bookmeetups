@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorized_user?
-    session[:id] == params[:id]
+    session[:id] == params[:id].to_i
   end
 
   def redirect_unless_authorized
