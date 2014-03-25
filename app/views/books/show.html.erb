@@ -1,9 +1,9 @@
 <div class="book_pic">
-  <img src="<%= @book.photo_link(2) %>" alt="<%= @book.title %>">
-  <% if @selected_book %>
+  <img src="<%= @book.photo_link(1) %>" alt="<%= @book.title %>">
+  <% if @book_in_current_user_collection %>
     <%= button_to "Remove from my collection", user_favorite_book_path(current_user.id, @book.id), :method => :delete, :class => "button" %>
   <% else %>
-    <%= button_to "Add to my collection", user_create_path(current_user.id, @book.id), :class => "button" %>
+    <%= button_to "Add to my collection", user_create_favorite_book_path(current_user.id, @book.id), :class => "button" %>
   <% end %>
 </div>
 <div class="info">
