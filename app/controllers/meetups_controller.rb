@@ -19,7 +19,7 @@ class MeetupsController < ApplicationController
     current_user.meetups << @meetup
     recipient = User.find(params[:user_id])
     recipient.meetups << @meetup
-    render  :"messages/new"
+    render  :"messages/new", :layout => true
   end
 
   def show

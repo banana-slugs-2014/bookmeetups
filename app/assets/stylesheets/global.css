@@ -47,11 +47,6 @@ ul li {
   width: 100%;
 }
 
-
-/*===== Date for message times =====*/
-.date {
-  font-size: .5em;
-  color: #999999;
+.strong {
+  font-weight: bold
 }
-
-
