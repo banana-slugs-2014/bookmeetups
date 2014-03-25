@@ -14,7 +14,7 @@ class MeetupsController < ApplicationController
       @meetup = existing_meetup if (existing_meetup.users.include?(current_user ) &&
                                     existing_meetup.users.include?(User.find(params[:user_id])))
     end
-    if @meetup.nil?
+    unless @meetup
       @meetup = Meetup.create
       book.meetups << @meetup
       current_user.meetups << @meetup
