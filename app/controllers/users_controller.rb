@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :redirect_unless_logged_in, :except => [:new, :create]
+  before_filter :redirect_unless_logged_in, :except => [:new, :create, :landing]
   before_filter :redirect_unless_authorized, :only => [:edit, :update, :destroy]
   before_filter :redirect_unless_form_filled, :only => [:update, :create]
 
@@ -50,6 +50,10 @@ class UsersController < ApplicationController
     @user.destroy
     session.clear
     redirect_to(root_path)
+  end
+
+  def landing
+    render :landing
   end
 
 end

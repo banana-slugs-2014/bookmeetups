@@ -1,0 +1,27 @@
+/*----------Landing Page------------*/
+.landing {
+  text-align: center;
+  margin-top: 10%;
+  font-size: 1.5em;
+}
+
+.hero-btn {
+  background-color: #8E6951;
+  border: none;
+  text-decoration: none;
+  padding: 10px;
+  color: #D9F7F1;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  height: 55px;
+  margin: 10px;
+  vertical-align: middle;
+  width: 175px;
+  transition: all 1s ease;
+}
+
+.hero-btn:hover {
+  background-color: #8E6989;
+  transition: all 1s ease;
+}
