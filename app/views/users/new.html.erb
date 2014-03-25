@@ -9,12 +9,7 @@
     <%= f.password_field(:password, :required => true) %>
     <h1><%= f.label "Confirm Password" %></h1>
     <%= f.password_field(:password_confirmation, :required => true) %>
-    <h1>City<br>
-    <%= text_field_tag :city, nil, :required => true %></h1>
-    <h1>State<br>
-    <%= text_field_tag :state, nil, :required => true, :pattern => '^\w{2}$' %></h1>
-    <h1>Zip<br>
-    <%= text_field_tag :zip, nil, :required => true, :pattern => '^\d{5}$' %></h1>
+    Zip <%= text_field_tag :zip, nil, :required => true, :pattern => '^\d{5}$' %>
     <%= f.submit "Sign Up" %>
     <br><br><br>
   <% end %>
