@@ -17,9 +17,9 @@ class User < ActiveRecord::Base
     self.save
   end
   
-  def friends(book, miles = 60)
+  def friends(book)
     f = []
-    locations = location.in_range( miles )
+    locations = location.in_range( travel_distance )
     locations.each do |locale|
       locale.users.includes(:books).each do |user|
         next if user == self
@@ -33,10 +33,10 @@ class User < ActiveRecord::Base
     f
   end
 
-  def book_friends(miles = 60)
+  def book_friends
     f = []
     books = self.books.to_a
-    locations = location.in_range( miles )
+    locations = location.in_range( travel_distance )
     locations.each do |locale|
       locale.users.includes(:books).each do |user|
         next if user == self
