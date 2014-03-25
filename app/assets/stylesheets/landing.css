@@ -6,22 +6,29 @@
 }
 
 .hero-btn {
-  background-color: #8E6951;
+  background: #8E6951;
   border: none;
-  text-decoration: none;
-  padding: 10px;
-  color: #D9F7F1;
+  color: #A9D9DB;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8E6951',  endColorstr='#DEBFAB', GradientType=0 );
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 1.25em;
-  height: 55px;
   margin: 10px;
+  padding: 23px 60px;
+  text-decoration: none;
+  text-shadow: 1px 0px 0px #C9C9C9;
+  transition: all .2s ease;
   vertical-align: middle;
-  width: 175px;
-  transition: all 1s ease;
 }
 
 .hero-btn:hover {
-  background-color: #8E6989;
-  transition: all 1s ease;
+  background: #8E6951;
+        background: -moz-linear-gradient(top, #8E6951 0%, #BDA292 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8E6951), color-stop(100%,#BDA292));
+    background: -webkit-linear-gradient(top, #8E6951 0%,#BDA292 100%);
+    background: -o-linear-gradient(top, #8E6951 0%,#BDA292 100%);
+    background: -ms-linear-gradient(top, #8E6951 0%,#BDA292 100%);
+    background: linear-gradient(to bottom, #8E6951 0%,#BDA292 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8E6951',  endColorstr='#BDA292', GradientType=0 );
+  transition: all .2s ease;
 }
