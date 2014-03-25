@@ -11,6 +11,7 @@
   <% end %>
 </div>
 
+
 <% if current_user != @user %>
     <p>Books in Common with <%= @user.username.capitalize %>:</p>
     <div class="book_list">
@@ -18,7 +19,7 @@
         <div class="book-display">
           <h4><%= book.title %></h4>
           <%= link_to image_tag(book.photo_link(1)), book_path(book) %>
-          <%= link_to "Meet Up!", user_create_meetup_path(@user, book), class: "meetup" %>
+            <%= link_to "Meet Up!", user_create_meetup_path(@user, book), class: "meetup" %>
         </div>
       <% end %>
     </div>

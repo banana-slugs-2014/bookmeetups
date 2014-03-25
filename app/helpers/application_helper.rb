@@ -36,5 +36,4 @@ module ApplicationHelper
     books
   end
 
-
 end

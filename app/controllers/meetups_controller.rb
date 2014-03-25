@@ -3,7 +3,7 @@ class MeetupsController < ApplicationController
 
   def index
     if session[:id] == params[:user_id].to_i
-      @meetups = current_user.meetups
+      @meetups = current_user.meetups.uniq
       render :index
     else
       render :"shared/unauthorized", :layout => true
@@ -11,8 +11,12 @@ class MeetupsController < ApplicationController
   end
 
   def create
-    book =  Book.find(params[:book_id])
-    @meetup = Meetup.create
+    book = Book.find(params[:book_id])
+    book.meetups.each do |existing_meetup|
+      @meetup = existing_meetup if existing_meetup.users.include?(current_user && User.find(params[:user_id]))
+    end
+
+    @meetup = Meetup.create if @meetup.nil?
     @message = Message.new
     book.meetups << @meetup
     current_user = User.find(session[:id])
