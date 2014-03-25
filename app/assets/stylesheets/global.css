@@ -46,7 +46,7 @@ ul li {
 .button:hover {
   background-color: #344975;
   transition: all .2s ease;
-}
+  }
 
 .strong {
   font-weight: bold
