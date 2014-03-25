@@ -17,9 +17,9 @@
     <div class="book_list">
       <% books_in_common_with(@user).each do |book| %>
         <div class="book-display">
-          <h4><%= book.title %></h4>
-          <%= link_to "Meet Up!", user_create_meetup_path(@user, book), class: "meetup" %>
+          <h4><%= link_to book.title, book_path(book) %></h4>
           <%= link_to image_tag(book.photo_link(1)), book_path(book) %>
+            <%= link_to "Meet Up!", user_create_meetup_path(@user, book), class: "meetup" %>
         </div>
       <% end %>
     </div>
