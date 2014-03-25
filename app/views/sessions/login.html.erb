@@ -1,10 +1,10 @@
 <div class='login'>
-  <h2>Welcome!</h2>
+  <h1>Welcome back!</h1>
   <%= form_for @login, url: sessions_path, method: :post do |f| %>
-    <%= f.label "Username" %>
+    <h1><%= f.label "Username" %></h1>
     <%= f.text_field(:username, :required => true) %>
-    <%= f.label "Password" %>
+    <h1><%= f.label "Password" %></h1>
     <%= f.password_field(:password, :required => true) %>
-    <%= f.submit "Log In" %>
+    <br><%= f.submit "Log In", class: "submit" %>
   <% end %>
 </div>

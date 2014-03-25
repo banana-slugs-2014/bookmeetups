@@ -9,6 +9,11 @@
   z-index: 50;
 }
 
+@media (min-width: 400px) and (max-width: 1200px) {
+   .collapse {
+       display: none !important;
+   }
+}
 nav {
   float: right;
   width: 50%;
@@ -23,14 +28,14 @@ nav ul {
 }
 
 nav ul li {
-  color: white;
+  color: #A9D9DB;
   display: inline;
   float: right;
   padding: 2px 15px;
 }
 
 nav ul li a {
-  color: white;
+  color: #A9D9DB;
   text-decoration: none;
 }
 
@@ -39,10 +44,11 @@ nav ul li a:hover {
 }
 
 nav ul li a:visited {
-  color: white;
+  color: #A9D9DB;
 }
 
 .search_bar {
+  color: #232323;
   float: left;
   margin: 3px;
   padding: 5px 0px 5px 20px;
@@ -55,7 +61,7 @@ nav ul li a:visited {
   border: none;
   height: 35px;
   padding: 5px;
-  width: 350px;
+  width: 60%;
 }
 .search_button {
   background-color: #DBBDA9;
