@@ -1,16 +1,17 @@
 <div class='splash'>
   <h1>Welcome!</h1>
   <%= form_for @user do |f| %>
-    <h1><%= f.label "Username" %></h1>
+    <h2><%= f.label "Username" %></h2>
     <%= f.text_field(:username, :required => true) %>
-    <h1><%= f.label "E-Mail" %></h1>
+    <h2><%= f.label "E-Mail" %></h2>
     <%= f.text_field :email, :required => true, :pattern => '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$' %>
-    <h1><%= f.label "Password" %></h1>
+    <h2><%= f.label "Password" %></h2>
     <%= f.password_field(:password, :required => true) %>
-    <h1><%= f.label "Confirm Password" %></h1>
+    <h2><%= f.label "Confirm Password" %></h2>
     <%= f.password_field(:password_confirmation, :required => true) %>
-    Zip <%= text_field_tag :zip, nil, :required => true, :pattern => '^\d{5}$' %>
-    <%= f.submit "Sign Up" %>
-    <br><br><br>
+    <h2>Zip Code </h2>
+    <p>(we use this to help you find friends nearby!)</p>
+    <%= text_field_tag :zip, nil, :required => true, :pattern => '^\d{5}$' %>
+    <br><%= f.submit "Sign Up", class: "submit" %>
   <% end %>
 </div>
