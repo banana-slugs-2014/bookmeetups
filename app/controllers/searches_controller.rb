@@ -2,7 +2,8 @@ class SearchesController < ApplicationController
   require 'googlebooks'
 
   def search
-    redirect_to "/search/#{params[:search]}"
+    s = params[:search].gsub(/\./, "")
+    redirect_to "/search/#{s}"
   end
 
   def results
