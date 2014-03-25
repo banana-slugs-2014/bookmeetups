@@ -1,13 +1,10 @@
 class MeetupsController < ApplicationController
   before_filter :redirect_unless_logged_in
+  before_filter :redirect_unless_authorized, :only => [:index]
 
   def index
-    if session[:id] == params[:user_id].to_i
-      @meetups = current_user.meetups.uniq
-      render :index
-    else
-      render :"shared/unauthorized", :layout => true
-    end
+    @meetups = current_user.meetups.uniq
+    render :index
   end
 
   def create
