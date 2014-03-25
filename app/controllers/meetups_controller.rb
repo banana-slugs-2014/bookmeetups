@@ -8,7 +8,6 @@ class MeetupsController < ApplicationController
   end
 
   def create
-    current_user = User.find(session[:id])
     @other_user = User.find(params[:user_id])
     book = Book.find(params[:book_id])
     book.meetups.each do |existing_meetup|
