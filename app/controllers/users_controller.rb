@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     else
       @user = User.new
     end
+    render :new, :layout => true
   end
 
   def create
