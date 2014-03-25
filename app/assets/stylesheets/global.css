@@ -4,11 +4,6 @@ body {
   margin: 0;
 }
 
-p {
-  font-size: 1.5em;
-  font-weight: 300;
-}
-
 h1 {
   font-weight: 100;
 }
@@ -42,7 +37,16 @@ ul li {
   padding: 10px;
   bottom: 0;
   position: absolute;
+  transition: all .2s ease;
   width: 100%;
+}
+
+.button:hover {
+  background-color: #8E6989;
+  transition: all .2s ease;
+  -webkit-box-shadow:0px 0px 1px 0px #D8E7F5, inset 0px 0px 40px #EED0EE;
+       -moz-box-shadow:0px 0px 1px 0px #D8E7F5, inset 0px 0px 40px #EED0EE;
+            box-shadow:0px 0px 1px 0px #D8E7F5, inset 0px 0px 40px #EED0EE;
 }
 
 .strong {

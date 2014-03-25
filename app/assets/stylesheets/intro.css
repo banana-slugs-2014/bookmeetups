@@ -21,10 +21,20 @@
   padding: 0;}
 
 .info a {
-  color: #8F6951;
-  text-decoration: none;
+  background-color: #DBBDA9;
+  border: 1px solid #608D8F;
+  color: #D9F7F1;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
-
+  font-size: .75em;
+  margin: 5px auto;
+  padding: 10px;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  transition: all .2s ease;
+  width: 150px;
 }
 
 .info a:hover {

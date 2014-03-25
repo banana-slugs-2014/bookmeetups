@@ -64,6 +64,11 @@ nav ul li a:visited {
   padding: 5px;
   width: 60%;
 }
+
+.search_field:focus {
+  outline: none;
+}
+
 .search_button {
   background-color: #DBBDA9;
   border: none;
@@ -74,4 +79,13 @@ nav ul li a:visited {
   margin-left: -5px;
   position: absolute;
   vertical-align: middle;
+}
+
+.search_button:hover {
+  background-color: #FFDCC5;
+  transition: all .2s ease;
+  -webkit-box-shadow:0px 0px 1px 0px #D8E7F5, inset 1px 0px 1px #9C7F73;
+       -moz-box-shadow:0px 0px 1px 0px #D8E7F5, inset 1px 0px 1px #9C7F73;
+            box-shadow:0px 0px 1px 0px #D8E7F5, inset 1px 0px 1px #9C7F73;
+
 }
