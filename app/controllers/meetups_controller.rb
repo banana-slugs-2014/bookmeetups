@@ -12,11 +12,8 @@ class MeetupsController < ApplicationController
 
   def create
     book = Book.find(params[:book_id])
-    existing_meetups = book.meetups
-    existing_meetups.each do |meetup|
-      if meetup.users.include?(current_user && User.find(params[:user_id]))
-        @meetup = meetup
-      end
+    book.meetups.each do |existing_meetup|
+      @meetup = existing_meetup if existing_meetup.users.include?(current_user && User.find(params[:user_id]))
     end
 
     @meetup = Meetup.create if @meetup.nil?
