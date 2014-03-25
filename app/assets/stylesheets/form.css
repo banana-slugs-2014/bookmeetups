@@ -1,0 +1,43 @@
+.form {
+  border: none;
+  color: #232323;
+  float: left;
+  height: 100%;
+  margin: 3px;
+  padding: 5px 0px 5px 20px;
+  position: relative;
+  width: 150px;
+}
+
+.submit {
+  background-color: #DBBDA9;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.25em;
+  height: 45px;
+  margin-left: -5px;
+  position: absolute;
+  vertical-align: middle;
+  width: 150px;
+}
+
+#user_username {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.25em;padding: 5px;
+  height: 35px;
+  width: 350px;
+}
+
+#user_password {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.25em;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+
+}
