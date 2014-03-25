@@ -8,19 +8,20 @@ class MeetupsController < ApplicationController
   end
 
   def create
+    @other_user = User.find(params[:user_id])
     book = Book.find(params[:book_id])
     book.meetups.each do |existing_meetup|
-      @meetup = existing_meetup if existing_meetup.users.include?(current_user && User.find(params[:user_id]))
+      @meetup = existing_meetup if (existing_meetup.users.include?(current_user ) &&
+                                    existing_meetup.users.include?(User.find(params[:user_id])))
     end
-
-    @meetup = Meetup.create if @meetup.nil?
-    @message = Message.new
-    book.meetups << @meetup
-    current_user = User.find(session[:id])
-    current_user.meetups << @meetup
-    recipient = User.find(params[:user_id])
-    recipient.meetups << @meetup
-    render  :"messages/new", :layout => true
+    unless @meetup
+      @meetup = Meetup.create
+      book.meetups << @meetup
+      current_user.meetups << @meetup
+      @other_user.meetups << @meetup
+    end
+    @messages = @meetup.messages
+    render  :"show"
   end
 
   def show
