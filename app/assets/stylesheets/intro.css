@@ -20,6 +20,8 @@
   margin: 0;
   padding: 0;}
 
+/*only affects the edit my profile button in the intro div*/
+
 .info a {
   background-color: #DBBDA9;
   border: 1px solid #608D8F;
@@ -29,7 +31,7 @@
   font-size: .75em;
   margin: 5px auto;
   padding: 10px;
-  bottom: 0;
+  bottom: 50%;
   position: absolute;
   text-align: center;
   text-decoration: none;
