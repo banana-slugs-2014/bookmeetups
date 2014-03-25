@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  validates_presence_of :username, :password, :email, :location_id
+  validates_presence_of :username, :password_digest, :email, :location_id
   validates_uniqueness_of :username, :email, case_sensitive: false
 
   has_one :photo
@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
   belongs_to :location
   has_many :messages
 
+  def new_unread_message
+    self.unread += 1
+    self.save
+  end
+  
   def friends(book, miles = 60)
     f = []
     locations = location.in_range( miles )

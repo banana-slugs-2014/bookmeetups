@@ -4,7 +4,7 @@ class Meetup < ActiveRecord::Base
   has_many :messages
   belongs_to :book
 
-  def unread(u_id)
+  def unread_messages(u_id)
     num = 0
     messages.each do |message|
       num += 1   if message.user_id != u_id && message.unread
@@ -14,9 +14,9 @@ class Meetup < ActiveRecord::Base
 
   def mark_read(user)
     messages.each do |message|
-      unless message.user_id ==  user.id
+      unless message.user_id == user.id
         if message.unread
-          message.unread = true
+          message.unread = false
           message.save
           user.unread -= 1
           user.save
@@ -26,6 +26,6 @@ class Meetup < ActiveRecord::Base
   end
 
   def other_user(user)
-    
+    (users - [user]).first
   end
 end

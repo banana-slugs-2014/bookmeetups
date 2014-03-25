@@ -5,7 +5,7 @@
       <li><%= link_to "My Books", user_favorite_books_path(current_user) %></li>
       <li><%= link_to "My Meetups", user_meetups_path(current_user) %></li>
       <li><%= link_to second_button_text, user_path(session[:id]) %></li>
-
+      <li><%= current_user.unread %></li>
     <% else %>
       <li><%= link_to first_button_text, new_session_path %></li>
       <li><%= link_to second_button_text, new_user_path %></li>
