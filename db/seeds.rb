@@ -66,3 +66,15 @@ names.each do |name|
   u.save
   u.books << ( Book.all ).sample(18)
 end
+
+names = [ "Bender", "Fry", "Bruce Wayne", "Wolverine", "James Howlett", "Walter Kovacs",  "Remy LeBeau", " Raven Darkholme", "Charles Francis Xavier"]
+
+names.each do |name|
+  u = User.new
+  u.username = name
+  u.password = "123"
+  u.email = name + "@test.com"
+  u.location = [new_l, far_l].sample
+  u.save
+  u.books << ( Book.all ).sample(rand(3..30))
+end
