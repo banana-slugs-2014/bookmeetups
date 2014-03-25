@@ -23,8 +23,4 @@ class ApplicationController < ActionController::Base
     redirect_to(user_path(session[:id]), :flash => {:error => "You are not authorized to perform this task"}) unless authorized_user?
   end
 
-  def form_present?
-    params[:user].empty?
-  end
-
 end
