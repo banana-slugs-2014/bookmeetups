@@ -100,6 +100,19 @@ Bookmeetups.Binder.prototype = {
   }
 };
 
+Bookmeetups.Animator = function(selectors){
+  this.selectors = selectors;
+};
+
+Bookmeetups.Animator.prototype = {
+  landingSplash: function(){
+    var self = this;
+    $(this.selectors.splashWords).fadeIn(1500, function(){
+      $(self.selectors.buttons).fadeIn(1000);
+    });
+  }
+};
+
 $(document).ready(function() {
   var eventSelectors = {
     openMessageFormSelector: '.open-new-message',
@@ -114,7 +127,13 @@ $(document).ready(function() {
     cancelNewMessageButton: '.cancel'
   };
 
+  var animatorSelectors = {
+    splashWords: '.landing h1',
+    buttons:     '.hero-btn'
+  };
+
   Bookmeetups.view = new Bookmeetups.View(viewSelectors);
   Bookmeetups.controller = new Bookmeetups.Controller(Bookmeetups.view);
   new Bookmeetups.Binder(Bookmeetups.controller, eventSelectors).bind();
+  new Bookmeetups.Animator(animatorSelectors).landingSplash();
 });

@@ -5,30 +5,29 @@
   font-size: 1.5em;
 }
 
+.landing h1{
+  display: none;
+  margin-bottom: 60px;
+}
+
 .hero-btn {
-  background: #8E6951;
+  background: #202C47;
   border: none;
-  color: #A9D9DB;
+  color: #DEDEDE;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8E6951',  endColorstr='#DEBFAB', GradientType=0 );
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 1.25em;
-  margin: 10px;
-  padding: 23px 60px;
+  margin: 0 50px;
+  padding: 15px 40px;
   text-decoration: none;
-  text-shadow: 1px 0px 0px #C9C9C9;
-  transition: all .2s ease;
+  text-shadow: 1px 0 0 #C9C9C9;
+  transition: background .5s ease;
   vertical-align: middle;
+  display: none;
 }
 
 .hero-btn:hover {
-  background: #8E6951;
-        background: -moz-linear-gradient(top, #8E6951 0%, #BDA292 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8E6951), color-stop(100%,#BDA292));
-    background: -webkit-linear-gradient(top, #8E6951 0%,#BDA292 100%);
-    background: -o-linear-gradient(top, #8E6951 0%,#BDA292 100%);
-    background: -ms-linear-gradient(top, #8E6951 0%,#BDA292 100%);
-    background: linear-gradient(to bottom, #8E6951 0%,#BDA292 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8E6951',  endColorstr='#BDA292', GradientType=0 );
+  background-color: #3B5385;
   transition: all .2s ease;
 }
