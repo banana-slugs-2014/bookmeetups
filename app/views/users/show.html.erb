@@ -12,7 +12,7 @@
 <ul class="friends_list">
   <% current_user.book_friends.each do |friend|  %>
     <div class="friend_links">
-      <li><%= link_to friend.username, user_favorite_books_path(friend) %></li>
+      <li><%= link_to friend.username, user_favorite_books_path(friend), :class => "friends_link_text" %></li>
       <li><%= link_to render( partial: "photos/show", locals: { user: friend }), user_favorite_books_path(friend) %></li>
     </div>
   <% end %>
