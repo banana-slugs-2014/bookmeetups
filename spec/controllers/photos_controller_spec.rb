@@ -67,7 +67,13 @@ describe PhotosController do
   end
 
   context '#serve' do
-    it "should be successful"
+    before(:each) {
+      expect(controller).to receive(:send_data).once {controller.render text: "photo_data" }
+    }
+
+    it "should be successful" do
+      get :serve, { user_id: test_user.id, id: test_photo.id }
+    end
   end
 
 end
