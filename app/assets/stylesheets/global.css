@@ -1,6 +1,7 @@
 body {
   background-color: #A9D9DB;
   font-family: 'Lato', sans-serif;
+  min-height: 800px;
   margin: 0;
 }
 
