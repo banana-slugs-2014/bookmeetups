@@ -9,6 +9,9 @@ gem 'pg'
 gem 'thin'
 gem 'geocoder'
 gem 'googlebooks'
+gem 'sidekiq'
+gem 'redis'
+
 
 
 # Gems used only for assets and not required
