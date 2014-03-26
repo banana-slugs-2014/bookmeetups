@@ -9,7 +9,6 @@ class Location < ActiveRecord::Base
   before_save :geocheck
 
   def geocheck
-    p "OMG GEOCODE" unless latitude && longitude
     geocode unless latitude && longitude
   end
 
@@ -19,8 +18,8 @@ class Location < ActiveRecord::Base
   end
 
   def self.find_limits(lat, long, miles)
-    fla, cla =LatLongDistanceConverter.lat_range(lat, miles) 
-    flo, clo =LatLongDistanceConverter.long_range(lat, long, miles) 
+    fla, cla =LatLongDistanceConverter.lat_range(lat, miles)
+    flo, clo =LatLongDistanceConverter.long_range(lat, long, miles)
     { floorlat: fla, ceillat: cla,
       floorlong: flo, ceillong: clo}
   end
@@ -33,7 +32,7 @@ class Location < ActiveRecord::Base
 
   def self.locations_within_range_circle(lat, long, miles, locations)
     in_range = []
-    locations.each do |location| 
+    locations.each do |location|
       d = LatLongDistanceConverter.distance_between_two_points(location.latitude, lat, location.longitude, long)
       in_range << location if d <= miles
     end
