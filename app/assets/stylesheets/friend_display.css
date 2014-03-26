@@ -1,6 +1,5 @@
 /*====== Friend List Pics ========*/
 .friend_links {
-  background-color: #DBBDA9;
   float: left;
   display: block;
   text-align: center;
@@ -14,8 +13,10 @@
 }
 
 .friend_links:hover {
+  background-color: #DBBDA9;
   float: left;
-  margin: -1em 5px 1em 5px;
+  /*margin: -1em 5px 1em 5px;*/
+  top: -10px;
   /*margin: -1em 5px 2em 5px;*/
 }
 
@@ -30,8 +31,7 @@
 }
 
 .friend_links img:hover {
-  background-color: #A9D9DB;
-  opacity: .65;
+  opacity: .45;
 }
 
 .friend_links h4 {
