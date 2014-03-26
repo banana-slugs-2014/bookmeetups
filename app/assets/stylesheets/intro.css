@@ -72,3 +72,9 @@
   color: #475B5C;
   font-weight: 300;
 }
+
+.unread p {
+  color: #202C47;
+  font-size: 1em;
+  font-weight: 400;
+}
