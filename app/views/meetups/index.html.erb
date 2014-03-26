@@ -1,20 +1,21 @@
-<h1>Meetups!</h1>
+<!-- <h1>Meetups!</h1> -->
 <% @meetups.each do |meetup| %>
 
   <div class="book_pic">
-    <%= link_to image_tag(meetup.book.photo_link(2)), book_path(meetup.book) %>
+    <%= link_to image_tag(meetup.book.photo_link(1)), book_path(meetup.book) %>
   </div>
   <div class="info">
     <div class="unread">
       <p><%= meetup.unread_messages(current_user.id) if meetup.unread_messages(current_user.id) != 0%></p>
     </div>
 
-    <h3>Participants:</h3>
-
     <% meetup.users.each do |user| %>
-      <h4><%= user.username %></h4>
+      <% if user != current_user %>
+        <span class="meetup_user"><h3>Meetup with <%= link_to user.username.capitalize, user_path(user) %></h3></span>
+        <h4><%= user.location.city %></h4>
+      <% end %>
     <% end %>
-    <%= link_to 'Go to Messages >>', user_meetup_path(current_user, meetup) %>
+    <%= link_to 'Go to Messages', user_meetup_path(current_user, meetup) %>
   </div>
 
 <% end %>

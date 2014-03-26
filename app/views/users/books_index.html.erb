@@ -3,7 +3,7 @@
 </div>
 <div class="info">
   <h3>The books of <%= @user.username.capitalize %>!</h3>
-  <%= !@user.location.nil? ? @user.location.city : "No location set." %><br>
+  <h4><%= !@user.location.nil? ? @user.location.city : "No location set." %></h4>
   <% if @user == current_user %>
     <%= link_to "Edit My Profile", edit_user_path(current_user) %>
   <% end %>
