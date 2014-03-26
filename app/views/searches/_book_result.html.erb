@@ -6,7 +6,7 @@
   <h4>Title: <%= book.title %></h4>
   <h4>Author: <%= book.author %></h4>
   <% if current_user %>
-    <%= link_to "Add to my collection", user_create_favorite_book_path(current_user.id, book.id),  :method => "post", :class => "book-selector" %>
+    <%= link_to "Add to my collection", user_create_favorite_book_path(current_user.id, book.id), :method => "post", :class => "book-selector" %>
   <% else %>
    <%= link_to "Log in to add", new_session_path, :class => "book-selector" %>
   <% end %>

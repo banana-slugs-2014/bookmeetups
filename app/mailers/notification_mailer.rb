@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: 'notifications@bookfreind.com'
+  default from: 'notifications@bookfriend.com'
   def send_notification(user, otheruser, message)
     @user = user
     @message = message

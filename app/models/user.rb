@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     self.unread += 1
     self.save
   end
-  
+
   def friends(book)
     f = []
     locations = location.in_range( travel_distance )
@@ -24,9 +24,7 @@ class User < ActiveRecord::Base
       locale.users.includes(:books).each do |user|
         next if user == self
         user.books.each do |b|
-          if book == b
-            f << user
-          end
+          f << user if book == b
         end
       end
     end
@@ -41,9 +39,7 @@ class User < ActiveRecord::Base
       locale.users.includes(:books).each do |user|
         next if user == self
         user.books.each do |book|
-          if books.include?( book)
-            f << user
-          end
+          f << user if books.include?( book)
         end
       end
     end

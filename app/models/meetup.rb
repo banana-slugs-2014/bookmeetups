@@ -21,7 +21,7 @@ class Meetup < ActiveRecord::Base
           user.unread -= 1
           user.save
         end
-      end 
+      end
     end
   end
 
