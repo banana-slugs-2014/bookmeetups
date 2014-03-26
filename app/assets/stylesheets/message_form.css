@@ -55,16 +55,22 @@
 }
 
 .byline {
+  font-size: 1.4em;
+  font-weight: 100;
   margin: 2% 0 0 0;
-  font-size: 1.2em;
 }
 
 .text {
-  margin: 1% 0 0 1%;
+  border-left: 1px solid black;
+  font-size: 1.5em;
+  font-weight: 300;
+  padding-left: 15px;
+  margin: 1% 0 .5% 2%;
+  word-wrap: break-word;
 }
 
 .date {
-  font-size: .5em;
+  font-size: .75em;
   color: #999999;
 }
 
