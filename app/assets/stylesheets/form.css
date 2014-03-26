@@ -9,27 +9,7 @@
   width: 150px;
 }
 
-.submit{
-  background-color: #202C47;
-  border: none;
-  color: #D6D6D6;
-  display: block;
-  float: left;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 1.25em;
-  line-height: 2.7em;
-  margin-top: 20px;
-  position: absolute;
-  transition: all .2s;
-  vertical-align: middle;
-  width: 175px;
-}
 
-.submit:hover {
-  background-color: #3B5385;
-  text-shadow: 0px -1.5px 1.5px rgba(0,0,0,0.5);
-}
 
 h2 {
   font-size: 1.5em;
