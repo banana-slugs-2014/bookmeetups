@@ -18,7 +18,7 @@
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 1.25em;
-  height: 45px;
+  line-height: 2.7em;
   margin-top: 20px;
   position: absolute;
   transition: all .2s;
@@ -161,7 +161,6 @@ h3 {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 1.25em;
-  height: 45px;
   line-height: 2.7em;
   margin: 20px;
   padding: 0;
@@ -173,20 +172,18 @@ h3 {
 }
 
 .add:hover {
-  background-color: #705340;
-  color: #E8F7F1;
-  text-shadow:0 -1px 1px rgba(0,0,0,0.5);
+  background-color: #3B5385;
+  text-shadow: 0px -1.5px 1.5px rgba(0,0,0,0.5);
 }
 
 .cancel{
-  background-color: #8E6951;
+  background-color: #202C47;
   border: none;
-  color: #D9F7F1;
+  color: #D6D6D6;
   float: left;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 1.25em;
-  height: 55px;
   line-height: 2.7em;
   margin-top: 20px;
   margin-left: 20px;
@@ -195,8 +192,10 @@ h3 {
   text-decoration: none;
   transition: all .2s;
   vertical-align: middle;
-  width: 275px;
+  width: 175px;
 }
+
+
 
 
 .update, .new-message {
@@ -208,7 +207,6 @@ h3 {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 1.25em;
-  height: 45px;
   line-height: 2.7em;
   margin: 20px 0 0 0;
   padding: 0;
@@ -219,10 +217,9 @@ h3 {
   width: 200px;
 }
 
-.update:hover {
-  background-color: #705340;
-  color: #E8F7F1;
-  text-shadow:0 -1px 1px rgba(0,0,0,0.5);
+.update:hover, .new-message:hover, .cancel:hover {
+  background-color: #3B5385;
+  text-shadow: 0px -1.5px 1.5px rgba(0,0,0,0.5);
 }
 
 .new-message-form{
