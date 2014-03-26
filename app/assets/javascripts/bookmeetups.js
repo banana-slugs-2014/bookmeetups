@@ -136,4 +136,19 @@ $(document).ready(function() {
   Bookmeetups.controller = new Bookmeetups.Controller(Bookmeetups.view);
   new Bookmeetups.Binder(Bookmeetups.controller, eventSelectors).bind();
   new Bookmeetups.Animator(animatorSelectors).landingSplash();
+
+  $('body').on('mouseenter', '.book-display', function(e){
+    $(e.target).parents('.book-display').find('.title').fadeIn(200);
+    $(e.target).parents('.book-display').find('.cover').css('opacity', '.1');
+    $(e.target).parents('.book-display').find('.meetup').css('opacity', '1');
+  });
+
+  $('body').on('mouseleave', '.book-display', function(e){
+    $(e.target).parents('.book-display').find('.title').fadeOut(200);
+    $(e.target).parents('.book-display').find('.cover').css('opacity', '1');
+    $(e.target).parents('.book-display').find('.meetup').css('opacity', '0');
+  });
+
+
+
 });
