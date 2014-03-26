@@ -13,23 +13,23 @@
   background-color: #8E6951;
   border: none;
   color: #D9F7F1;
+  display: block;
+  float: left;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 1.25em;
   height: 55px;
   margin-top: 20px;
   position: absolute;
-  transition: all .2s ease;
+  transition: all .2s;
   vertical-align: middle;
   width: 175px;
 }
 
 .submit:hover {
-  background-color: #8E6989;
-  -webkit-box-shadow:0px 0px 1px 0px #D8E7F5, inset 0px 0px 20px #EED0EE;
-       -moz-box-shadow:0px 0px 1px 0px #D8E7F5, inset 0px 0px 20px #EED0EE;
-            box-shadow:0px 0px 1px 0px #D8E7F5, inset 0px 0px 20px #EED0EE;
-transition: all .2s ease;
+  background-color: #705340;
+  color: #E8F7F1;
+  text-shadow:0 -1px 1px rgba(0,0,0,0.5);
 }
 
 h2 {
@@ -38,6 +38,7 @@ h2 {
   margin-top: 1%;
   padding: 0;
 }
+
 
 p {
   font-size: 1.25em;
@@ -49,7 +50,7 @@ p {
 #user_username {
   border: none;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   font-size: 1.25em;
   padding: 5px;
   height: 35px;
@@ -59,7 +60,7 @@ p {
 #user_password {
   border: none;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   font-size: .75em;
   height: 35px;
   padding: 5px;
@@ -70,7 +71,7 @@ p {
 #user_email {
   border: none;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   font-size: .75em;
   height: 35px;
   padding: 5px;
@@ -81,7 +82,7 @@ p {
 #user_password_confirmation {
   border: none;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   font-size: .75em;
   height: 35px;
   padding: 5px;
@@ -91,9 +92,87 @@ p {
 #zip {
   border: none;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   font-size: .75em;
   height: 35px;
   padding: 5px;
   width: 350px;
+}
+
+/* Edit User Info */
+.edit_user {
+  position: relative;
+  width: 75%;
+}
+
+
+h3 {
+  font-weight: 100;
+  font-size: 1.65em;
+  margin: 1% 0% ;
+}
+
+#user_city {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 1.75m;
+  height: 30px;
+  padding: 5px;
+  width: 350px;
+}
+
+#user_state {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 1.75m;
+  height: 30px;
+  padding: 5px;
+  width: 350px;
+}
+
+#user_zip {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 1.75m;
+  height: 30px;
+  padding: 5px;
+  width: 350px;
+}
+
+#user_travel_distance {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: .65em;
+  height: 40px;
+  margin: 2px;
+  padding: 2px;
+  text-align: center;
+  width: 70px;
+
+}
+
+.add {
+  background-color: #8E6951;
+  border: none;
+  color: #D9F7F1;
+  display: block;
+  float: left;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  padding: 5px;
+  position: relative;
+  text-decoration: none;
+  transition: all .2s;
+  width: 175px;
+}
+
+.add:hover {
+  background-color: #705340;
+  color: #E8F7F1;
+  text-shadow:0 -1px 1px rgba(0,0,0,0.5);
 }
