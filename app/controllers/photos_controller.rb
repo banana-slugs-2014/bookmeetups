@@ -14,15 +14,7 @@ class PhotosController < ApplicationController
 
   def create
     user = User.find(params[:user_id])
-     @photo = Photo.new do |t|
-      if params[:photo][:data]
-        t.name      = params[:photo][:name]
-        t.data      = params[:photo][:data].read
-        t.filename  = params[:photo][:data].original_filename
-        t.mime_type = params[:photo][:data].content_type
-      end
-    end
-
+    @photo = PhotoBuilder.new(params[:photo]).build
     if @photo.save
       user.photo.destroy unless user.photo.nil?
       user.photo = @photo

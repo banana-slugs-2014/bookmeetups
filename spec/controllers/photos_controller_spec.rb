@@ -30,22 +30,24 @@ describe PhotosController do
   end
 
   context '#create' do
-    let(:attribs) { attributes_for :photo }
+    let(:photo_data) { Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/files/upload_test.jpg", "image/jpg") }
 
-    xit 'should be redirect' do
-      post :create, { :user_id => test_user.id, :data => attribs }
-      expect(response).to be_redirect
-    end
+    context 'with valid attributes' do
+      it 'should be redirect' do
+        post :create, { :user_id => test_user.id, :photo => {name: 'test', data: photo_data} }
+        expect(response).to be_redirect
+      end
 
-    xit 'should create a new photo' do
-      expect {
-        post :create, { :user_id => test_user.id, :data => attribs }
-      }.to change { Photo.count }.by(1)
-    end
+      it 'should create a new photo' do
+        expect {
+          post :create, { :user_id => test_user.id, :photo => {name: 'test', data: photo_data} }
+        }.to change { Photo.count }.by(1)
+      end
 
-    xit 'should associate new photo with user' do
-      post :create, { :user_id => test_user.id, :data => attribs }
-      expect(assigns(:photo)).to eq(test_user.photo)
+      it 'should associate new photo with user' do
+        post :create, { :user_id => test_user.id, :photo => {name: 'test', data: photo_data} }
+        expect(assigns(:photo)).to eq(test_user.photo)
+      end
     end
   end
 
@@ -65,7 +67,7 @@ describe PhotosController do
   end
 
   context '#serve' do
-    #Tests pending due to lack of full understanding
+    it "should be successful"
   end
 
 end
