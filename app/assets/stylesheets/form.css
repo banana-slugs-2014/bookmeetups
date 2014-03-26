@@ -9,73 +9,19 @@
   width: 150px;
 }
 
-
-
-h2 {
-  font-size: 1.5em;
-  font-weight: 100;
-  margin-top: 1%;
-  padding: 0;
-}
-
-p {
-  font-size: 1.25em;
-  font-weight: 100;
-  margin-top: -1%;
-  padding: 0;
- }
-
-#user_username {
+#user_email, #user_password_confirmation, #zip,
+#user_username, #user_password {
   border: none;
   font-family: 'Lato', sans-serif;
   font-weight: 100;
   font-size: 1.25em;
-  padding: 5px;
-  height: 35px;
-  width: 350px;
-}
-
-#user_password {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: .75em;
-  height: 35px;
-  padding: 5px;
-  width: 350px;
-
-}
-
-#user_email {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: .75em;
-  height: 35px;
-  padding: 5px;
-  width: 350px;
-
-}
-
-#user_password_confirmation {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: .75em;
   height: 35px;
   padding: 5px;
   width: 350px;
 }
 
-#zip {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: .75em;
-  height: 35px;
-  padding: 5px;
-  width: 350px;
-}
+
+
 
 /* Edit User Info */
 .edit_user {
