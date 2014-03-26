@@ -52,20 +52,20 @@ ul li {
   font-weight: bold
 }
 
-.book_selector {
+.book-selector {
   background-color: #202C47;
   border: none;
   color: #D6D6D6;
   font-family: 'Lato', sans-serif;
   font-size: .75em;
   font-weight: 100;
-  margin: 4% 0;
+  margin: 6% 0;
   padding: 8px 5px;
   text-align: center;
   transition: all .2s ease;
   width: 250px;
 }
 
-.book_selector:hover {
+.book-selector:hover {
   background-color: #3B5385;
 }

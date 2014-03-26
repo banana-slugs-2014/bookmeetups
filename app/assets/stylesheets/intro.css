@@ -24,29 +24,28 @@
 /*only affects the buttons in the intro div*/
 
 .info a {
-  background-color: #DBBDA9;
-  color: #D9F7F1;
+  background-color: #202C47;
+  border: none;
+  color: #D6D6D6;
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
   font-size: .75em;
-  margin: 5px auto;
-  padding: 10px;
-  bottom: 50%;
-  position: absolute;
+  font-weight: 100;
+  margin: 6% 0;
+  padding: 8px 5px;
   text-align: center;
   text-decoration: none;
   transition: all .2s ease;
-  width: 150px;
+  width: 250px;
 }
 
 .info a:hover {
-  color: #232323;
+  background-color: #3B5385;
 }
 
 .info h4 {
   font-size: 1.25em;
   font-weight: 100;
-  margin: 0;
+  margin: 1% 0%;
   padding: 0;
 }
 
@@ -70,4 +69,5 @@
 
 .meetup_user a:hover{
   color: #475B5C;
+  font-weight: 300;
 }

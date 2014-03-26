@@ -6,9 +6,9 @@
   <h4>Title: <%= @book.title %></h4>
   <h4>Author: <%= @book.author %></h4>
   <% if @book_in_current_user_collection %>
-    <%= button_to "Remove from my collection", user_favorite_book_path(current_user.id, @book.id), :method => :delete, :class => "book_selector" %>
+    <%= button_to "Remove from my collection", user_favorite_book_path(current_user.id, @book.id), :method => :delete, :class => "book-selector" %>
   <% else %>
-    <%= button_to "Add to my collection", user_create_favorite_book_path(current_user.id, @book.id), :class => "book_selector" %>
+    <%= button_to "Add to my collection", user_create_favorite_book_path(current_user.id, @book.id), :class => "book-selector" %>
   <% end %>
 </div>
   <div class="friend_list">
