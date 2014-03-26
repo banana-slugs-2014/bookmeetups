@@ -13,6 +13,6 @@ class UserBuilder
       user.password_confirmation  = @password_confirmation
       user.email                  = @email
     end
-    return new_user
+    new_user
   end
 end
