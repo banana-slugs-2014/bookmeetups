@@ -43,7 +43,7 @@ far_l.latitude = 34.2068182
 far_l.longitude = -118.2000277
 far_l.save
 
-names = [ "bob", "tom", "test" ]
+names = [ "Abe Lincoln", "Tom", "Afro Samurai", "Alien", "Animal", "Glen", "Audrey Hepburn", "A legit sorcerer", "Bart Simpson", "sam", "Batman", "Friendly Bear" ]
 
 names.each do |name|
   u = User.new
@@ -54,8 +54,7 @@ names.each do |name|
   u.save
   u.books << ( Book.all ).sample(30)
 end
-names = [ "yoshi", "glen", "mario", "that other dude",
-"a legit sorcerer", "sal", "sam", "the phantom of the opera", "book critic"]
+names = [ "Bob", "Bender", "Betty Boop", "Bob Marley", "Boba Fett", "Buddha",  "Che", "Chef", "Clint Eastwood", "Cloud Strife", "Sam", "James" ]
 
 names.each do |name|
   u = User.new
@@ -67,7 +66,7 @@ names.each do |name|
   u.books << ( Book.all ).sample(rand(25-30))
 end
 
-names = [ "Bender", "Fry", "Bruce Wayne", "Wolverine", "James Howlett", "Walter Kovacs",  "Remy LeBeau", " Raven Darkholme", "Charles Francis Xavier"]
+names = [ "Dalek Dan", "Shebob", "Deadpool", "Stan", "Dilbert", "Doc Brown", "Einstein", "Charles" ]
 
 names.each do |name|
   u = User.new
