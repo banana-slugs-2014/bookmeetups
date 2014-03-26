@@ -1,7 +1,5 @@
 <div class="profile_pic">
-  <% if @user.photo %>
-    <%= render partial: "photos/show", locals: { user: @user } %>
-  <% end %>
+  <%= render partial: "photos/show", locals: { user: @user } %>
 </div>
 <div class="info">
   <h3>The books of <%= @user.username.capitalize %>!</h3>

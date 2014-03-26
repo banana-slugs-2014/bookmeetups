@@ -1,13 +1,15 @@
 /*====== Friend List Pics ========*/
 .friend_links {
-  border: 1px solid gray;
   float: left;
   display: block;
   text-align: center;
   height: 250px;
+  overflow: hidden;
+  margin: 0 5px;
   padding: 5px;
   position: relative;
   width: 200px;
+
 }
 
 .friend_links img {

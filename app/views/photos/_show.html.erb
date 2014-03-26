@@ -1,5 +1,5 @@
 <% if user.photo.nil? %>
-  <%= image_tag src="/assets/missing.png" %>
+  <div class="default_profile"><%= image_tag src="/assets/defaults/default_#{user.id % 130}.jpg" %></div>
 <% else %>
   <%= image_tag serve_user_photo_path(user.id, user.photo.id) %>
 <% end %>
