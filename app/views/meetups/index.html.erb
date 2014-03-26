@@ -12,10 +12,7 @@
     <% meetup.users.each do |user| %>
       <% if user != current_user %>
         <span class="meetup_user"><h3>Meetup with <%= link_to user.username.capitalize, user_path(user) %></h3></span>
-<<<<<<< HEAD
         <h4><%= user.location.city %></h4>
-=======
->>>>>>> Fixes meetup index page.
       <% end %>
     <% end %>
     <%= link_to 'Go to Messages', user_meetup_path(current_user, meetup) %>
