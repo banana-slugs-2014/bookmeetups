@@ -15,8 +15,8 @@
     <p>Books in Common with <%= @user.username.capitalize %>:</p>
       <% books_in_common_with(@user).each do |book| %>
         <div class="book-display">
-          <h4><%= link_to book.title, book_path(book) %></h4>
-          <%= link_to image_tag(book.photo_link(1)), book_path(book) %>
+          <div class="title"><%= book.title %></div>
+          <%= link_to image_tag(book.photo_link(1)), book_path(book), :class => 'cover' %>
             <%= link_to "Meet Up!", user_create_meetup_path(@user, book), class: "meetup" %>
         </div>
       <% end %>
@@ -26,8 +26,8 @@
     <p><%= @user.username.capitalize %>'s Books:</p>
       <% other_books_of(@user).each do |book| %>
         <div class="book-display">
-          <h4><%= link_to book.title, book_path(book) %></h4>
-          <%= link_to image_tag(book.photo_link(1)), book_path(book) %>
+          <div class="title"><%= book.title %></div>
+          <%= link_to image_tag(book.photo_link(1)), book_path(book), :class => 'cover' %>
         </div>
       <% end %>
     </div>
@@ -36,12 +36,13 @@
   <div class="book_list">
     <% @user.books.each do |book| %>
       <div class="book-display">
-        <h4><%= link_to book.title, book_path(book) %></h4>
-        <%= link_to image_tag(book.photo_link(1)), book_path(book) %>
+        <div class="title">
+          <%= book.title %>
+        </div>
+        <%= link_to image_tag(book.photo_link(1)), book_path(book), :class => 'cover' %>
       </div>
     <% end %>
   </div>
-
 <% end %>
 
 
