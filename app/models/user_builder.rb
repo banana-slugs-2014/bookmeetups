@@ -8,7 +8,7 @@ class UserBuilder
 
   def build
     new_user = User.new do |user|
-      user.username               = @username
+      user.username               = @username.downcase
       user.password               = @password
       user.password_confirmation  = @password_confirmation
       user.email                  = @email
