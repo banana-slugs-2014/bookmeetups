@@ -9,8 +9,8 @@
         Zip
         <%= user.text_field(:zip, size: "15", :required => true, :pattern => '^\d{5}$', value: current_user.location.blank? ? "Zip code" : current_user.location.zip) %>
         Will Travel
-        <%= user.text_field(:travel_distance, size: "10", :required => true, :pattern => '^\d+', value: current_user.travel_distance.blank? ? 
-        "Miles" : current_user.travel_distance) %> Miles
+        <%= user.text_field(:travel_distance, size: "10", :required => true, :pattern => '^\d+', value: current_user.travel_distance.blank? ?
+        "Miles to meet new friends!" : current_user.travel_distance) %> Miles
         <%= user.submit "Update Location" %>
   <% end %>
   <%= link_to "Add New Profile Pic", new_user_photo_path(@user) %>
