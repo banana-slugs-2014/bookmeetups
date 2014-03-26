@@ -159,19 +159,48 @@ h3 {
   background-color: #8E6951;
   border: none;
   color: #D9F7F1;
-  display: block;
   float: left;
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.25em;
-  padding: 5px;
-  position: relative;
+  height: 55px;
+  line-height: 2.7em;
+  margin-top: 20px;
+  margin-left: 20px;
+  right: 25%;
+  text-align: center;
   text-decoration: none;
   transition: all .2s;
-  width: 175px;
+  vertical-align: middle;
+  width: 275px;
 }
 
 .add:hover {
+  background-color: #705340;
+  color: #E8F7F1;
+  text-shadow:0 -1px 1px rgba(0,0,0,0.5);
+}
+
+.update {
+  background-color: #8E6951;
+  border: none;
+  color: #D9F7F1;
+  display: block;
+  float: left;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.25em;
+  height: 55px;
+  line-height: 2.7em;
+  margin-top: 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .2s;
+  width: 275px;
+}
+
+.update:hover {
   background-color: #705340;
   color: #E8F7F1;
   text-shadow:0 -1px 1px rgba(0,0,0,0.5);

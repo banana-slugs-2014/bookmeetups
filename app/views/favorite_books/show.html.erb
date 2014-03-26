@@ -3,7 +3,7 @@
 <div class="favorite-books-table">
   <ul>
     <% @user.books.each do |book| %>
-      <li><img src="<%= book.photo_link(1) %>" alt="<%= book.title %>"><%= link_to book.title, book_path(book.id) %> <%= book.author %></li>
+      <li><img class="book-img" src="<%= book.photo_link(1) %>" alt="<%= book.title %>"><%= link_to book.title, book_path(book.id) %> <%= book.author %></li>
     <% end %>
   </ul>
 </div>

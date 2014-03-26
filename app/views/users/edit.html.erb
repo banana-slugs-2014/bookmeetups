@@ -11,7 +11,7 @@
         <h3>Will Travel
         <%= user.text_field(:travel_distance, size: "10", :required => true, :pattern => '^\d+', value: current_user.travel_distance.blank? ?
         "Miles" : current_user.travel_distance) %> Miles To Meet New Friends!</h3>
-        <%= user.submit "Update Location", class: "add"%>
+        <%= user.submit "Update Location", class: "update" %>
+        <%= link_to "Add New Profile Pic", new_user_photo_path(@user), class: "add" %>
   <% end %>
-  <%= link_to "Add New Profile Pic", new_user_photo_path(@user), class: "submit add" %>
 </div>
