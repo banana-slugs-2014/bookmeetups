@@ -18,31 +18,22 @@ class User < ActiveRecord::Base
   end
 
   def friends(book)
-    f = []
-    locations = location.in_range( travel_distance )
-    locations.each do |locale|
-      locale.users.includes(:books).each do |user|
-        next if user == self
-        user.books.each do |b|
-          f << user if book == b
-        end
-      end
-    end
-    f
+    location.locations_within_range( travel_distance ).each_with_object([]) do |locale, coll |
+      coll << friends_at_location( locale, [book] )
+    end.flatten
   end
 
   def book_friends
-    f = []
-    books = self.books.to_a
-    locations = location.in_range( travel_distance )
-    locations.each do |locale|
-      locale.users.includes(:books).each do |user|
-        next if user == self
-        user.books.each do |book|
-          f << user if books.include?( book)
-        end
-      end
+    b= self.books.to_a
+    location.locations_within_range( travel_distance ).each_with_object([]) do |locale, coll |
+      coll << friends_at_location( locale, b )
+    end.flatten
+  end
+
+  def friends_at_location( location, books )
+    location.users.includes(:books).select do |user|
+      user if user != self &&
+      user.books.any?{ |users_book| books.include?( users_book ) }
     end
-    f.uniq
   end
 end
