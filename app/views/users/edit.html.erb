@@ -1,11 +1,10 @@
-<!-- goes to user#update -->
 <div class="edit_user">
   <header><h1>Edit User info</h1></header>
-  <%= form_for :user, url: user_path, method: :put do |user| %>
+  <%= form_for :user, :url => user_path, :method => :put do |user| %>
         <h3>Zip</h3>
-        <%= user.text_field(:zip, size: "15", :required => true, :pattern => '^\d{5}$', value: current_user.location.blank? ? "Zip code" : current_user.location.zip) %>
+        <%= user.text_field(:zip, :size => "15", :required => true, :pattern => '^\d{5}$', :value => current_user.location.blank? ? "Zip code" : current_user.location.zip) %>
         <h3>Will Travel
-        <%= user.text_field(:travel_distance, size: "10", :required => true, :pattern => '^\d+', value: current_user.travel_distance.blank? ?
+        <%= user.text_field(:travel_distance, :size => "10", :required => true, :pattern => '^\d+', :value => current_user.travel_distance.blank? ?
         "Miles" : current_user.travel_distance) %> Miles To Meet New Friends!</h3>
         <%= user.submit "Update Location", class: "update" %>
         <%= link_to "Add New Profile Pic", new_user_photo_path(@user), class: "add" %>

@@ -4,9 +4,7 @@
 <div class="info">
   <h3><%= @user.username.capitalize %>'s Book Buddies!</h3>
   <h4><%= !@user.location.nil? ? "#{@user.location.city}, #{@user.location.state}" : "No location set." %></h4>
-  <% if @user == current_user %>
-    <%= link_to "Edit My Profile", edit_user_path(current_user) %>
-  <% end %>
+  <%= link_to "Edit My Profile", edit_user_path(current_user) if @user == current_user %>
 </div>
 
 <ul class="friends_list">

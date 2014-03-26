@@ -13,10 +13,7 @@
     <%= render partial: "shared/nav" %>
   </div>
   <div class="container">
-  <% if flash[:error] %>
-    <%= flash[:error] %>
-  <% end %>
-
+  <%= flash[:error] if flash[:error] %>
 <%= yield %>
   </div>
 </body>
