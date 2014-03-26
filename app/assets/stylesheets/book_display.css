@@ -12,7 +12,6 @@
   float: left;
   height: 170px;
   overflow:hidden; /* this is important */
-  margin: ;
   padding: 0;
   position: relative;
   transition: .2s;
