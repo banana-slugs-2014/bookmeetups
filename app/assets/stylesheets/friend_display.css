@@ -13,11 +13,9 @@
 }
 
 .friend_links:hover {
-  background-color: #DBBDA9;
   float: left;
-  /*margin: -1em 5px 1em 5px;*/
   top: -10px;
-  /*margin: -1em 5px 2em 5px;*/
+  width: 210px;
 }
 
 .friend_links img {
@@ -48,9 +46,20 @@
   bottom: 4%;
   left: 0;
   opacity: 1;
-  text-align: left;
-  width: 100%;
+text-align: center;
+  vertical-align: middle;
+    width: 100%;
   z-index: 99;
+}
+.friend_links:hover h4 {
+  background-color: #EE3410;
+  height: 85%;
+  padding: 0;
+  opacity: .35;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  top: 0;
 }
 
 .friend_links a {
