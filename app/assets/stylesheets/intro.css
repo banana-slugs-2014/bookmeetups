@@ -69,5 +69,8 @@
 
 .meetup_user a:hover{
   color: #475B5C;
+<<<<<<< HEAD
   font-weight: 300;
+=======
+>>>>>>> Fixes meetup index page.
 }

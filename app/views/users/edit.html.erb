@@ -9,7 +9,6 @@
         <h3>Zip</h3>
         <%= user.text_field(:zip, size: "15", :required => true, :pattern => '^\d{5}$', value: current_user.location.blank? ? "Zip code" : current_user.location.zip) %>
         <h3>Will Travel
-
         <%= user.text_field(:travel_distance, size: "10", :required => true, :pattern => '^\d+', value: current_user.travel_distance.blank? ?
         "Miles" : current_user.travel_distance) %> Miles To Meet New Friends!</h3>
         <%= user.submit "Update Location", class: "add"%>
