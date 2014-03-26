@@ -25,15 +25,13 @@ describe SessionsController do
 
   context '#create' do
     context 'with valid params' do
+      before(:each) { post :create, { user: credentials } }
+
       it 'should be redirect' do
-        post :create, { user: credentials }
         expect(response).to be_redirect
       end
 
-      it 'should create a new session' do
-        post :create, { user: credentials }
-        session[:id].should == existing_user.id
-      end
+      it { should set_session(:id).to(existing_user.id) }
     end
 
     context 'with all invalid params' do
