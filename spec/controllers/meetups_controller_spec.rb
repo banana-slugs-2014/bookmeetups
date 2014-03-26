@@ -86,11 +86,10 @@ describe MeetupsController do
       let!(:unauthorized_user) { create :user }
       before(:each) { request.session[:id] = unauthorized_user.id }
 
-      xit "should redirect back to the current user books page" do
+      it "should redirect back to the current user books page" do
         get :show, { :user_id => my_user.id, :id => new_meetup.id }
         expect(response).to be_redirect
       end
     end
-
   end
 end
