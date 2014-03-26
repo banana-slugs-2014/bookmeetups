@@ -1,11 +1,42 @@
 /*====== New message form ========*/
-.open-new-message{
+/*.open-new-message{
   font-weight: bold;
   text-decoration: none;
   padding: 8px;
   border-radius: 4px;
   background-color: #000;
   color: white;
+}*/
+
+.meetup-messages h2 > a, .byline a{
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #202C47;
+}
+
+.meetup-messages a:hover{
+
+}
+
+.open-new-message{
+  background-color: #202C47;
+  border: none;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  font-weight: 100;
+  margin: 6% 0;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .2s ease;
+  width: 250px;
+}
+
+.message {
+  float: left;
+  width: 100%;
 }
 
 .message a {
