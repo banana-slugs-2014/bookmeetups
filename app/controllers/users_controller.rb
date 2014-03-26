@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    location = Location.where(:city => params[:user][:city], :state => params[:user][:state], :zip => params[:user][:zip]).first_or_create
+    location = LocationBuilder.new(params[:user][:zip]).build
     @user.travel_distance =  params[:user][:travel_distance]
     @user.save
     @user.update_attribute(:location, location)
