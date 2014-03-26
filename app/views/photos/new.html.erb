@@ -1,13 +1,13 @@
 <%= form_for([@user, @photo], :html => {:multipart => true}) do |f| %>
   <div class="field">
-    <%= f.label :name %>
+    <h3><%= f.label :name %></h3>
     <%= f.text_field :name, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :data %>
+    <h3><%= f.label :data %></h3>
     <%= f.file_field :data, :required => true %>
   </div>
   <div class="actions">
-    <%= f.submit "Upload" %>
+    <%= f.submit "Upload", :class => "submit" %>
   </div>
 <% end %>

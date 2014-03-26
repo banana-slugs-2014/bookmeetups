@@ -9,7 +9,7 @@
   width: 150px;
 }
 
-.submit {
+.submit{
   background-color: #8E6951;
   border: none;
   color: #D9F7F1;
@@ -132,7 +132,7 @@ h3 {
   width: 350px;
 }
 
-#user_zip {
+#user_zip, #photo_name {
   border: none;
   font-family: 'Lato', sans-serif;
   font-weight: 100;
@@ -181,6 +181,7 @@ h3 {
   text-shadow:0 -1px 1px rgba(0,0,0,0.5);
 }
 
+
 .update {
   background-color: #8E6951;
   border: none;
@@ -205,3 +206,5 @@ h3 {
   color: #E8F7F1;
   text-shadow:0 -1px 1px rgba(0,0,0,0.5);
 }
+
+
