@@ -14,7 +14,7 @@ describe Location do
   context "responds to" do
     it { should respond_to(:geocheck) }
     it { should respond_to(:address) }
-    it { should respond_to(:in_range) }
+    it { should respond_to(:locations_within_range) }
   end
 
 
