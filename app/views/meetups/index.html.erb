@@ -6,7 +6,7 @@
   </div>
   <div class="info">
     <div class="unread">
-      <p><%= meetup.unread_messages(current_user.id) if meetup.unread_messages(current_user.id) != 0%></p>
+      <p><%= "You have #{meetup.unread_messages(current_user.id)} new messages!" if meetup.unread_messages(current_user.id) != 0%></p>
     </div>
 
     <% meetup.users.each do |user| %>
