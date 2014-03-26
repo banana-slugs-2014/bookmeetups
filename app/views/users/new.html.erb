@@ -11,7 +11,7 @@
     <%= f.password_field(:password_confirmation, :required => true) %>
     <h2>Zip Code </h2>
     <p>(we use this to help you find friends nearby!)</p>
-    <%= text_field_tag :zip, nil, :required => true, :pattern => '^\d{5}$' %>
+    <%= text_field_tag :zip, nil, :required => true, :pattern => '^\d{5}$', :title => "Enter your 5 digit zip code" %>
     <br><%= f.submit "Sign Up", class: "submit" %>
   <% end %>
 </div>

@@ -54,7 +54,7 @@ names.each do |name|
   u.save
   u.books << ( Book.all ).sample(30)
 end
-names = [ "bob", "bender", "betty boop", "bob marley", "boba fett", "buddha",  "che", "chef", "clint eastwood", "cloud strife", "sam", "james" ]
+names = [ "bob", "bender", "betty boop", "bob marley", "boba fett", "buddha",  "che", "chef", "clint eastwood", "cloud strife", "sam", "robot", "james" ]
 
 names.each do |name|
   u = User.new
