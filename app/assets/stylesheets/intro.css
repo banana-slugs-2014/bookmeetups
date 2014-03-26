@@ -29,7 +29,7 @@
   color: #D6D6D6;
   font-family: 'Lato', sans-serif;
   font-size: .75em;
-  font-weight: 100;
+  font-weight: 300;
   margin: 6% 0;
   padding: 8px 20px;
   text-align: center;
@@ -39,6 +39,8 @@
 
 .info a:hover {
   background-color: #3B5385;
+  text-shadow: 0px -1.5px 1.5px rgba(0,0,0,0.5);
+
 }
 
 .info h4 {
