@@ -5,40 +5,40 @@ describe Location do
     it { should validate_presence_of :city }
     it { should validate_presence_of :state }
     it { should validate_presence_of :zip }
-
   end
 
   context "associations" do
     it { should have_many(:users) }
   end
 
-  context "methods" do
-    # let!(:user1) { User.create }
-    # let!(:user2) { User.create }
-    # let!(:book) { Book.create }
-    # let!(:location) {Location.create}
-    # let!(:location) {Location.create}
+  context "responds to" do
+    it { should respond_to(:geocheck) }
+    it { should respond_to(:address) }
+    it { should respond_to(:in_range) }
+  end
 
-    describe ".in_range" do
 
-      xit "finds a user with the same book at the same location" do
-        # user1.books << book
-        # user2.books << book
-        # location.users << user1
-        # location.users << user2
-        # puts location
-        # expect(user1.location).to eq location
-        # expect(user1.book_friends).to eq [user2]
+  context "instance methods" do
+    let!(:test_location) { create :location }
+
+    context '#address' do
+      it "should concatinate the address" do
+        expect(test_location.address).to eq([test_location.city, test_location.state, test_location.zip].compact.join(', '))
       end
+    end
 
-      xit "finds a user with the same book at a differnt but in range location" do
-
-      end
-
-      xit "does not find any users when users with the same books are out of range" do
-
-      end
+    context '#geocheck' do
     end
   end
 
+  context "class methods" do
+    it "should work" do
+    end
+
+    xit "finds a user with the same book at a differnt but in range location" do
+    end
+
+    xit "does not find any users when users with the same books are out of range" do
+    end
+  end
 end
