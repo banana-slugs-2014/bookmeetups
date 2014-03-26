@@ -8,7 +8,7 @@
   color: white;
 }*/
 
-.meetup-messages h2 > a{
+.meetup-messages h2 > a, .byline a{
   text-decoration: none;
   font-weight: bold;
   text-transform: capitalize;
