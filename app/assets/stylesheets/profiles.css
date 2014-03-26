@@ -44,4 +44,11 @@
 .default_profile img {
   left: -55px;
   top: 0;
+  z-index: 1;
+}
+
+.friends_link_text {
+  position: relative;
+  text-decoration: none;
+  z-index: 2;
 }
