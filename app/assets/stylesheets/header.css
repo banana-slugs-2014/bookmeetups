@@ -100,3 +100,20 @@ nav ul li a:visited {
   box-shadow: -2px 2px 6px -6px #777777;
   transition: all .3s ease;
 }
+
+.incoming {
+  color: white;
+  position: absolute;
+  right: 190px;
+  top: 15px;
+}
+
+.incoming span {
+  font-size: 10px;
+  margin-left: -5px;
+  background: red;
+  padding: 3px;
+  border-radius: 15px;
+}
+
+
