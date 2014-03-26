@@ -1,0 +1,23 @@
+.flash {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  font-weight: bold;
+  font-size: 2em;
+  font-family: 'Lato' sans-serif;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding: 0.875rem 1.5rem 0.875rem 0.875rem;
+  font-size: 0.8125rem;
+  background-color: #FFBABA;
+  border-color: #D8000C;
+  border-radius: 1px;
+  color: #D8000C;
+  width: 50%;
+}
+
+@media screen and (max-width: 500px) {
+  .flash {
+    width: 90%;
+  }
+}
