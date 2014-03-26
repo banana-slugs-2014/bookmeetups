@@ -217,7 +217,7 @@ h3 {
   width: 200px;
 }
 
-.update:hover, .new-message:hovergit , .cancel:hover {
+.update:hover, .new-message:hover, .cancel:hover {
   background-color: #3B5385;
   text-shadow: 0px -1.5px 1.5px rgba(0,0,0,0.5);
 }
