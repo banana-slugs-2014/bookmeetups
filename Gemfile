@@ -12,8 +12,6 @@ gem 'googlebooks'
 gem 'sidekiq'
 gem 'redis'
 
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -34,6 +32,10 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'debugger'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development do
   gem "better_errors"
