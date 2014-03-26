@@ -7,14 +7,25 @@ describe MessagesController do
   before(:each) { request.session[:id] = current_user.id }
 
   context "#new" do
-    it 'should be success' do
-      get :new, { :meetup_id => test_meetup.id }
-      expect(response).to be_success
+    context 'valid user' do
+      it 'should be success' do
+        get :new, { :meetup_id => test_meetup.id }
+        expect(response).to be_success
+      end
+
+      it 'should set a form for new message' do
+        get :new, { :meetup_id => test_meetup.id }
+        expect(assigns(:message)).to be_a_new(Message)
+      end
     end
 
-    it 'should set a form for new message' do
-      get :new, { :meetup_id => test_meetup.id }
-      expect(assigns(:message)).to be_a_new(Message)
+    context 'without user' do
+      before(:each) { request.session[:id] = nil }
+
+      it "should be redirect" do
+        get :new, { :meetup_id => test_meetup.id }
+        expect(response).to be_redirect
+      end
     end
   end
 
@@ -23,7 +34,7 @@ describe MessagesController do
     before(:each) do
       Meetup.any_instance.stub(:other_user){other_user}
     end
-    it "should be redirect" do
+    it "should be ok" do
       post :create, { :meetup_id => test_meetup.id, :message => message_attribs }
       expect(response).to be_ok
     end
