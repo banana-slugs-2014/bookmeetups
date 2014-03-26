@@ -1,18 +1,7 @@
 <h1> Results </h1>
-<ul>
-  <% @books.each do |book| %>
-    <li>
-      <div class="book">
-        <ul>
-          <li><img src="<%= book.photo_link(1) %>" ></li>
-          <li><%= book.title  %></li>
-          <li><%= book.author %></li>
-          <% if logged_in? %>
-            <li><%= link_to("Add to my collection", user_create_favorite_book_path(current_user, book), {:method => "POST"}) %></li>
-          <% end %>
-        <ul>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<% @books.each do |book| %>
+  <div class="book">
+    <%= render :partial => "book_result", locals: { book: book } %>
+  </div>
+<% end %>
 
