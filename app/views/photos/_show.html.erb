@@ -1,5 +1,5 @@
 <% if user.photo.nil? %>
-  <div class="default_profile"><%= image_tag src="/assets/defaults/default_#{user.id % 129}.jpg" %></div>
+  <%= image_tag src="/assets/defaults/default_#{user.id % 129}.jpg", :class => "default_img" %>
 <% else %>
-  <%= image_tag serve_user_photo_path(user.id, user.photo.id) %>
+  <%= image_tag serve_user_photo_path(user.id, user.photo.id), :class => "custom_img" %>
 <% end %>
