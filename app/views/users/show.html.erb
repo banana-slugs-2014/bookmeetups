@@ -15,7 +15,7 @@
           <div>
             <%= link_to friend.username.titlecase, user_favorite_books_path(friend), :class => "friends_link_text" %>
           </div>
-          <div>
+          <div class="friend_img">
             <%= link_to render( partial: "photos/show", locals: { user: friend }), user_favorite_books_path(friend) %>
           </div>
         </li>

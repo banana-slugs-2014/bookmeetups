@@ -1,3 +1,9 @@
+/*====== Set Defaults ========*/
+ul {
+  padding: 0;
+  text-align: center;
+}
+
 /*====== User Profile Pic Display ========*/
 .profile_pic {
   float: left;
@@ -20,7 +26,7 @@
   left: 0;
 }
 
-.default_profile img {
+.default_img img {
   left: -55px;
   top: 0;
   z-index: 1;
@@ -34,28 +40,24 @@
 
 
 /*====== Friends List Section ========*/
-.friends_list .body {
-
+.custom_img {
+  width: 100%;
 }
 
 /*====== Friend List Pics ========*/
 .friend_links {
   display: inline-block;
   text-align: center;
-  height: 250px;
+  height: 126px;
+  width: 126px;
   overflow: hidden;
-  margin: 0 5px;
-  padding: 5px;
+  margin: -2px;
   position: relative;
-  width: 200px;
 
 }
 
 .friend_links img {
-  height: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
+  height: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
