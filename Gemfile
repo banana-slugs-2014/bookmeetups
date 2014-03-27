@@ -11,6 +11,7 @@ gem 'geocoder'
 gem 'googlebooks'
 gem 'sidekiq'
 gem 'redis'
+gem 'sucker_punch'
 
 # Gems used only for assets and not required
 # in production environments by default.
