@@ -69,11 +69,11 @@ Contributors:
 
 Changelog
 v1.0 (March 26th, 2014)
-  Features:
-    * Users may search for read books and add it to their account
-    * Users may search for other nearby users who have read a book, and initiate a request for meetup with them.
-    * BookMeetups allows a user to set the maximum distance that the system will use to locate other nearby users.
-    * BookMeetups will notify a user via email when other users contact them to request a meetup.
+Features:
+* Users may search for read books and add it to their account
+* Users may search for other nearby users who have read a book, and initiate a request for meetup with them.
+* BookMeetups allows a user to set the maximum distance that the system will use to locate other nearby users.
+* BookMeetups will notify a user via email when other users contact them to request a meetup.
 
 License
 Copyleft 2014.  My lawyer will fill in the rest later.
