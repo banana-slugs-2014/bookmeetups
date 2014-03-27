@@ -16,9 +16,10 @@
 }
 
 
-################################################
-#           NAV BAR
-################################################
+/***********************************
+# NAVIGATION
+***********************************/
+
 
 nav {
   float: right;
@@ -54,29 +55,10 @@ nav ul li a:visited {
   color: #A9D9DB;
 }
 
-#################
-# NOTIFICATIONS
-#################
 
-.incoming {
-  color: white;
-  position: absolute;
-  right: 190px;
-  top: 15px;
-}
-
-.incoming span {
-  font-size: 10px;
-  margin-left: -5px;
-  background: red;
-  padding: 3px;
-  border-radius: 15px;
-}
-
-
-###################################################
-#            SEARCH BAR
-###################################################
+/******************************************
+# SEARCH BAR
+*******************************************/
 
 
 .search_bar {
@@ -134,4 +116,24 @@ nav ul li a:visited {
 
 .search_button:focus {
   outline: none;
+}
+
+
+/******************************************
+# NOTIFICATIONS
+*******************************************/
+
+.incoming {
+  color: white;
+  position: absolute;
+  right: 190px;
+  top: 15px;
+}
+
+.incoming span {
+  font-size: 10px;
+  margin-left: -5px;
+  background: red;
+  padding: 3px;
+  border-radius: 15px;
 }
