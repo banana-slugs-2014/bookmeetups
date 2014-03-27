@@ -1,11 +1,5 @@
-.small {
-  font-size: .75em;
-  position: relative;
-  width: 250px;
-}
-
 .info {
-  background-color: #A9D9DB;
+  /*background-color: #A9D9DB;*/
   height: 275px;
   display: block;
   font-size: 1.75em;
@@ -61,7 +55,7 @@
   background-color: #A9D9DB;
   color: black;
   font-size: 1em;
-  font-weight: 100;
+  font-weight: 300;
   margin: 0;
   padding: 0;
   position: relative;
@@ -69,8 +63,10 @@
 }
 
 .meetup_user a:hover{
-  color: #475B5C;
+  color: #3B5385;
   font-weight: 300;
+  background-color: #A9D9DB;
+  text-shadow: 0 0 0;
 }
 
 .unread p {

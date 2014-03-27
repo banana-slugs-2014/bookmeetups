@@ -11,7 +11,7 @@
 
     <% meetup.users.each do |user| %>
       <% if user != current_user %>
-        <span class="meetup_user"><h3>Meetup with <%= link_to user.username.capitalize, user_path(user) %></h3></span>
+        <h3>Meetup with <span class="meetup_user"><%= link_to user.username.capitalize, user_path(user) %></span></h3>
         <h4><%= user.location.city %></h4>
       <% end %>
     <% end %>
