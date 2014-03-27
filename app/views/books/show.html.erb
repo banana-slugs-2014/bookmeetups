@@ -11,20 +11,39 @@
     <%= button_to "Add to my collection", user_create_favorite_book_path(current_user.id, @book.id), :class => "book-selector" %>
   <% end %>
 </div>
-  <div class="friend_list">
-    <p>Your close friends for this book:</p>
-    <% @nearby_friends.each do |reader| %>
-      <div class="friend_links">
-        <h4><%= link_to reader.username, user_favorite_books_path(reader) %></h4>
-        <%= link_to render(partial: 'photos/show', locals: { user: reader }), user_path(reader) %>
-      </div>
-    <% end %>
+
+<section class="friends_list">
+  <div class="body">
+    <ul>
+      <p>Your close friends for this book:</p>
+      <% @nearby_friends.each do |friend| %>
+        <li class="friend_links">
+          <div>
+            <p><%=friend.username.titlecase%></p>
+          </div>
+          <div class="friend_img">
+            <%= link_to render( partial: "photos/show", locals: { user: friend }), user_favorite_books_path(friend) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
-    <p>Your distant friends for this book:</p>
-    <% @distant_friends.each do |reader| %>
-      <div class="friend_links">
-       <h4><%= link_to reader.username, user_favorite_books_path(reader) %></h4>
-        <%= link_to render(partial: 'photos/show', locals: { user: reader }), user_path(reader) %>
-      </div>
-    <% end %>
+</section>
+
+<section class="friends_list">
+  <div class="body">
+    <ul>
+      <p>Your distant friends for this book:</p>
+      <% @distant_friends.each do |friend| %>
+        <li class="friend_links">
+          <div>
+            <p><%=friend.username.titlecase%></p>
+          </div>
+          <div class="friend_img">
+            <%= link_to render( partial: "photos/show", locals: { user: friend }), user_favorite_books_path(friend) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
+</section>
