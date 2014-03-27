@@ -22,6 +22,5 @@ class MessagesController < ApplicationController
     end
     render :partial => 'messages/created_message',
            :locals => { meetup: meetup, message: message }
-
   end
 end

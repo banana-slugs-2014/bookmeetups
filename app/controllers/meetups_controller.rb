@@ -20,7 +20,7 @@ class MeetupsController < ApplicationController
       current_user.meetups << @meetup
       @other_user.meetups << @meetup
     end
-    @messages = @meetup.messages
+    @messages = @meetup.messages.order("created_at DESC")
     render  :"show"
   end
 
