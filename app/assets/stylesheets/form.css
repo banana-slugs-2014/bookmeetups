@@ -10,7 +10,7 @@
 }
 
 #user_email, #user_password_confirmation, #zip,
-#user_username, #user_password {
+#user_username, #user_password, #user_zip, #photo_name, #user_travel_distance {
   border: none;
   font-family: 'Lato', sans-serif;
   font-weight: 100;
@@ -20,56 +20,7 @@
   width: 350px;
 }
 
-
-
-
-/* Edit User Info */
-.edit_user {
-  position: relative;
-  width: 75%;
-}
-
-
-h3 {
-  font-weight: 100;
-  font-size: 1.65em;
-  margin: 1% 0% ;
-}
-
-#user_city {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: 1.75m;
-  height: 30px;
-  padding: 5px;
-  width: 350px;
-}
-
-#user_state {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: 1.75m;
-  height: 30px;
-  padding: 5px;
-  width: 350px;
-}
-
-#user_zip, #photo_name {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: 1.75m;
-  height: 30px;
-  padding: 5px;
-  width: 350px;
-}
-
 #user_travel_distance {
-  border: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
   font-size: .65em;
   height: 40px;
   margin: 2px;
@@ -79,28 +30,6 @@ h3 {
 
 }
 
-.add {
-  background-color: #202C47;
-  border: none;
-  color: #D6D6D6;
-  float: left;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 1.25em;
-  line-height: 2.7em;
-  margin: 20px;
-  padding: 0;
-  text-align: center;
-  text-decoration: none;
-  transition: all .2s;
-  vertical-align: middle;
-  width: 200px;
-}
-
-.add:hover {
-  background-color: #3B5385;
-  text-shadow: 0px -1.5px 1.5px rgba(0,0,0,0.5);
-}
 
 .cancel{
   background-color: #202C47;
