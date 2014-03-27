@@ -15,6 +15,11 @@
    }
 }
 
+
+################################################
+#           NAV BAR
+################################################
+
 nav {
   float: right;
   font-size: 1.15em;
@@ -48,6 +53,31 @@ nav ul li a:hover {
 nav ul li a:visited {
   color: #A9D9DB;
 }
+
+#################
+# NOTIFICATIONS
+#################
+
+.incoming {
+  color: white;
+  position: absolute;
+  right: 190px;
+  top: 15px;
+}
+
+.incoming span {
+  font-size: 10px;
+  margin-left: -5px;
+  background: red;
+  padding: 3px;
+  border-radius: 15px;
+}
+
+
+###################################################
+#            SEARCH BAR
+###################################################
+
 
 .search_bar {
   color: #232323;
@@ -105,20 +135,3 @@ nav ul li a:visited {
 .search_button:focus {
   outline: none;
 }
-
-.incoming {
-  color: white;
-  position: absolute;
-  right: 190px;
-  top: 15px;
-}
-
-.incoming span {
-  font-size: 10px;
-  margin-left: -5px;
-  background: red;
-  padding: 3px;
-  border-radius: 15px;
-}
-
-
