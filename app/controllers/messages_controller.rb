@@ -19,7 +19,6 @@ class MessagesController < ApplicationController
       other_user = meetup.other_user( current_user)
       other_user.new_unread_message
       EmailNotificationJob.new.async.perform(other_user.id, current_user.id, message.text)
-      # EmailWorker.perform_async(other_user.id, current_user.id, message.text)
     end
     render :partial => 'messages/created_message',
            :locals => { meetup: meetup, message: message }
