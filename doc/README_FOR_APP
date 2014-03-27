@@ -1,2 +1,84 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+BookMeetups
+
+Quick start
+To use BookMeetups, a user must first create an account. This requires a username, password, email address and a zip code.
+
+The system requires an email address so that BookMeetups has a way of notifying the user when other users initiate a request for meetup with them.  A valid zipcode is also required as a user's geographical location is derived from the zipcode; this physical location is used as a point of reference for finding other nearby users.
+
+
+How to use
+
+Account Creation
+To begin, create an account by clicking on the "Sign Up" button.  Input the appropriate data in the relevant fields then click on "Sign Up".  If all entered data are valid, a new account will be created.
+
+
+Login
+Login by clicking on the sign-in button, and input valid user credentials.  Once account verification is complete, the user will be sent to the main user page.
+
+
+Searching
+From the main user screen, search for books that you have read by using the "Search Books" field up on the top left hand corner of the screen.  Input the desired title and then click on the "Search Books" button.  A list of matching result will be returned.
+
+The user may then click on "Add to my collection" to add the selected book to their account. If a book is added in error, the user may now click on the "Remove from my collection" button in the page to remove the book from their collection.
+
+
+BookFriends
+Once books are added to the user's collection, the user may see a list of other nearby users by clicking on the "Home" button on the top navbar.  By clicking on these other user's portraits, the user may see these other user's book collections.
+
+
+Meetups
+To initiate a meetup with another user.  From the selected user's page, hover your mouse over a book, then click on the "Meetup" link that pops up. This will take the user to the Meetup page.
+
+Click on the "Compose new message" button to load a form to compose a message to the selected user.  Once the message is composed, click on the "Post Message" button to send the message, or click on "Cancel" to close the form.
+
+When the "Post Message" button is clicked, the other user will be notified via email of your request for meetup.
+
+
+Managing Meetups
+To view existing Meetup requests, click on the "My Meetups" button in the navbar.  This will allow the user to view a list of all their active meetups.  Click on the "Go To Messages" button to view the details of the meetup and continue dialog with the associated user.
+
+
+Managing Books
+To view your current book collection, click on the "My Books" button in the navbar.  This will load a grid view of all books in your collection.  Click on any of these books to load the detail page for that book, where you may remove the book from your collection via the "Remove from my collection" button.
+
+From here you may also see a list of nearby users who have also read the book.  Click on any of their portraits to view their detailed information page.
+
+
+Editing User Details
+By clicking on the "Home" button of the navbar, and then clicking on the "Edit My Profile" button in the user detail page, the user may update their current geographical location by inputting the correct zip code, then clicking on the "Update Location" button.
+
+The user may also update the distance they are willing to travel to meet new book friends by typing in the distance in miles in the appropriate box, then clicking the "Update Location button".
+
+Custom user profile photos may be uploaded here by clicking on the "Add New Profile" button.
+
+
+Logging Out
+Click on the "Logout" button in the navbar to log out of the system.
+
+Contact Us or Report Inapropriate Content
+If you have any questions regarding BookMeetups, please feel free to contact us.
+We can be reached by email at bookmeetup@gmail.com. Alternatively we can be reached at our new office (address pending).
+
+If you have touble with another user posting inapropriate content, harrassing you or generally disrespecting you or our site please send us an email.
+
+bookmeetup@gmail.com
+
+Contributers
+Project Lead: Matthew Knudsen
+Team Member: Steven Buchanan
+Team Member: Henry Hsu
+Team Member: Jamie McKenzie
+Team Member: Hunter Paull
+
+
+
+Changelog
+v1.0 (March 26th, 2014)
+  Features:
+    * Users may search for read books and add it to their account
+    * Users may search for other nearby users who have read a book, and initiate a request for meetup with them.
+    * BookMeetups allows a user to set the maximum distance that the system will use to locate other users.
+    * BookMeetups will notify a user via email when other users contact them to request a meetup.
+
+License
+Copyleft 2014.  My lawyer will fill in the rest later.
