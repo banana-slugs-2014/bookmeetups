@@ -1,4 +1,4 @@
-.book-selector, .submit, .add {
+.book-selector, .submit, .add, .cancel, .update, .new-message{
   background-color: #202C47;
   border: none;
   color: #D6D6D6;
@@ -10,17 +10,13 @@
   transition: all .2s ease;
 }
 
-.book-selector:hover, .submit:hover, .add:hover {
-  background-color: #3B5385;
-  text-shadow: 0px -1.5px 1.5px rgba(0,0,0,0.5);
-}
-
-.submit, .add {
+.submit, .add, .cancel, .update, .new-message{
   float: left;
   font-size: 1.25em;
   font-weight: 300;
   line-height: 2.7em;
   margin-top: 20px;
+  text-decoration: none;
   vertical-align: middle;
 }
 
@@ -33,8 +29,24 @@
 .add {
   margin: 20px;
   padding: 0;
-  text-decoration: none;
   width: 200px;
 }
 
+.cancel{
+  line-height: 2em;
+  margin-left: 20px;
+  right: 25%;
+  width: 175px;
+}
 
+.update, .new-message {
+  display: block;
+  padding: 0;
+  position: relative;
+  width: 200px;
+}
+
+.book-selector:hover, .submit:hover, .add:hover, .cancel:hover, .update:hover, .new-message:hover {
+  background-color: #3B5385;
+  text-shadow: 0px -1.5px 1.5px rgba(0,0,0,0.5);
+}
