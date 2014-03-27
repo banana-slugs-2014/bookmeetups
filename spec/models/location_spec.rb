@@ -27,5 +27,4 @@ describe Location do
       end
     end
   end
-  
 end
