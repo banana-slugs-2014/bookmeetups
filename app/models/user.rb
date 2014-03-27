@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def friends(book)
-    location.locations_within_range( travel_distance ).each_with_object([]) do |locale, coll |
+    location.locations_within_range( travel_distance ).each_with_object([]) do |locale, coll|
       coll << friends_at_location( locale, [book] )
     end.flatten
   end

@@ -67,20 +67,6 @@ describe UsersController do
     end
   end
 
-  context '#index' do
-    before(:each) { request.session[:id] = my_user.id }
-
-    it "should be a success" do
-      get :index
-      expect(response).to be_success
-    end
-
-    it "should list all users" do
-      get :index
-      expect(assigns(:users)).to eq(User.all)
-    end
-  end
-
   context '#edit' do
     before(:each) { request.session[:id] = my_user.id }
 

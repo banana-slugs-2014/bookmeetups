@@ -3,7 +3,7 @@ Bookmeetups::Application.routes.draw do
 
   post "/search", to: "searches#search"
   get "users/landing", to: "users#landing"
-  resources :users do
+  resources :users, :except => [:index] do
     post 'books/:book_id', to: 'favorite_books#create', as: 'create_favorite_book'
     delete 'books/:book_id', to: 'favorite_books#destroy', as: 'favorite_book'
     get 'books', to: 'favorite_books#index', as: 'favorite_books'
