@@ -58,7 +58,7 @@ If you have touble with another user posting inapropriate content, harrassing yo
 
 bookmeetup@gmail.com
 
-Contributers
+Contributors:
 * Project Lead: [Matthew Knudsen](https://github.com/mknudsen01)
 * Team Member:  [Steven Buchanan](https://github.com/smbuchanan)
 * Team Member:  [Henry Hsu](https://github.com/henryh28)
