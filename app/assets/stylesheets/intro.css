@@ -1,5 +1,4 @@
 .info {
-  /*background-color: #A9D9DB;*/
   height: 275px;
   display: block;
   font-size: 1.75em;
@@ -10,9 +9,7 @@
 
 .info h3{
   font-size: 1.75em;
-  font-weight: 100;
   margin: 0;
-  padding: 0;
 }
 
 /*only affects the buttons in the intro div*/
@@ -37,13 +34,6 @@
 
 }
 
-.info h4 {
-  font-size: 1.25em;
-  font-weight: 100;
-  margin: 1% 0%;
-  padding: 0;
-}
-
 .info p {
   font-size: .75em;
   font-weight: 300;
@@ -51,8 +41,7 @@
   padding: 10px auto;
 }
 
-.meetup_user a {
-  background-color: #A9D9DB;
+.meetup_user {
   color: black;
   font-size: 1em;
   font-weight: 100;
@@ -62,7 +51,7 @@
   top: 0;
 }
 
-.meetup_user a:hover{
+.meetup_user:hover{
   color: #475B5C;
   font-weight: 300;
 }
