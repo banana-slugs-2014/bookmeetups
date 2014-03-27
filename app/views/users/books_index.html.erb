@@ -3,12 +3,11 @@
 </div>
 <div class="info">
   <h3><%= @user.username.titlecase %></h3>
-  <h4><%= !@user.location.nil? ? @user.location.city : "No location set." %></h4>
+   <h4><%= !@user.location.nil? ? "#{@user.location.city}, #{@user.location.state}" : "No location set." %></h4>
   <% if @user == current_user %>
     <%= link_to "Edit My Profile", edit_user_path(current_user) %>
   <% end %>
 </div>
-
 
 <% if current_user != @user %>
     <div class="book_list">
