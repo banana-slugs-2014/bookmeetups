@@ -63,7 +63,7 @@ names.each do |name|
   u.email = name + "@test.com"
   u.location = [new_l, far_l].sample
   u.save
-  u.books << ( Book.all ).sample(rand(25-30))
+  u.books << ( Book.all ).sample(rand(25..30))
 end
 
 names = [ "dalek dan", "shebob", "deadpool", "stan", "dilbert", "doc brown", "einstein", "charles" ]
@@ -75,5 +75,5 @@ names.each do |name|
   u.email = name + "@test.com"
   u.location = [new_l, far_l].sample
   u.save
-  u.books << ( Book.all ).sample(rand(15-30))
+  u.books << ( Book.all ).sample(rand(15..30))
 end
