@@ -56,7 +56,11 @@ class UsersController < ApplicationController
   end
 
   def landing
-    render :landing
+    if logged_in?
+      redirect_to(user_path(session[:id]))
+    else
+      render :landing
+    end
   end
 
 end
