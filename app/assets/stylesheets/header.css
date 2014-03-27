@@ -51,15 +51,9 @@ nav ul li a:hover {
   color: #378A8E;
 }
 
-nav ul li a:visited {
-  color: #A9D9DB;
-}
-
-
 /******************************************
 # SEARCH BAR
 *******************************************/
-
 
 .search_bar {
   color: #232323;
