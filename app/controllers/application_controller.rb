@@ -33,4 +33,5 @@ class ApplicationController < ActionController::Base
     redirect_to(new_user_path, :flash => {:error => "Please use a valid zip code"}) if zip.to_region.nil?
   end
 
+  helper_method :logged_in?, :current_user
 end
