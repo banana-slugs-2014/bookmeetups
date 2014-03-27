@@ -26,19 +26,6 @@ describe Location do
         expect(test_location.address).to eq([test_location.city, test_location.state, test_location.zip].compact.join(', '))
       end
     end
-
-    context '#geocheck' do
-    end
   end
-
-  context "class methods" do
-    it "should work" do
-    end
-
-    xit "finds a user with the same book at a differnt but in range location" do
-    end
-
-    xit "does not find any users when users with the same books are out of range" do
-    end
-  end
+  
 end
