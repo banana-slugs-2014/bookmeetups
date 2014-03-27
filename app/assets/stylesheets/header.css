@@ -14,6 +14,7 @@
        display: none !important;
    }
 }
+
 nav {
   float: right;
   font-size: 1.15em;
@@ -99,6 +100,10 @@ nav ul li a:visited {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDCC5',  endColorstr='#CFB2A0', GradientType=0 );
   box-shadow: -2px 2px 6px -6px #777777;
   transition: all .3s ease;
+}
+
+.search_button:focus {
+  outline: none;
 }
 
 .incoming {
