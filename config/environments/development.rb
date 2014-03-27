@@ -1,4 +1,5 @@
 Bookmeetups::Application.configure do
+  config.gem 'redis'
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -34,4 +35,10 @@ Bookmeetups::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
 end
+
+ENV["REDISTOGO_URL"] = 'redis://127.0.0.1:6379/0'
+
+
+# ENV["REDISTOGO_URL"] = 'redis://redistogo:3e279a43b5b5cbf4ed38781e02924574@pearlfish.redistogo.com:10710'
