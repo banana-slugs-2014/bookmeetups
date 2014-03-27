@@ -32,10 +32,15 @@
   z-index: 2;
 }
 
+
+/*====== Friends List Section ========*/
+.friends_list .body {
+
+}
+
 /*====== Friend List Pics ========*/
 .friend_links {
-  float: left;
-  display: block;
+  display: inline-block;
   text-align: center;
   height: 250px;
   overflow: hidden;
